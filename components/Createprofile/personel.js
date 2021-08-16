@@ -130,7 +130,6 @@ export default function Personel({ ...data }) {
             <input
               type="text"
               id="full_name"
-              name="fullname"
               {...register("fullname", {
                 required: true,
                 minLength: 3,

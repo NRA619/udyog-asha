@@ -29,10 +29,10 @@ const container = {
  //  getdata();
 //})
 
-
-const login = () => {
+export default function login()  {
+  const router = useRouter();
   const googlesubmit = async (values) => {
-    const router = useRouter();
+    
     console.log(values);
     console.log(values.profileObj);
     const email = values.profileObj.email;
@@ -146,4 +146,3 @@ const login = () => {
   );
 };
 
-export default login;
