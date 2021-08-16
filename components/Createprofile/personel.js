@@ -13,9 +13,9 @@ const test = (curPassword) => {
     },
   };
 };
-const router = useRouter();
+
 export default function Personel({ ...data }) {
-  
+  const router = useRouter();
   const email = router.query.data;
   const {
     control,
@@ -100,7 +100,7 @@ export default function Personel({ ...data }) {
 
                 <input
                   type="file"
-                  id="fileUpload"
+                  id="file_Upload"
                   name="fileUpload"
                   {...register("fileUpload", {
                     required: true,
@@ -124,12 +124,12 @@ export default function Personel({ ...data }) {
         </div>
         <div className="md:h-2/3 my-4 md:justify-items-center flex flex-col justify-center text-white items-center w-5/6 md:grid  md:grid-cols-2  bg-indigo-500 rounded-md shadow-xl">
           <div className="w-3/4 flex flex-col space-y-3 m-6">
-            <label htmlFor="fullname" className="font-medium">
+            <label htmlFor="full_name" className="font-medium">
               Full Name*
             </label>
             <input
               type="text"
-              id="fullname"
+              id="full_name"
               name="fullname"
               {...register("fullname", {
                 required: true,
@@ -151,12 +151,12 @@ export default function Personel({ ...data }) {
           </div>
 
           <div className="w-3/4 flex flex-col space-y-3 m-6">
-            <label htmlFor="age" className="font-medium">
+            <label htmlFor="age_" className="font-medium">
               Age*
             </label>
             <input
               type="text"
-              id="age"
+              id="age_"
               name="age"
               {...register("age", {
                 required: true,
@@ -180,12 +180,12 @@ export default function Personel({ ...data }) {
             )}
           </div>
           <div className="w-3/4 flex flex-col space-y-3 m-6">
-            <label htmlFor="gender" className="font-medium">
+            <label htmlFor="gender_" className="font-medium">
               Gender*
             </label>
             <select
               type="text"
-              id="gender"
+              id="gender_"
               name="gender"
               {...register("gender")}
               className="text-indigo-900 rounded-md p-2 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
@@ -198,12 +198,12 @@ export default function Personel({ ...data }) {
             </select>
           </div>
           <div className="w-3/4 flex flex-col space-y-3 m-6">
-            <label htmlFor="mobileno" className="font-medium">
+            <label htmlFor="mobileno_" className="font-medium">
               Mobile no.*
             </label>
             <input
               type="text"
-              id="mobileno"
+              id="mobileno_"
               name="mobileno"
               {...register("mobileno", {
                 required: true,
@@ -224,13 +224,13 @@ export default function Personel({ ...data }) {
             )}
           </div>
           <div className="w-3/4 flex flex-col space-y-3 m-6">
-            <label htmlFor="email" className="font-medium">
+            <label htmlFor="email_" className="font-medium">
               Email*
             </label>
             <fieldset disabled>
               <input
                 type="text"
-                id="email"
+                id="email_"
                 name="email"
                 {...register("email", {})}
                 className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
@@ -252,12 +252,12 @@ export default function Personel({ ...data }) {
         </div>
         <div className="md:h-2/3 my-4 py-10 flex flex-col justify-center md:justify-items-center items-center w-5/6 md:grid  md:grid-cols-2 text-white bg-indigo-500 rounded-md shadow-xl">
           <div className="w-3/4 flex flex-col space-y-3 m-6">
-            <label htmlFor="password" className="font-medium">
+            <label htmlFor="password_" className="font-medium">
               New Password*
             </label>
             <input
               type="password"
-              id="password"
+              id="password_"
               name="password"
               {...register("password", {
                 required: true,
@@ -274,12 +274,12 @@ export default function Personel({ ...data }) {
           </div>
 
           <div className="w-3/4 flex flex-col space-y-3 m-6">
-            <label htmlFor="password_repeat" className="font-medium">
+            <label htmlFor="password_repeat_" className="font-medium">
               Confirm Password*
             </label>
             <input
               type="password"
-              id="password_repeat"
+              id="password_repeat_"
               name="password_repeat"
               {...register("password_repeat", test(password.current))}
               className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"

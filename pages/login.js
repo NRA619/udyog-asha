@@ -29,10 +29,10 @@ const container = {
  //  getdata();
 //})
 
-const router = useRouter();
+
 const login = () => {
- 
   const googlesubmit = async (values) => {
+    const router = useRouter();
     console.log(values);
     console.log(values.profileObj);
     const email = values.profileObj.email;
