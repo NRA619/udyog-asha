@@ -29,9 +29,9 @@ const container = {
  //  getdata();
 //})
 
-
+const router = useRouter();
 const login = () => {
-  const router = useRouter();
+ 
   const googlesubmit = async (values) => {
     console.log(values);
     console.log(values.profileObj);

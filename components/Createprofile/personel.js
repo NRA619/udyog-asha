@@ -13,9 +13,9 @@ const test = (curPassword) => {
     },
   };
 };
-
+const router = useRouter();
 export default function Personel({ ...data }) {
-  const router = useRouter();
+  
   const email = router.query.data;
   const {
     control,
@@ -232,7 +232,6 @@ export default function Personel({ ...data }) {
                 type="text"
                 id="email"
                 name="email"
-                value={email}
                 {...register("email", {})}
                 className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
               ></input>
