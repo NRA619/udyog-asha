@@ -1,0 +1,301 @@
+import React, { useState, useRef, useEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import login from "../../pages/login";
+
+const test = (curPassword) => {
+  const pass = curPassword;
+  return {
+    validate: (value) => {
+      return value === pass || "The passwords do not match";
+    },
+  };
+};
+
+export default function Personel({ ...data }) {
+  const router = useRouter();
+  const email = router.query.data;
+  const {
+    control,
+    register,
+    formState: { errors },
+    handleSubmit,
+    watch,
+  } = useForm();
+  const password = useRef({});
+  password.current = watch("password", "");
+
+  const [imgPreview, setImgPreview] = useState(
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+  );
+
+  const [error, setError] = useState(false);
+
+  const handleImageChange = (e) => {
+    setError(false);
+    const selected = e.target.files[0];
+    const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg"];
+    if (selected && ALLOWED_TYPES.includes(selected.type)) {
+      let reader = new FileReader();
+      reader.onloadend = () => {
+        setImgPreview(reader.result);
+      };
+      reader.readAsDataURL(selected);
+    } else {
+      setError(true);
+    }
+  };
+  useEffect(() => {
+    if (!email) {
+      router.push("/");
+    }
+  });
+  function onSubmitForm(values) {
+    values.fullname = values.fullname.trim();
+    // const trimvalue = values.trim();
+    console.log(values);
+
+    if (values.fullname && values.mobileno) {
+      router.push("/");
+    }
+  }
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmitForm)}
+      className="md:flex md:flex-col md:items-center"
+    >
+      <main className="h-screen w-full">
+        <div className="flex items-center relative h-1/3 md:h-1/3 w-full">
+          <div className="h-full w-full flex justify-center md:block text-yellow-800 bg-gradient-to-r from-black to-indigo-600">
+            <div className="float-right w-1/2 h-full hidden md:flex justify-center items-center">
+              <span className="text-white  md:w-3/4 text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit consectetur
+                adipiscing elit
+              </span>
+            </div>
+            <div className=" h-full w-3/4 md:w-1/2 flex justify-center items-center md:text-4xl text-md text-white space-x-2 md:space-x-5">
+              <span>
+                <AccountCircleIcon style={{ fontSize: 50 }} color="secondary" />
+              </span>
+              <span className="font-semibold">Create Your Profile</span>
+            </div>
+
+            <div className="h-0 bg-yellow-100 flex justify-center items-center absolute bottom-0 left-0 right-0 ">
+              <img
+                src={imgPreview}
+                id="img"
+                className="rounded-full md:h-32 md:w-32 h-24 w-24"
+              ></img>
+            </div>
+          </div>
+        </div>
+        <div className="h-2/5 md:h-1/3 flex justify-center items-center">
+          {
+            <div className="flex flex-col justify-center items-center">
+              <label className="flex flex-col items-center py-2 px-4 bg-white rounded-md shadow-md tracking-wide border border-blue cursor-pointer hover:bg-indigo-500 hover:text-white text-indigo-600 ease-linear transition-all duration-150">
+                <span className="text-base leading-normal">Upload photo</span>
+
+                <input
+                  type="file"
+                  id="fileUpload"
+                  name="fileUpload"
+                  {...register("fileUpload", {
+                    required: true,
+                  })}
+                  onChange={handleImageChange}
+                  className="hidden"
+                />
+              </label>
+              <span>(jpg, jpeg or png)</span>
+            </div>
+          }
+        </div>
+      </main>
+
+      <div className="relative -mt-28 md:-mt-40 md:w-3/4 flex flex-col justify-center items-center">
+        <div className="md:my-0 relative  flex flex-col justify-center items-center">
+          <span className="block text-2xl text-indigo-900 font-bold ">
+            Personel Details
+          </span>
+          <span className="w-12 mt-2 block h-1 rounded bg-indigo-900"></span>
+        </div>
+        <div className="md:h-2/3 my-4 md:justify-items-center flex flex-col justify-center text-white items-center w-5/6 md:grid  md:grid-cols-2  bg-indigo-500 rounded-md shadow-xl">
+          <div className="w-3/4 flex flex-col space-y-3 m-6">
+            <label htmlFor="fullname" className="font-medium">
+              Full Name*
+            </label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              {...register("fullname", {
+                required: true,
+                minLength: 3,
+                maxLength: 20,
+              })}
+              name="fullname"
+              className="rounded-md p-4 text-indigo-900 shadow-lg h-10 focus:outline-none focus:ring-1 focus:ring-black"
+            ></input>
+            {errors.fullname && errors.fullname.type === "maxLength" && (
+              <span>Max length is 20</span>
+            )}
+            {errors.fullname && errors.fullname.type === "required" && (
+              <span>Please fill this field</span>
+            )}
+            {errors.fullname && errors.fullname.type === "minLength" && (
+              <span>Atleast 3 characters</span>
+            )}
+          </div>
+
+          <div className="w-3/4 flex flex-col space-y-3 m-6">
+            <label htmlFor="age" className="font-medium">
+              Age*
+            </label>
+            <input
+              type="text"
+              id="age"
+              name="age"
+              {...register("age", {
+                required: true,
+                pattern: /[0-9]/,
+                max: 100,
+                min: 18,
+              })}
+              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+            ></input>
+            {errors.age && errors.age.type === "required" && (
+              <span>Please fill this field</span>
+            )}
+            {errors.age && errors.age.type === "max" && (
+              <span>Maximum age upto 100</span>
+            )}
+            {errors.age && errors.age.type === "min" && (
+              <span>You must be above 18</span>
+            )}
+            {errors.age && errors.age.type === "pattern" && (
+              <span>Must be in Digit</span>
+            )}
+          </div>
+          <div className="w-3/4 flex flex-col space-y-3 m-6">
+            <label htmlFor="gender" className="font-medium">
+              Gender*
+            </label>
+            <select
+              type="text"
+              id="gender"
+              name="gender"
+              {...register("gender")}
+              className="text-indigo-900 rounded-md p-2 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+            >
+              <option value="female" className="">
+                female
+              </option>
+              <option value="male">male</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+          <div className="w-3/4 flex flex-col space-y-3 m-6">
+            <label htmlFor="mobileno" className="font-medium">
+              Mobile no.*
+            </label>
+            <input
+              type="text"
+              id="mobileno"
+              name="mobileno"
+              {...register("mobileno", {
+                required: true,
+                message: "Fill your mobileno",
+                pattern: /[0-9]/,
+                maxLength: 10,
+              })}
+              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+            ></input>
+            {errors.mobileno && errors.mobileno.type === "maxLength" && (
+              <span>Max length is 10</span>
+            )}
+            {errors.mobileno && errors.mobileno.type === "required" && (
+              <span>Please fill this field</span>
+            )}
+            {errors.mobileno && errors.mobileno.type === "pattern" && (
+              <span>Must be in digit</span>
+            )}
+          </div>
+          <div className="w-3/4 flex flex-col space-y-3 m-6">
+            <label htmlFor="email" className="font-medium">
+              Email*
+            </label>
+            <fieldset disabled>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                value={email}
+                {...register("email", {})}
+                className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              ></input>
+            </fieldset>
+            {errors.email && errors.email.type === "required" && (
+              <span>Please fill this field</span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="relative md:w-3/4 mt-20 my-10 flex flex-col justify-center items-center">
+        <div className="md:ml-10 md:my-0 my-4 flex flex-col items-center">
+          <span className="block text-2xl text-indigo-900 font-bold ">
+            Security Details
+          </span>
+          <span className="w-12 mt-2 flex h-1 rounded bg-indigo-900"></span>
+        </div>
+        <div className="md:h-2/3 my-4 py-10 flex flex-col justify-center md:justify-items-center items-center w-5/6 md:grid  md:grid-cols-2 text-white bg-indigo-500 rounded-md shadow-xl">
+          <div className="w-3/4 flex flex-col space-y-3 m-6">
+            <label htmlFor="password" className="font-medium">
+              New Password*
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              {...register("password", {
+                required: true,
+                minLength: 6,
+              })}
+              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+            ></input>
+            {errors.password && errors.password.type === "required" && (
+              <span>Please fill this field</span>
+            )}
+            {errors.password && errors.password.type === "minLength" && (
+              <span>min length 3</span>
+            )}
+          </div>
+
+          <div className="w-3/4 flex flex-col space-y-3 m-6">
+            <label htmlFor="password_repeat" className="font-medium">
+              Confirm Password*
+            </label>
+            <input
+              type="password"
+              id="password_repeat"
+              name="password_repeat"
+              {...register("password_repeat", test(password.current))}
+              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+            ></input>
+            {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          className="bg-white border border-indigo-100 hover:text-white hover:bg-indigo-500  text-indigo-900 py-2 px-8 mb-10 rounded-md shadow-md"
+        >
+          Next
+        </button>
+      </div>
+    </form>
+  );
+}
