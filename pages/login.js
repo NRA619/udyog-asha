@@ -29,7 +29,7 @@ const container = {
  //  getdata();
 //})
 
-export default function login()  {
+export default function Login()  {
   const router = useRouter();
   const googlesubmit = async (values) => {
     

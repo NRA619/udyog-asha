@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import login from "../../pages/login";
+import Login from "../../pages/login";
 import Image from 'next/image';
 
 const test = (curPassword) => {
