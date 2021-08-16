@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function AboutDirector() {
     return (
@@ -7,7 +8,7 @@ export default function AboutDirector() {
        <div className="bg-purple h-1/2 grid grid-cols-1 justify-items-center md:flex items-center justify-center space-x-5">
           {/* director photo */}
         <div className = "">
-        <img src = "/pf.jpg" className="shadow-md rounded-full h-32 w-32" />
+        <Image src = "/pf.jpg" className="shadow-md rounded-full h-32 w-32" />
         </div>
         <div className="flex flex-col mt-4 md:mt-0">
         <span className="text-xl font-extrabold">Mr.<span className="font-bold text-indigo-900"> Pravin Taterao Shinde</span></span>

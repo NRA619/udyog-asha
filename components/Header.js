@@ -82,7 +82,7 @@ export default function Header() {
             </li>
             <li className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800">
               <InfoRoundedIcon />
-              <a href="#">Services</a>
+              <Link >Services</Link>
             </li>
             <li className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800 hover:cursor-pointer">
             

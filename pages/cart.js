@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from 'next/image';
 
 const cart = () => {
   
@@ -12,34 +13,34 @@ const cart = () => {
       {/* Cart 1 */}
       <div className="mt-32 grid grid-cols-1 gap-4 m-4 md:grid-cols-3 mb-44">
         <section className="rounded-md shadow-2xl">
-          <img src="./1.png" className="rounded-md" />
+          <Image src="./1.png" className="rounded-md" />
           <div>Name</div>
           <div>Discription</div>
           <div className="float-right">
             <button>
-              <img src="./remove.svg" />
+              <Image src="./remove.svg" />
             </button>
           </div>
           <div>Price</div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./2.png" className="rounded-md" />
+          <Image src="./2.png" className="rounded-md" />
           <div>Name</div>
           <div>Discription</div>
           <div className="float-right">
             <button>
-              <img src="./remove.svg" />
+              <Image src="./remove.svg" />
             </button>
           </div>
           <div>Price</div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./3.png" className="rounded-md" />
+          <Image src="./3.png" className="rounded-md" />
           <div>Name</div>
           <div>Discription</div>
           <div className="float-right">
             <button>
-              <img src="./remove.svg" />
+              <Image src="./remove.svg" />
             </button>
           </div>
           <div>Price</div>

@@ -4,6 +4,7 @@ import GoogleLogin from "react-google-login";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { useEffect } from "react";
+import Image from 'next/image';
 {
   /* variants of framer motion line(21) used for animation */
 }
@@ -92,7 +93,7 @@ const login = () => {
             </span>
             {/* Desktop right image hidden for mobile version */}
             <span className="hidden relative md:flex md:flex-col justify-center items-center text-center px-5  text-white">
-              <img src="/log1.png"></img>
+              <Image src="/log1.png"></Image>
             </span>
             {/* invisible for both (for spacing) */}
             <span className="invisible flex justify-center text-center px-5 text-white">

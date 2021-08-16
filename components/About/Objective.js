@@ -9,7 +9,7 @@ export default function Objective({ name, children }) {
          <span className="w-1/2 md:w-3/4">
          <div className="md:w-3/4">
            <div>
-             <img src="/c1.jpg"  className="md:w-full mt-10"></img>
+             <Image src="/c1.jpg"  className="md:w-full mt-10"></Image>
            </div>
          </div>
          </span>
@@ -20,7 +20,7 @@ export default function Objective({ name, children }) {
          <span className="w-1/2  md:hidden">
          <div className="md:w-3/4">
            <div>
-             <img src="/c1.jpg"  className="md:w-full"></img>
+             <Image src="/c1.jpg"  className="md:w-full"></Image>
            </div>
          </div>
          </span>
@@ -35,7 +35,7 @@ export default function Objective({ name, children }) {
          <span className="w-3/4">
          <div className="md:w-3/4 float-right">
            <div className="">
-             <img src="/c1.jpg"  className="md:w-full my-10"></img>
+             <Image src="/c1.jpg"  className="md:w-full my-10"></Image>
            </div>
          </div>
          </span>

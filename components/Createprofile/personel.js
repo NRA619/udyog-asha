@@ -3,6 +3,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import login from "../../pages/login";
+import Image from 'next/image';
 
 const test = (curPassword) => {
   const pass = curPassword;
@@ -83,11 +84,11 @@ export default function Personel({ ...data }) {
             </div>
 
             <div className="h-0 bg-yellow-100 flex justify-center items-center absolute bottom-0 left-0 right-0 ">
-              <img
+              <Image
                 src={imgPreview}
                 id="img"
                 className="rounded-full md:h-32 md:w-32 h-24 w-24"
-              ></img>
+              ></Image>
             </div>
           </div>
         </div>

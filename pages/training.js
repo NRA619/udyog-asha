@@ -1,6 +1,7 @@
 import SearchSharpIcon from '@material-ui/icons/SearchSharp';
 import Link from 'next/Link';
 import AddShoppingCartSharpIcon from '@material-ui/icons/AddShoppingCartSharp';
+import Image from 'next/image';
 
 const training = () => {
   return (
@@ -30,7 +31,7 @@ const training = () => {
       </div>
       <div className="grid grid-cols-1 gap-4 m-4 md:grid-cols-3">
         <section className="rounded-md shadow-2xl">
-          <img src="./1.png" className="rounded-md" />
+          <Image src="./1.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -50,7 +51,7 @@ const training = () => {
           </div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./2.png" className="rounded-md" />
+          <Image src="./2.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -69,7 +70,7 @@ const training = () => {
           </div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./3.png" className="rounded-md" />
+          <Image src="./3.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -99,7 +100,7 @@ const training = () => {
       </div>
       <div className="grid grid-cols-1 gap-4 m-4 md:grid-cols-3">
         <section className="rounded-md shadow-2xl">
-          <img src="./1.png" className="rounded-md" />
+          <Image src="./1.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -117,7 +118,7 @@ const training = () => {
           </div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./2.png" className="rounded-md" />
+          <Image src="./2.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -136,7 +137,7 @@ const training = () => {
           </div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./3.png" className="rounded-md" />
+          <Image src="./3.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -166,7 +167,7 @@ const training = () => {
       </div>
       <div className="grid grid-cols-1 gap-4 m-4 md:grid-cols-3">
         <section className="rounded-md shadow-2xl">
-          <img src="./1.png" className="rounded-md" />
+          <Image src="./1.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -185,7 +186,7 @@ const training = () => {
           </div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./2.png" className="rounded-md" />
+          <Image src="./2.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
@@ -204,7 +205,7 @@ const training = () => {
           </div>
         </section>
         <section className="rounded-md shadow-2xl">
-          <img src="./3.png" className="rounded-md" />
+          <Image src="./3.png" className="rounded-md" />
           <div className="m-2 float-right shadow-2xl">
             <button className="">
               <Link href="/cart">
