@@ -8,7 +8,7 @@ export default function AboutDirector() {
        <div className="bg-purple h-1/2 grid grid-cols-1 justify-items-center md:flex items-center justify-center space-x-5">
           {/* director photo */}
         <div className = "">
-        <Image src = "/pf.jpg" className="shadow-md rounded-full h-32 w-32" />
+        <Image src = "/pf.jpg" width={128} height= {128} className="shadow-md rounded-full h-32 w-32 pt-10" />
         </div>
         <div className="flex flex-col mt-4 md:mt-0">
         <span className="text-xl font-extrabold">Mr.<span className="font-bold text-indigo-900"> Pravin Taterao Shinde</span></span>

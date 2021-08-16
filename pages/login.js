@@ -93,7 +93,7 @@ export default function Login()  {
             </span>
             {/* Desktop right image hidden for mobile version */}
             <span className="hidden relative md:flex md:flex-col justify-center items-center text-center px-5  text-white">
-              <Image src="/log1.png"></Image>
+              <Image width={1100} height={950} src="/log1.png"></Image>
             </span>
             {/* invisible for both (for spacing) */}
             <span className="invisible flex justify-center text-center px-5 text-white">

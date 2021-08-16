@@ -7,9 +7,9 @@ export default function Objective({ name, children }) {
      <main className = "h-full w-full"> 
       <div className="flex flex-col space-y-4 justify-around md:grid md:grid-cols-2 md:justify-items-center items-center  md:h-1/2 bg-black text-white">
          <span className="w-1/2 md:w-3/4">
-         <div className="md:w-3/4">
+         <div className="md:w-3/4 my-10">
            <div>
-             <Image src="/c1.jpg"  className="md:w-full mt-10"></Image>
+             <Image src="/c1.jpg" width={1350} height= {800} className="md:w-full mt-10"></Image>
            </div>
          </div>
          </span>
@@ -20,7 +20,7 @@ export default function Objective({ name, children }) {
          <span className="w-1/2  md:hidden">
          <div className="md:w-3/4">
            <div>
-             <Image src="/c1.jpg"  className="md:w-full"></Image>
+             <Image src="/c1.jpg"  className="md:w-full" width={1350} height= {950}></Image>
            </div>
          </div>
          </span>
@@ -33,9 +33,9 @@ export default function Objective({ name, children }) {
       संपूर्ण महाराष्ट्रात मराठी भाषेच्या माध्यमातून तळागाळातील लोकांपर्यंत व्यवसायाचे ज्ञान पोहोचवणारी अग्रगण्य व्यवसाय प्रशिक्षण व मार्गदर्शन करणारी संस्था आहे. उद्योगाच्या माध्यमातून लघु व मध्यम उद्योग ,कृषी प्रक्रिया उद्योग, कौशल्य तसेच उद्योजकीय प्रशिक्षण , सल्ला व प्रकल्प अहवाल मार्गदर्शन मार्केटिंग सहाय्य, शासकीय कर्ज योजना राबवण्यास मदती करता पुढे आहो.  संस्था तज्ञ व्याख्याते व मार्गदर्शक यांच्या विचारांची देवाण करून उद्योजकाला सर्वोत्तम सेवा पुरवीत आहे. नवउद्योजकांना ही सेवा वाजवी दरात देण्याचा प्रयत्न केला आहे.  श्री प्रविण तातेराव शिंदे सर यांच्या मार्गदर्शनाखाली सर्व क्षेत्रातील प्रशिक्षण आयोजित होत आहे. सरांची  संशोधन वृत्ती ,जिद्द, चिकाटी, दूरदृष्टी, वेळेचे व्यवस्थापन, अष्टपैलू व्यक्तिमत्व असल्याने जवळपास तीनशे उद्योग व्यवसायाचे ज्ञान असणारे व आतापर्यंत लाखो लोकांना प्रशिक्षण देणारे स्वतः मार्गदर्शन करतात.
          </span>
          <span className="w-3/4">
-         <div className="md:w-3/4 float-right">
+         <div className="md:w-3/4 float-right my-10">
            <div className="">
-             <Image src="/c1.jpg"  className="md:w-full my-10"></Image>
+             <Image src="/c1.jpg" width={1350} height= {800} className="md:w-full my-10"></Image>
            </div>
          </div>
          </span>

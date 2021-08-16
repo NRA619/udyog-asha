@@ -3,6 +3,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import CopyrightRoundedIcon from '@material-ui/icons/CopyrightRounded';
+import Link from 'next/link';
+import TouchAppRoundedIcon from '@material-ui/icons/TouchAppRounded';
 
 export default function Footer() {
     return (
@@ -93,6 +95,18 @@ export default function Footer() {
                     <InstagramIcon fontSize="small" className=""></InstagramIcon>
                     <FacebookIcon fontSize="small" className=""></FacebookIcon>
                     <TwitterIcon fontSize="small"></TwitterIcon>
+                </div>
+                </div>
+                <div className="md:flex md:flex-col md:items-center">
+                <span className="text-lg border-b-4 border-white text-white font-semibold">
+                    Quick Links
+                </span>
+
+                <div className="flex flex-col md:justify-center text-white w-1/2 p-2">
+                    <Link href="/about">About Us</Link>
+                    <Link href="/">Consultancy</Link>
+                    <Link href="/">Blog</Link>
+                    
                 </div>
                 </div>
                 <div className="mt-5 md:mt-0">
