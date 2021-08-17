@@ -28,7 +28,7 @@ export default function Personel({ ...data }) {
   password.current = watch("password", "");
 
   const [imgPreview, setImgPreview] = useState(
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+    "/c1.jpg"
   );
 
   const [error, setError] = useState(false);
@@ -47,11 +47,11 @@ export default function Personel({ ...data }) {
       setError(true);
     }
   };
-  useEffect(() => {
-    if (!email) {
-      router.push("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (!email) {
+  //     router.push("/");
+  //   }
+  // });
   function onSubmitForm(values) {
     values.fullname = values.fullname.trim();
     // const trimvalue = values.trim();
@@ -70,24 +70,25 @@ export default function Personel({ ...data }) {
         <div className="flex items-center relative h-1/3 md:h-1/3 w-full">
           <div className="h-full w-full flex justify-center md:block text-yellow-800 bg-gradient-to-r from-black to-indigo-600">
             <div className="float-right w-1/2 h-full hidden md:flex justify-center items-center">
-              <span className="text-white  md:w-3/4 text-justify">
+              {/* <span className="text-white  md:w-3/4 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit consectetur
                 adipiscing elit
-              </span>
+              </span> */}
             </div>
-            <div className=" h-full w-3/4 md:w-1/2 flex justify-center items-center md:text-4xl text-md text-white space-x-2 md:space-x-5">
+            {/* <div className=" h-full w-3/4 md:w-1/2 flex justify-center items-center md:text-4xl text-md text-white space-x-2 md:space-x-5">
               <span>
                 <AccountCircleIcon style={{ fontSize: 50 }} color="secondary" />
               </span>
               <span className="font-semibold">Create Your Profile</span>
-            </div>
+            </div> */}
 
             <div className="h-0 bg-yellow-100 flex justify-center items-center absolute bottom-0 left-0 right-0 ">
               <Image
                 src={imgPreview}
                 id="img"
                 className="rounded-full md:h-32 md:w-32 h-24 w-24"
+                width={128} height= {128}
               ></Image>
             </div>
           </div>
@@ -226,16 +227,16 @@ export default function Personel({ ...data }) {
             <label htmlFor="email_" className="font-medium">
               Email*
             </label>
-            <fieldset disabled>
               <input
                 type="text"
                 id="email_"
                 name="email"
                 value={email}
+                readonly="readonly"
                 {...register("email", {})}
                 className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
               ></input>
-            </fieldset>
+       
             {errors.email && errors.email.type === "required" && (
               <span>Please fill this field</span>
             )}
