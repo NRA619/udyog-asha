@@ -232,7 +232,7 @@ export default function Personel({ ...data }) {
                 id="email_"
                 name="email"
                 value={email}
-                readonly="readonly"
+                readOnly
                 {...register("email", {})}
                 className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
               ></input>
