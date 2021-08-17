@@ -7,7 +7,7 @@ export default function Objective({ name, children }) {
      <main className = "h-full w-full"> 
       <div className="flex flex-col space-y-4 justify-around md:grid md:grid-cols-2 md:justify-items-center items-center  md:h-1/2 bg-black text-white">
          <span className="w-1/2 md:w-3/4">
-         <div className="md:w-3/4 my-10">
+         <div className="md:w-3/4 mt-10">
            <div>
              <Image src="/c1.jpg" width={1350} height= {800} className="md:w-full mt-10"></Image>
            </div>
@@ -18,9 +18,9 @@ export default function Objective({ name, children }) {
          </span>
          {/* hidden for desktop version */}
          <span className="w-1/2  md:hidden">
-         <div className="md:w-3/4">
+         <div className="md:w-3/4 mt-5">
            <div>
-             <Image src="/c1.jpg"  className="md:w-full" width={1350} height= {950}></Image>
+             <Image src="/c1.jpg"  className="md:w-full" width={1350} height= {800}></Image>
            </div>
          </div>
          </span>

@@ -3,7 +3,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Login from "../../pages/login";
-import Image from 'next/image';
+import Image from "next/image";
 
 const test = (curPassword) => {
   const pass = curPassword;
@@ -27,9 +27,7 @@ export default function Personel({ ...data }) {
   const password = useRef({});
   password.current = watch("password", "");
 
-  const [imgPreview, setImgPreview] = useState(
-    "/c1.jpg"
-  );
+  const [imgPreview, setImgPreview] = useState("/c1.jpg");
 
   const [error, setError] = useState(false);
 
@@ -70,25 +68,26 @@ export default function Personel({ ...data }) {
         <div className="flex items-center relative h-1/3 md:h-1/3 w-full">
           <div className="h-full w-full flex justify-center md:block text-yellow-800 bg-gradient-to-r from-black to-indigo-600">
             <div className="float-right w-1/2 h-full hidden md:flex justify-center items-center">
-              {/* <span className="text-white  md:w-3/4 text-justify">
+              <span className="text-white  md:w-3/4 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit consectetur
                 adipiscing elit
-              </span> */}
+              </span>
             </div>
-            {/* <div className=" h-full w-3/4 md:w-1/2 flex justify-center items-center md:text-4xl text-md text-white space-x-2 md:space-x-5">
+            <div className=" h-full w-3/4 md:w-1/2 flex justify-center items-center md:text-4xl text-md text-white space-x-2 md:space-x-5">
               <span>
-                <AccountCircleIcon style={{ fontSize: 50 }} color="secondary" />
+                <AccountCircleIcon style={{ fontSize: 50 }}  />
               </span>
               <span className="font-semibold">Create Your Profile</span>
-            </div> */}
+            </div>
 
             <div className="h-0 bg-yellow-100 flex justify-center items-center absolute bottom-0 left-0 right-0 ">
               <Image
                 src={imgPreview}
                 id="img"
                 className="rounded-full md:h-32 md:w-32 h-24 w-24"
-                width={128} height= {128}
+                width={128}
+                height={128}
               ></Image>
             </div>
           </div>
@@ -96,9 +95,6 @@ export default function Personel({ ...data }) {
         <div className="h-2/5 md:h-1/3 flex justify-center items-center">
           {
             <div className="flex flex-col justify-center items-center">
-              <label className="flex flex-col items-center py-2 px-4 bg-white rounded-md shadow-md tracking-wide border border-blue cursor-pointer hover:bg-indigo-500 hover:text-white text-indigo-600 ease-linear transition-all duration-150">
-                <span className="text-base leading-normal">Upload photo</span>
-
                 <input
                   type="file"
                   id="file_Upload"
@@ -107,9 +103,8 @@ export default function Personel({ ...data }) {
                     required: true,
                   })}
                   onChange={handleImageChange}
-                  className="hidden"
+                  className="w-3/4 text-indigo-900 font-semibold"
                 />
-              </label>
               <span>(jpg, jpeg or png)</span>
             </div>
           }
@@ -123,8 +118,8 @@ export default function Personel({ ...data }) {
           </span>
           <span className="w-12 mt-2 block h-1 rounded bg-indigo-900"></span>
         </div>
-        <div className="md:h-2/3 my-4 md:justify-items-center flex flex-col justify-center text-white items-center w-5/6 md:grid  md:grid-cols-2  bg-indigo-500 rounded-md shadow-xl">
-          <div className="w-3/4 flex flex-col space-y-3 m-6">
+        <div className="md:h-2/3 my-4 md:justify-items-center flex flex-col justify-center text-white items-center w-5/6 md:grid  md:grid-cols-2 ring-1 ring-gray-200 bg-white rounded-md shadow-xl">
+          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="full_name" className="font-medium">
               Full Name*
             </label>
@@ -137,7 +132,7 @@ export default function Personel({ ...data }) {
                 maxLength: 20,
               })}
               name="fullname"
-              className="rounded-md p-4 text-indigo-900 shadow-lg h-10 focus:outline-none focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 rounded-md p-4 text-indigo-900 shadow-lg h-10 focus:outline-none focus:ring-1 focus:ring-black"
             ></input>
             {errors.fullname && errors.fullname.type === "maxLength" && (
               <span>Max length is 20</span>
@@ -150,7 +145,7 @@ export default function Personel({ ...data }) {
             )}
           </div>
 
-          <div className="w-3/4 flex flex-col space-y-3 m-6">
+          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="age_" className="font-medium">
               Age*
             </label>
@@ -164,7 +159,7 @@ export default function Personel({ ...data }) {
                 max: 100,
                 min: 18,
               })}
-              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
             {errors.age && errors.age.type === "required" && (
               <span>Please fill this field</span>
@@ -179,7 +174,7 @@ export default function Personel({ ...data }) {
               <span>Must be in Digit</span>
             )}
           </div>
-          <div className="w-3/4 flex flex-col space-y-3 m-6">
+          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="gender_" className="font-medium">
               Gender*
             </label>
@@ -188,7 +183,7 @@ export default function Personel({ ...data }) {
               id="gender_"
               name="gender"
               {...register("gender")}
-              className="text-indigo-900 rounded-md p-2 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-2 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             >
               <option value="female" className="">
                 female
@@ -197,7 +192,7 @@ export default function Personel({ ...data }) {
               <option value="other">other</option>
             </select>
           </div>
-          <div className="w-3/4 flex flex-col space-y-3 m-6">
+          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="mobileno_" className="font-medium">
               Mobile no.*
             </label>
@@ -211,7 +206,7 @@ export default function Personel({ ...data }) {
                 pattern: /[0-9]/,
                 maxLength: 10,
               })}
-              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
             {errors.mobileno && errors.mobileno.type === "maxLength" && (
               <span>Max length is 10</span>
@@ -223,20 +218,20 @@ export default function Personel({ ...data }) {
               <span>Must be in digit</span>
             )}
           </div>
-          <div className="w-3/4 flex flex-col space-y-3 m-6">
+          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="email_" className="font-medium">
               Email*
             </label>
-              <input
-                type="text"
-                id="email_"
-                name="email"
-                value={email}
-                readOnly
-                {...register("email", {})}
-                className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
-              ></input>
-       
+            <input
+              type="text"
+              id="email_"
+              name="email"
+              value={email}
+              readOnly
+              {...register("email", {})}
+              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+            ></input>
+
             {errors.email && errors.email.type === "required" && (
               <span>Please fill this field</span>
             )}
@@ -251,8 +246,8 @@ export default function Personel({ ...data }) {
           </span>
           <span className="w-12 mt-2 flex h-1 rounded bg-indigo-900"></span>
         </div>
-        <div className="md:h-2/3 my-4 py-10 flex flex-col justify-center md:justify-items-center items-center w-5/6 md:grid  md:grid-cols-2 text-white bg-indigo-500 rounded-md shadow-xl">
-          <div className="w-3/4 flex flex-col space-y-3 m-6">
+        <div className="md:h-2/3 my-4 py-10 flex flex-col justify-center md:justify-items-center items-center w-5/6 md:grid  md:grid-cols-2 ring-1 ring-gray-200 text-white bg-white rounded-md shadow-xl">
+          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="password_" className="font-medium">
               New Password*
             </label>
@@ -264,7 +259,7 @@ export default function Personel({ ...data }) {
                 required: true,
                 minLength: 6,
               })}
-              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200  bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
             {errors.password && errors.password.type === "required" && (
               <span>Please fill this field</span>
@@ -274,7 +269,7 @@ export default function Personel({ ...data }) {
             )}
           </div>
 
-          <div className="w-3/4 flex flex-col space-y-3 m-6">
+          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="password_repeat_" className="font-medium">
               Confirm Password*
             </label>
@@ -283,7 +278,7 @@ export default function Personel({ ...data }) {
               id="password_repeat_"
               name="password_repeat"
               {...register("password_repeat", test(password.current))}
-              className="text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
             {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
           </div>

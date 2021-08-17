@@ -12,13 +12,13 @@ export default function AboutDirector() {
         </div>
         <div className="flex flex-col mt-4 md:mt-0">
         <span className="text-xl font-extrabold">Mr.<span className="font-bold text-indigo-900"> Pravin Taterao Shinde</span></span>
-        <span className="text-sm font-extrabold">Director of Udyog-Asha</span>
+        <span className="text-sm font-extrabold flex justify-center md:justify-start">Director of Udyog-Asha</span>
           
           
         </div> 
       </div>
       {/* About Director */}
-      <div className="md:m-12 m-2 mt-24 h-3/4 flex flex-col items-center md:items-start">
+      <div className="md:m-12 m-2 mt-24 h-3/4 flex flex-col items-center md:items-start bg-white shadow-md pt-5 pb-10 ring-1 ring-gray-100">
        <span className="block text-2xl md:ml-4 font-bold text-">About Director</span>
        <span className="w-12 mt-2 block h-1 md:ml-4 mb-2 rounded bg-black"></span>
       <span className="text-justify px-4">
