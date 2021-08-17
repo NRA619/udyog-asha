@@ -45,11 +45,11 @@ export default function Personel({ ...data }) {
       setError(true);
     }
   };
-  // useEffect(() => {
-  //   if (!email) {
-  //     router.push("/");
-  //   }
-  // });
+  useEffect(() => {
+    if (!email) {
+      router.push("/");
+    }
+  });
   function onSubmitForm(values) {
     values.fullname = values.fullname.trim();
     // const trimvalue = values.trim();
