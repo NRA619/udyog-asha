@@ -27,7 +27,7 @@ export default function Personel({ ...data }) {
   const password = useRef({});
   password.current = watch("password", "");
 
-  const [imgPreview, setImgPreview] = useState("/c1.jpg");
+  const [imgPreview, setImgPreview] = useState("/emplyphoto.png");
 
   const [error, setError] = useState(false);
 
