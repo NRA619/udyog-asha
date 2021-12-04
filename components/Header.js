@@ -11,7 +11,7 @@ import ClearRoundedIcon from '@material-ui/icons/ClearRounded';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { parseCookies } from "../pages/cookie";
+import { parseCookies } from "./cookie";
 import {useCookies} from 'react-cookie';
 import Image from 'next/image'
 import { useState } from 'react';

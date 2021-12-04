@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { parseCookies } from "../cookie";
+import { parseCookies } from "../../components/cookie";
 import BarLoader from "react-spinners/BarLoader";
 
 

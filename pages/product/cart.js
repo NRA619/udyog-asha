@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { parseCookies } from "../cookie";
+import { parseCookies } from "../../components/cookie";
 import BarLoader from "react-spinners/BarLoader";
 
 const Cart = () => {

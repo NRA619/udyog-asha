@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Link from "next/link";
-import { parseCookies } from "../cookie";
+import { parseCookies } from "../../components/cookie";
 import BarLoader from "react-spinners/BarLoader";
 
 const Address = () => {

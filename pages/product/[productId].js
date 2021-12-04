@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import axios from "axios";
-import { parseCookies } from "../cookie";
+import { parseCookies } from "../../components/cookie";
 
 const ProductDetail = () => {
   const router = useRouter();
