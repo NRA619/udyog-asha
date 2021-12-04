@@ -1,12 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/router";
+
 import { parseCookies } from "../cookie";
 import BarLoader from "react-spinners/BarLoader";
 
 const cart = () => {
-  const router = useRouter();
+
   const [emaillog, setemaillog] = useState("");
   const [pname, setpname] = useState({});
   const [total, settotal] = useState(0);

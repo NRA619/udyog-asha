@@ -3,8 +3,7 @@ import Link from "next/Link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import BarLoader from "react-spinners/BarLoader";
-import axios from "axios";
-import { parseCookies } from "../cookie";
+
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/product/Getproduct");
