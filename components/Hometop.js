@@ -76,7 +76,7 @@ export default function Hometop({ name, children }) {
                         <span className="bg-blue-500 h-0.5 w-auto" />
                     </span>
                     <span className="text-xxs flex items-center justify-center text-justify text-blue-600 font-medium pt-1">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. 
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
                     </span>
                 </div>
             </motion.div>
@@ -93,7 +93,7 @@ export default function Hometop({ name, children }) {
                        <span className="bg-yellow-500 h-0.5 w-auto" />
                    </span>
                    <span className="text-xxs flex items-center justify-center text-justify text-yellow-600 font-medium pt-1">
-                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. 
+                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
                    </span>
                </div>
            </motion.div>
@@ -110,7 +110,7 @@ export default function Hometop({ name, children }) {
                             <span className="bg-red-500 h-0.5 w-auto" />
                         </span>
                         <span className="text-xxs flex items-center justify-center text-justify text-red-600 font-medium pt-1">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. 
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
                         </span>
                     </div>
                 </motion.div>
@@ -132,7 +132,7 @@ export default function Hometop({ name, children }) {
                             <span className="bg-blue-500 h-1 w-auto" />
                         </span>
                         <span className="text-sm lg:text-md  text-justify text-blue-500 font-medium">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown. 
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown. 
                         </span>
                     </div>
                 </motion.div>
@@ -149,7 +149,7 @@ export default function Hometop({ name, children }) {
                     <span className="bg-yellow-600 h-1 w-auto" />
                     </span>
                     <span className=" text-justify text-yellow-600 text-sm lg:text-md font-medium">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. 
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
                     </span>
                 </div>
             </motion.div>
@@ -166,7 +166,7 @@ export default function Hometop({ name, children }) {
                             <span className="bg-red-500 h-1 w-auto" />
                         </span>
                         <span className="text-sm lg:text-md text-justify text-red-500 font-medium">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. 
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
                         </span>
                     </div>
                 </motion.div>

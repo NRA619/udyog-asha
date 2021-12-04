@@ -279,7 +279,7 @@ const Cart = () => {
                     </div>
                   </span>
                   {pname.map((detail) => (
-                    <div className="">
+                    <div className="" key={detail.productid}>
                       <div>
                         <div
                           className="flex justify-between px-2 py-8  border-t border-green-900 mx-2  md:mx-16"
