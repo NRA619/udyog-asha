@@ -1,4 +1,4 @@
-import { parseCookies } from "./cookie";
+import { parseCookies } from "../components/cookie";
 import axios from 'axios';
 import { useEffect } from "react";
 
