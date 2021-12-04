@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const training = ({ ninjas }) => {
+const Training = ({ ninjas }) => {
   const [search, setSearch] = useState("");
   const [loading, setloading] = useState(false);
   
@@ -194,4 +194,4 @@ const training = ({ ninjas }) => {
   );
 };
 
-export default training;
+export default Training;

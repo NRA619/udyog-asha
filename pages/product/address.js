@@ -5,7 +5,7 @@ import Link from "next/link";
 import { parseCookies } from "../cookie";
 import BarLoader from "react-spinners/BarLoader";
 
-const address = () => {
+const Address = () => {
  
   const {
     control,
@@ -362,4 +362,4 @@ const address = () => {
   );
 };
 
-export default address;
+export default Address;

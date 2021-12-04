@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const product = ({ ninjas }) => {
+const Product = ({ ninjas }) => {
   const [search, setSearch] = useState("");
   const [loading, setloading] = useState(true);
   useEffect(async () => {
@@ -210,4 +210,4 @@ const product = ({ ninjas }) => {
   );
 };
 
-export default product;
+export default Product;

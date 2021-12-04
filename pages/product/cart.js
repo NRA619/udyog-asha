@@ -5,7 +5,7 @@ import axios from "axios";
 import { parseCookies } from "../cookie";
 import BarLoader from "react-spinners/BarLoader";
 
-const cart = () => {
+const Cart = () => {
 
   const [emaillog, setemaillog] = useState("");
   const [pname, setpname] = useState({});
@@ -389,4 +389,4 @@ const cart = () => {
   );
 };
 
-export default cart;
+export default Cart;

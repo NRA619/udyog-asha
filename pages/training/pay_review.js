@@ -6,7 +6,7 @@ import { parseCookies } from "../cookie";
 import BarLoader from "react-spinners/BarLoader";
 
 
-const thumbnail = ({ ninjas, ninj }) => {
+const Thumbnail = ({ ninjas, ninj }) => {
   const router = useRouter();
   const productId = router.query.data;
   const [isLogged, setisLogged] = React.useState(false);
@@ -247,4 +247,4 @@ const thumbnail = ({ ninjas, ninj }) => {
   );
 };
 
-export default thumbnail;
+export default Thumbnail;
