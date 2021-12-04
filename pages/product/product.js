@@ -1,5 +1,5 @@
 import SearchSharpIcon from "@material-ui/icons/SearchSharp";
-import Link from "next/Link";
+import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import BarLoader from "react-spinners/BarLoader";
