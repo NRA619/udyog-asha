@@ -3,8 +3,22 @@ import { motion } from "framer-motion";
 import GoogleLogin from "react-google-login";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { useEffect } from "react";
-import Image from 'next/image';
+import Image from "next/image";
+import { useCookies } from "react-cookie";
+import React, { useState, useRef, useEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
+import Link from 'next/link';
+import BarLoader from "react-spinners/BarLoader";
+
+const test = (curPassword) => {
+  const pass = curPassword;
+  return {
+    validate: (value) => {
+      return value === pass || "The passwords do not match";
+    },
+  };
+};
+
 {
   /* variants of framer motion line(21) used for animation */
 }
@@ -20,23 +34,31 @@ const container = {
   },
 };
 
+// if(data)
 
-//  const getdata = async () => {
-//    const data = await axios.get("http://localhost:5000/tr/GetTraining")
-//    console.log(data)
-//}
-// useEffect(()=> {
- //  getdata();
-//})
-
-export default function Login()  {
+export default function Login() {
+  const [cookie, setCookie] = useCookies(["user"]);
   const router = useRouter();
+  const {
+    control,
+    register,
+    formState: { errors },
+    handleSubmit,
+    watch,
+  } = useForm();
+  const password = useRef({}); // password check validation
+  password.current = watch("password", "");
+  const [loading, setloading] = useState(false);
+  useEffect(() => {
+    setloading(true);
+    setTimeout(() => {
+      setloading(false);
+    }, 3000);
+  }, [])
+  // Google Sign in Button function
   const googlesubmit = async (values) => {
-    
-    console.log(values);
-    console.log(values.profileObj);
     const email = values.profileObj.email;
-    console.log(email);
+    // Backend Post
     try {
       const res = await axios.post("http://localhost:5000/user/googlelogin", {
         email: email,
@@ -45,9 +67,16 @@ export default function Login()  {
       if (res.data.isExists == false) {
         router.push({
           pathname: "/createprofile",
-          query: { data: values.profileObj.email },
+          query: { data: values.profileObj.email }, // passing email variable
         });
       } else {
+        let buff = new Buffer.from(res.data.email);
+        let stringToBase64 = buff.toString('base64');
+        setCookie("user", JSON.stringify(stringToBase64), {
+          path: "/",
+          maxAge: 3600, // Expires After 1hr
+          sameSite: true,
+        });
         router.push({
           pathname: "/",
         });
@@ -55,17 +84,55 @@ export default function Login()  {
     } catch (err) {
       console.log(err);
     }
-
-    //   if(values.profileObj) {router.push({
-    //     pathname: '/createprofile',
-    //   query: {data: values.profileObj.email}});}
   };
+ 
+// email login function
+  async function loginform(values) {
+    const emailsign = values.email;
+    const passwordsign = values.password_repeat;
+    // backend post
+    try {
+      const res = await axios.post("http://localhost:5000/user/emaillogin", {
+        email: emailsign,
+        password: passwordsign,
+      });
+      if (res.data.isVerified == true) {
+        let buff = new Buffer.from(res.data.email);
+        let stringToBase64 = buff.toString('base64');
+        setCookie("user", JSON.stringify(stringToBase64), {
+          path: "/",
+          maxAge: 3600, // Expires After 1hr
+          sameSite: true,
+        });
+        router.push({
+          pathname: "/",
+        });
+      } else {
+        alert(
+          "Credentials are incorrect!! please check your email and password"
+        );
+      }
+    } catch (err) {}
+  }
+
+  
 
   return (
-    <main className="md:flex md:justify-center bg-back-image bg-no-repeat bg-cover">
+    <main className="md:flex md:justify-center bg-emptybg bg-no-repeat bg-cover">
       {" "}
       {/* background image (to access go to tailwindconfig)*/}
       {/* Login Card && card animation */}
+      {loading == true && (
+        <div className="flex flex-col justify-center items-center h-screen w-screen">
+        <BarLoader
+          color="#000000"
+          height={4}
+          width={100}
+         
+        />
+        </div>
+      )}
+      {loading == false && (
       <motion.div
         variants={container}
         initial="hidden"
@@ -74,7 +141,7 @@ export default function Login()  {
       >
         {/* Upper part */}
         {/* Upper main class !!imp */}
-        <div className="relative bg-cover bg-black md:shadow-2xl h-screen w-screen md:h-3/4 md:w-3/4 mx-96">
+        <div className="relative bg-cover bg-bluebg md:shadow-2xl h-screen w-screen md:h-3/4 md:w-3/4 mx-96">
           <div className="md:absolute md:inset-y-0 md:right-0 flex flex-col my-20 md:my-0 md:justify-between md:w-1/2 md:float-right">
             <span className="relative flex justify-center text-white font-bold">
               {/* hidden for mobile version */}
@@ -88,7 +155,7 @@ export default function Login()  {
               </span>
             </span>
             {/* hidden for desktop */}
-            <span className="md:hidden flex justify-center text-white text-center mx-10 my-10">
+            <span className="md:hidden flex justify-center text-xs text-white text-center mx-10 my-10">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </span>
             {/* Desktop right image hidden for mobile version */}
@@ -104,19 +171,90 @@ export default function Login()  {
           {/* Lower part */}
           <div className="">
             {/* lower main class !!imp */}
-            <div className="absolute flex justify-center bg-white h-1/2 md:h-full md:w-1/2 inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:rounded-none rounded-t-large">
-              <div className="flex flex-col justify-between my-5">
+            <div className="absolute flex justify-center bg-white h-3/5 md:h-full md:w-1/2 inset-x-0 bottom-0 md:inset-y-0 md:right-0 md:rounded-none rounded-t-large">
+              <div className="flex flex-col justify-between my-5 w-full">
                 {/* hidden for mobile version */}
                 <span className="hidden md:flex justify-center font-bold text-black space-x-1 text-2xl">
                   <h1>Welcome</h1>
                   <h1 className="text-blue-600"> Back!</h1>
                 </span>
-                <div className="flex flex-col justify-center items-center space-y-10">
-                  {/* Login Button */}
-                  {/* button animation */}
 
+                <div className="flex flex-col justify-center h-1/4 w-full md:h-full items-center space-y-10 mt-10 md:mt-0">
+                  {/* Login form */}
+                  {/* emaillogin form */}
+                    <form
+                      onSubmit={handleSubmit(loginform)}
+                      className="md:flex md:flex-col space-y-3 mt-20 md:mt-0 2-3/4 md:w-1/2"
+                    >
+                      <div className="flex flex-col">
+                        {/* email field */}
+                        <label
+                          htmlFor="email_"
+                          className="font-normal text-xs md:text-sm"
+                        >
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email_"
+                          // register field
+                          {...register("email", {
+                            // validations
+                            required: true,
+                          })}
+                          name="email"
+                          className="ring-1 ring-gray-200 bg-gray-100 rounded-md p-2 text-indigo-900 shadow-md h-8 md:h-9 focus:outline-none focus:ring-1 focus:ring-black"
+                        ></input>
+                        {errors.email && errors.email.type === "required" && (
+                          <span className = "text-xs">Please fill this field</span>
+                        )}
+                      </div>
+
+                      <div className="flex flex-col">
+                        {/* password field */}
+                        <label
+                          htmlFor="password_repeat_"
+                          className="font-normal text-xs md:text-sm"
+                        >
+                          Password
+                        </label>
+                        <input
+                          type="password"
+                          id="password_repeat_"
+                          // register field
+                          {...register("password_repeat", {
+                            // validations
+                            required: true,
+                          })}
+                          name="password_repeat"
+                          className="ring-1 ring-gray-200 bg-gray-100 rounded-md p-2 text-indigo-900 shadow-md h-8 md:h-9 focus:outline-none focus:ring-1 focus:ring-black"
+                        ></input>
+                        {errors.password_repeat &&
+                          errors.password_repeat.type === "required" && (
+                            <span className = "text-xs">Please fill this field</span>
+                          )}
+                      </div>
+
+                      <div className="flex flex-col items-center ">
+                        <button
+                          type="submit"
+                          className=" border border-indigo-100 text-white bg-black py-1.5 px-3 md:py-1.5 md:px-6 rounded-md shadow-md text-xs md:text-base"
+                        >
+                          Next
+                        </button>
+                        <div className="flex flex-col justify-center items-center  md:space-x-1">
+                          <span className="text-sm">Dont have account?</span>
+                            <span  className="text-sm  text-blue-600 font-semibold">Please Use google Loign</span>
+                        </div>
+                      </div>
+                    </form>
+               
+                
+                  {/* Login Button */}
+                  {/* google login */}
+                  {/* button animation */}
                   <GoogleLogin
-                    className="flex justify-center bg-black rounded-3xl p-4 shadow-xl transition duration-500 ease-in-out bg-black hover:bg-blue-600 transform hover:-translate-y-1 hover:scale-110"
+                    className="flex justify-center rounded-3xl p-4 shadow-xl transition duration-500 ease-in-out bg-black hover:bg-blue-600 transform hover:-translate-y-1 hover:scale-110"
                     clientId="369653107453-suc1m13pghsvjlo7q1hq7tpmoqb0iaon.apps.googleusercontent.com"
                     buttonText="Sign in with google"
                     onSuccess={googlesubmit}
@@ -124,16 +262,13 @@ export default function Login()  {
                     theme="dark"
                     cookiePolicy={"single_host_origin"}
                   />
-                  <span className="flex justify-center text-center px-10 text-black font-semibold">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor
-                  </span>
-                  <span className="flex justify-center text-black font-bold">
+
+                  {/* <span className="flex justify-center text-black font-semibold">
                     Terms and Conditions.
-                  </span>
+                  </span> */}
                 </div>
-                <span className="flex justify-center font-semibold">
-                  2021 <CopyrightRoundedIcon />
+                <span className=" flex justify-center text-xs font-semibold">
+                  2021 <CopyrightRoundedIcon fontSize="small" />
                   All rights reserved.
                 </span>
               </div>
@@ -141,8 +276,8 @@ export default function Login()  {
           </div>
         </div>
       </motion.div>
+      )}
       {/* end of card animation */}
     </main>
   );
-};
-
+}

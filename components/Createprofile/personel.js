@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Controller, useForm } from "react-hook-form";
+import {  useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import Login from "../../pages/login";
-import Image from "next/image";
-
+import {useCookies} from 'react-cookie';
+import axios from "axios";
+import Link from 'next/link';
+// password check validation
 const test = (curPassword) => {
   const pass = curPassword;
   return {
@@ -15,6 +16,7 @@ const test = (curPassword) => {
 };
 
 export default function Personel({ ...data }) {
+  const [cookie, setCookie] = useCookies(["user"])
   const router = useRouter();
   const email = router.query.data;
   const {
@@ -23,50 +25,66 @@ export default function Personel({ ...data }) {
     formState: { errors },
     handleSubmit,
     watch,
-  } = useForm();
-  const password = useRef({});
-  password.current = watch("password", "");
+  } = useForm(); // react hook form (useForm)
+  const password = useRef({}); // password check validation
+  password.current = watch("password", ""); // password check validation
 
-  const [imgPreview, setImgPreview] = useState("/emplyphoto.png");
 
-  const [error, setError] = useState(false);
+  // Image submit
+  const [checkemail, setcheckemail] = React.useState(false);
+  //check of email
+  useEffect(()=> {
+  if(email){
+    setcheckemail(true);
+  }
+  else{
+    setcheckemail(false);
+  }
+})
+ 
+  // without email he cant go thorugh this link
+  
 
-  const handleImageChange = (e) => {
-    setError(false);
-    const selected = e.target.files[0];
-    const ALLOWED_TYPES = ["image/png", "image/jpeg", "image/jpg"];
-    if (selected && ALLOWED_TYPES.includes(selected.type)) {
-      let reader = new FileReader();
-      reader.onloadend = () => {
-        setImgPreview(reader.result);
-      };
-      reader.readAsDataURL(selected);
-    } else {
-      setError(true);
-    }
-  };
-  useEffect(() => {
-    if (!email) {
-      router.push("/");
-    }
-  });
-  function onSubmitForm(values) {
+  // Submit form
+  async function onSubmitForm (values){
     values.fullname = values.fullname.trim();
-    // const trimvalue = values.trim();
+    const fullname = values.fullname
+    const age = values.age
+    const gender = values.gender
+    const mobileno = values.mobileno
+    const email = values.email
+    const password_repeat = values.password_repeat
     console.log(values);
-
-    if (values.fullname && values.mobileno) {
-      router.push("/");
+    try {
+      const res = await axios.post("http://localhost:5000/user/createprofile", {
+        fullname,  age,  gender, mobileno, email, password_repeat,
+      });
+      if(res.data.isExists == true) {
+        setCookie("user", JSON.stringify(res.data.email), {
+          path: '/',
+          maxAge: 3600, // Expires After 1hr
+          sameSite: true,
+        })
+        router.push("/");
+      }
+    }catch(err){
+      console.log(err)
     }
   }
   return (
+    // form
+    
+    <div>
+      {/* if user signed with google then user can see this page */}
+      {checkemail == true &&
     <form
       onSubmit={handleSubmit(onSubmitForm)}
       className="md:flex md:flex-col md:items-center"
     >
-      <main className="h-screen w-full">
-        <div className="flex items-center relative h-1/3 md:h-1/3 w-full">
-          <div className="h-full w-full flex justify-center md:block text-yellow-800 bg-gradient-to-r from-black to-indigo-600">
+      <main className="h-full pt-10 w-full md:flex md:flex-col items-center">
+        <div className="flex items-center py-20 relative h-1/4 md:h-1/3  w-full bg-back-about bg-cover">
+          <div className="h-full w-full flex justify-center md:block text-yellow-800 ">
+            {/* top Right  */}
             <div className="float-right w-1/2 h-full hidden md:flex justify-center items-center">
               <span className="text-white  md:w-3/4 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem
@@ -74,66 +92,45 @@ export default function Personel({ ...data }) {
                 adipiscing elit
               </span>
             </div>
+            {/* top left */}
             <div className=" h-full w-3/4 md:w-1/2 flex justify-center items-center md:text-4xl text-md text-white space-x-2 md:space-x-5">
               <span>
-                <AccountCircleIcon style={{ fontSize: 50 }}  />
+                <AccountCircleIcon style={{ fontSize: 50 }} />
               </span>
-              <span className="font-semibold">Create Your Profile</span>
+              <span className="font-semibold">Register Form</span>
             </div>
-
-            <div className="h-0 bg-yellow-100 flex justify-center items-center absolute bottom-0 left-0 right-0 ">
-              <Image
-                src={imgPreview}
-                id="img"
-                className="rounded-full md:h-32 md:w-32 h-24 w-24"
-                width={128}
-                height={128}
-              ></Image>
-            </div>
+           
           </div>
         </div>
-        <div className="h-2/5 md:h-1/3 flex justify-center items-center">
-          {
-            <div className="flex flex-col justify-center items-center">
-                <input
-                  type="file"
-                  id="file_Upload"
-                  name="fileUpload"
-                  {...register("fileUpload", {
-                    required: true,
-                  })}
-                  onChange={handleImageChange}
-                  className="w-3/4 text-indigo-900 font-semibold"
-                />
-              <span>(jpg, jpeg or png)</span>
-            </div>
-          }
-        </div>
-      </main>
-
-      <div className="relative -mt-28 md:-mt-40 md:w-3/4 flex flex-col justify-center items-center">
+      
+      
+      {/* Personel Details Form and Its validations */}
+      <div className="relative mt-20  md:w-3/4 flex flex-col justify-center items-center">
         <div className="md:my-0 relative  flex flex-col justify-center items-center">
-          <span className="block text-2xl text-indigo-900 font-bold ">
+          <span className="block text-xl md:text-2xl text-indigo-900 font-bold ">
             Personel Details
           </span>
-          <span className="w-12 mt-2 block h-1 rounded bg-indigo-900"></span>
+          <span className="w-10 md:w-12 mt-2 block h-1 rounded bg-indigo-900"></span>
         </div>
-        <div className="md:h-2/3 my-4 md:justify-items-center flex flex-col justify-center text-white items-center w-5/6 md:grid  md:grid-cols-2 ring-1 ring-gray-200 bg-white rounded-md shadow-xl">
-          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
-            <label htmlFor="full_name" className="font-medium">
+        <div className="md:h-2/3 my-4 md:justify-items-center flex flex-col justify-center text-white items-center w-5/6 md:grid  md:grid-cols-2 ring-1 ring-gray-200 bg-whitebg  rounded-md shadow-xl">
+          <div className="w-3/4 flex flex-col space-y-1 md:space-y-3 m-6 text-indigo-900">
+            <label htmlFor="full_name" className="text-sm md:text-base font-medium">
               Full Name*
             </label>
             <input
               type="text"
               id="full_name"
+              // register field
               {...register("fullname", {
+                // validations
                 required: true,
                 minLength: 3,
                 maxLength: 20,
               })}
               name="fullname"
-              className="ring-1 ring-gray-200 bg-gray-100 rounded-md p-4 text-indigo-900 shadow-lg h-10 focus:outline-none focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 rounded-md p-4 text-indigo-900 shadow-lg h-9 md:h-10 focus:outline-none focus:ring-1 focus:ring-black"
             ></input>
+            {/* errors */}
             {errors.fullname && errors.fullname.type === "maxLength" && (
               <span>Max length is 20</span>
             )}
@@ -145,22 +142,25 @@ export default function Personel({ ...data }) {
             )}
           </div>
 
-          <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
-            <label htmlFor="age_" className="font-medium">
+          <div className="w-3/4 flex flex-col space-y-3 mx-6 text-indigo-900">
+            <label htmlFor="age_" className="text-sm md:text-base font-medium">
               Age*
             </label>
             <input
               type="text"
               id="age_"
               name="age"
+              // register field
               {...register("age", {
+                // validations
                 required: true,
                 pattern: /[0-9]/,
                 max: 100,
                 min: 18,
               })}
-              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-9 md:h-10 focus:ring-1 focus:ring-black"
             ></input>
+            {/* errors */}
             {errors.age && errors.age.type === "required" && (
               <span>Please fill this field</span>
             )}
@@ -175,15 +175,16 @@ export default function Personel({ ...data }) {
             )}
           </div>
           <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
-            <label htmlFor="gender_" className="font-medium">
+            <label htmlFor="gender_" className="text-sm md:text-base font-medium">
               Gender*
             </label>
             <select
               type="text"
               id="gender_"
               name="gender"
+              // register field
               {...register("gender")}
-              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-2 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
+              className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-2 shadow-lg focus:outline-none h-9 md:h-10 focus:ring-1 focus:ring-black"
             >
               <option value="female" className="">
                 female
@@ -200,7 +201,9 @@ export default function Personel({ ...data }) {
               type="text"
               id="mobileno_"
               name="mobileno"
+              // register field
               {...register("mobileno", {
+                //validations
                 required: true,
                 message: "Fill your mobileno",
                 pattern: /[0-9]/,
@@ -208,6 +211,7 @@ export default function Personel({ ...data }) {
               })}
               className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
+            {/* errors */}
             {errors.mobileno && errors.mobileno.type === "maxLength" && (
               <span>Max length is 10</span>
             )}
@@ -218,7 +222,9 @@ export default function Personel({ ...data }) {
               <span>Must be in digit</span>
             )}
           </div>
+          {/* Email readOnly field */}
           <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
+            
             <label htmlFor="email_" className="font-medium">
               Email*
             </label>
@@ -228,17 +234,19 @@ export default function Personel({ ...data }) {
               name="email"
               value={email}
               readOnly
+              //form register
               {...register("email", {})}
               className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
-
+            {/* errors */}
             {errors.email && errors.email.type === "required" && (
               <span>Please fill this field</span>
             )}
           </div>
         </div>
       </div>
-
+      </main>
+      {/*Security Details Form and Its validations*/}
       <div className="relative md:w-3/4 mt-20 my-10 flex flex-col justify-center items-center">
         <div className="md:ml-10 md:my-0 my-4 flex flex-col items-center">
           <span className="block text-2xl text-indigo-900 font-bold ">
@@ -246,8 +254,11 @@ export default function Personel({ ...data }) {
           </span>
           <span className="w-12 mt-2 flex h-1 rounded bg-indigo-900"></span>
         </div>
-        <div className="md:h-2/3 my-4 py-10 flex flex-col justify-center md:justify-items-center items-center w-5/6 md:grid  md:grid-cols-2 ring-1 ring-gray-200 text-white bg-white rounded-md shadow-xl">
+    
+        <div className="md:h-2/3 my-4 py-10 flex flex-col justify-center md:justify-items-center items-center w-5/6 md:grid  md:grid-cols-2 ring-1 ring-gray-200 text-white bg-whitebg rounded-md shadow-xl">
+        
           <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
+          
             <label htmlFor="password_" className="font-medium">
               New Password*
             </label>
@@ -255,12 +266,15 @@ export default function Personel({ ...data }) {
               type="password"
               id="password_"
               name="password"
+              // register field
               {...register("password", {
+                //validations
                 required: true,
                 minLength: 6,
               })}
               className="ring-1 ring-gray-200  bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
+            {/* errors */}
             {errors.password && errors.password.type === "required" && (
               <span>Please fill this field</span>
             )}
@@ -268,7 +282,7 @@ export default function Personel({ ...data }) {
               <span>min length 3</span>
             )}
           </div>
-
+          
           <div className="w-3/4 flex flex-col space-y-3 m-6 text-indigo-900">
             <label htmlFor="password_repeat_" className="font-medium">
               Confirm Password*
@@ -277,21 +291,47 @@ export default function Personel({ ...data }) {
               type="password"
               id="password_repeat_"
               name="password_repeat"
-              {...register("password_repeat", test(password.current))}
+
+              // register field
+              {...register(
+                "password_repeat",
+                test(password.current) // Password check validation
+              )}
               className="ring-1 ring-gray-200 bg-gray-100 text-indigo-900 rounded-md p-4 shadow-lg focus:outline-none h-10 focus:ring-1 focus:ring-black"
             ></input>
+            {/* errors */}
             {errors.password_repeat && <p>{errors.password_repeat.message}</p>}
           </div>
+      
         </div>
+
+
       </div>
+      
+      
       <div className="flex justify-center">
+        {/* submit button */}
         <button
           type="submit"
           className="bg-white border border-indigo-100 hover:text-white hover:bg-indigo-500  text-indigo-900 py-2 px-8 mb-10 rounded-md shadow-md"
+   
         >
           Next
         </button>
       </div>
     </form>
+    }
+  {/* checking if user sign with google or not */}
+    {checkemail == false &&
+      <div className ="h-screen w-full flex flex-col justify-center items-center text-black">
+        Please Sign Using Google  
+        <Link href = "/login">
+            <span className = "text-blue-600 hover:cursor-pointer">
+              Google Sign In
+            </span>
+        </Link>
+      </div>
+    }
+    </div>
   );
 }

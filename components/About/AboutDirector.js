@@ -5,20 +5,21 @@ import Image from 'next/image';
 export default function AboutDirector() {
     return (
    <main className="">
-       <div className="bg-purple h-1/2 grid grid-cols-1 justify-items-center md:flex items-center justify-center space-x-5">
+       <div className=" h-1/2 grid grid-cols-1 justify-items-center md:flex items-center justify-center space-x-5">
           {/* director photo */}
         <div className = "">
-        <Image src = "/pf.jpg" width={128} height= {128} className="shadow-md rounded-full h-32 w-32 pt-10" />
+        <Image src = "/director.png" width={128} height= {128} className=" rounded-full h-32 w-32 pt-10 filter  saturate-120 " />
         </div>
         <div className="flex flex-col mt-4 md:mt-0">
-        <span className="text-xl font-extrabold">Mr.<span className="font-bold text-indigo-900"> Pravin Taterao Shinde</span></span>
-        <span className="text-sm font-extrabold flex justify-center md:justify-start">Director of Udyog-Asha</span>
+        <span className="text-xl font-bold">Mr.<span className="font-bold text-indigo-900"> Pravin Taterao Shinde</span></span>
+        <span className="text-sm font-bold flex justify-center md:justify-start">Director of Udyog-Asha</span>
           
           
         </div> 
       </div>
       {/* About Director */}
-      <div className="md:m-12 m-2 mt-24 h-3/4 flex flex-col items-center md:items-start bg-white shadow-md pt-5 pb-10 ring-1 ring-gray-100">
+      <div className="h-full w-full flex justify-center"> 
+      <div className="mt-12 h-3/4 w-6/7 flex flex-col justify-center items-center md:items-start bg-whitebg   shadow-md pt-5 pb-10 ring-1 ring-gray-100">
        <span className="block text-2xl md:ml-4 font-bold text-">About Director</span>
        <span className="w-12 mt-2 block h-1 md:ml-4 mb-2 rounded bg-black"></span>
       <span className="text-justify px-4">
@@ -28,6 +29,7 @@ export default function AboutDirector() {
 
       </span>
       
+      </div>
       </div>
     </main>
     

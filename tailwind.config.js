@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   purge: [],
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -10,7 +12,28 @@ module.exports = {
       backgroundImage: (theme) => ({
         "back-image": "url('/1.jpg')",
         'pb-image': "url('/pb.jpg')",
+        'back-about': "url('/aboutback.jpg')",
+        'blackbg': "url('/blackbg.png')",
+        'whitebg': "url('/whitebg.jpg')",
+        'wavebg': "url('/wave-back.png')",
+        'wavebgred': "url('/wave-light.jpg')",
+        'redback': "url('/redback.png')",
+        'blueback': "url('/blueback.png')",
+        'yellowback': "url('/yellowback.jpg')",
+        'bluebg' : "url('/bluebg.jpg')",
+        'emptybg' : "url('/emptybg.jpg')",
+        'breakbg' : "url('/breakbg.jpg')",
+        'address' : "url('/address.jpg')",
+        'cart': "url('/cart.jpg')",
+        'cartbag': "url('/cartbag.jpg')",
+        'cart2': "url('/cart2.jpg')"
       }),
+      width: {
+        '6/7': '87.7142857%',
+      },
+      fontSize: {
+        'xxs': '.5rem',
+      },
     },
   },
   variants: {
@@ -25,5 +48,5 @@ module.exports = {
       cursor: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-glow")()],
 };
