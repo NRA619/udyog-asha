@@ -7,24 +7,25 @@ import BarLoader from "react-spinners/BarLoader";
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/product/Getproduct");
-  const data = await res.json();
+  if(res) {
+    const data = await res.json();
+    return {
+      props: { ninjas: data },
+    };
+  }else {
+    const data = "empty"
+    return {
+      props: { ninjas: data },
+    };
+  }
 
-  return {
-    props: { ninjas: data },
-  };
+  
 };
 
 const Product = ({ ninjas }) => {
   const [search, setSearch] = useState("");
   const [loading, setloading] = useState(true);
   useEffect(async () => {
-    // let data = 'nimeshdeuja.com';
-    // let buff = new Buffer.from(data);
-    // let stringToBase64 = buff.toString('base64');
-    // let buff_dec = new Buffer.from(stringToBase64, 'base64');
-    // let xyz = buff_dec.toString('ascii');
-    // console.log(stringToBase64);
-    // console.log(xyz);
     setTimeout(() => {
       setloading(false);
     }, 3000);
@@ -67,12 +68,8 @@ const Product = ({ ninjas }) => {
               onChange={(e) => setSearch(e.target.value)}
             ></input>
           </div>
-          {/* Category1 */}
-          <div className="mt-20 ml-5 text-red-500 text-4xl  font-bold">
-            Recommendation
-          </div>
-          <div className="mt-2 ml-5 bg-red-400 w-20 rounded-lg h-1"></div>
-          <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+         
+          <div className="grid md:grid-cols-3 gap-8 mb-14 m-5 md:mt-32 mt-10">
             {ninjas
               .filter((val) => {
                 if (search == "") {
@@ -97,7 +94,7 @@ const Product = ({ ninjas }) => {
                         {ninja.pname}
                       </div>
                       
-                      <div className="ml-5">Rs.{ninja.price}</div>
+                      <div className="ml-5">Rs.{(ninja.price)/100}</div>
                       <div className="ml-5 text-blue-900 font-bold">
                         {ninja.Mode}
                       </div>
@@ -116,92 +113,6 @@ const Product = ({ ninjas }) => {
                     </div>
                   </div>
                 
-              ))}
-          </div>
-          {/* Category 2 */}
-          <div className="mt-20 ml-5 text-red-500 text-4xl  font-bold">
-            Popular
-          </div>
-          <div className="mt-2 ml-5 bg-red-400 w-12 rounded-lg h-1"></div>
-          <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
-            {ninjas
-              .filter((val) => {
-                if (search == "") {
-                  return val;
-                } else if (
-                  val.pname.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .map((ninja) => (
-                <Link href={"/ninjas/" + ninja.id} key={ninja.id}>
-                  <div className="bg-gray-50 hover:shadow-2xl">
-                    <Image
-                      src="/1.png"
-                      width={1200}
-                      height={650}
-                      layout="responsive"
-                    ></Image>
-                    <div className="ml-5 font-semibold text-lg">
-                      {ninja.pname}
-                    </div>
-                    <div className="ml-5">Rs.{ninja.price}</div>
-                    <div className="ml-5 text-blue-900 font-bold">
-                      {ninja.Mode}
-                    </div>
-                    <div className="float-right mr-5 mt-1 mb-2">
-                      <Link href={`${ninja._id}`}>
-                        <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
-                          Details
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-          </div>
-          {/* Category 3 */}
-          <div className="mt-20 ml-5 text-red-500 text-4xl  font-bold">
-            Live Lectures
-          </div>
-          <div className="mt-2 ml-5 bg-red-400 w-20 rounded-lg h-1"></div>
-          <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
-            {ninjas
-              .filter((val) => {
-                if (search == "") {
-                  return val;
-                } else if (
-                  val.pname.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .map((ninja) => (
-                <Link href={"/ninjas/" + ninja.id} key={ninja.id}>
-                  <div className="bg-gray-50 hover:shadow-2xl">
-                    <Image
-                      src="/1.png"
-                      width={1200}
-                      height={650}
-                      layout="responsive"
-                    ></Image>
-                    <div className="ml-5 font-semibold text-lg">
-                      {ninja.pname}
-                    </div>
-                    <div className="ml-5">Rs.{ninja.price}</div>
-                    <div className="ml-5 text-blue-900 font-bold">
-                      {ninja.Mode}
-                    </div>
-                    <div className="float-right mr-5 mt-1 mb-2">
-                      <Link href={`${ninja._id}`}>
-                        <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
-                          Details
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                </Link>
               ))}
           </div>
         </div>

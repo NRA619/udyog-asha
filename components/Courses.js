@@ -1,20 +1,18 @@
 import Image from 'next/image'
-
-
-const cources = [
-
-    { id: 1, name: "/1.png" },
-    { id: 2, name: "/2.png" },
-    { id: 3, name: "/3.png" },
-    { id: 4, name: "/4.png" },
-    { id: 5, name: "/5.png" },
-    { id: 6, name: "/7.png" },
-
-]
+import { useState,useEffect } from 'react';
 
 
 
 export default function Courses() {
+    
+    const [details,setDetails] = useState([]);
+
+    useEffect(async () => {
+        window.scrollTo(0, 0)
+        const res = await fetch("http://localhost:5000/tr/GetTraining");
+        const data = await res.json();
+        setDetails(data);
+    }, [])
     return (
         <div className="mb-2">
             <span className="block text-2xl font-bold text-">Featured courses</span>
@@ -22,9 +20,9 @@ export default function Courses() {
 
             <div className="grid md:grid-cols-3 gap-4 ">
 
-                {cources.map(item => (
-                    <div key={item.id} className="mt-5 cursor-pointer hover:opacity-75 md:p-2">
-                        <Image src={item.name} alt="cource1" width={1350} height={650} layout="responsive"></Image>
+            {details.map(item => (
+                    <div key={item._id} className="mt-5 cursor-pointer hover:opacity-75 md:p-2">
+                        <Image src={item.img} alt="cource1" width={1350} height={650} layout="responsive"></Image>
                     </div>
 
                 ))}

@@ -18,18 +18,14 @@ const Training = ({ ninjas }) => {
   const [loading, setloading] = useState(false);
   
   useEffect(() => {
-  
+    window.scrollTo(0, 0)
     setloading(true);
     setTimeout(() => {
       setloading(false);
     }, 3000);
   }, [])
 
-  function encrypt(e){
-    let buff = new Buffer.from(e);
-       let stringToBase64 = buff.toString('base64');
-       return stringToBase64;
- }
+  
 
   return (
     <main className="bg-red-600 bg-opacity-5">
@@ -82,9 +78,13 @@ const Training = ({ ninjas }) => {
         {ninjas
           .filter((val) => {
             if (search == "") {
-              return val;
+              if (val.category == "recommendation" || val.category == "Recommendation") {
+                return val;
+              }
             } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
-              return val;
+              if (val.category == "recommendation" || val.category == "Recommendation") {
+                return val;
+              }
             }
           })
           .map((ninja) => (
@@ -99,10 +99,10 @@ const Training = ({ ninjas }) => {
                  
                 ></Image>
                 <div className="ml-5 font-semibold text-lg">{ninja.pname}</div>
-                <div className="ml-5">Rs.{ninja.price}</div>
+                <div className="ml-5">Rs.{(ninja.price)/100}</div>
                 <div className="text-blue-900 font-bold">{ninja.Mode}</div>
                 <div className="float-right mr-5 mt-1 mb-2">
-                  <Link href={`${encrypt(ninja._id)}`}>
+                  <Link href={`${ninja._id}`}>
                     <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
                       Details
                     </button>
@@ -121,61 +121,27 @@ const Training = ({ ninjas }) => {
         {ninjas
           .filter((val) => {
             if (search == "") {
-              return val;
+              if (val.category == "Live" || val.category == "live") {
+                return val;
+              }
             } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
-              return val;
+              if (val.category == "Live" || val.category == "live") {
+                return val;
+              }
             }
           })
           .map((ninja) => (
             <Link href={"/ninjas/" + ninja.id} key={ninja.id}>
               <div className="bg-gray-50 hover:shadow-2xl">
                 <Image
-                  src="/1.png"
+                  src={ninja.img}
                   width={1200}
                   height={650}
                   layout="responsive"
                  
                 ></Image>
                 <div className="ml-5 font-semibold text-lg">{ninja.pname}</div>
-                <div className="ml-5">Rs.{ninja.price}</div>
-                <div className="text-blue-900 font-bold">{ninja.Mode}</div>
-                <div className="float-right mr-5 mt-1 mb-2">
-                  <Link href={`${ninja._id}`}>
-                    <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
-                      Details
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </Link>
-          ))}
-      </div>
-      {/* Category 3 */}
-      <div className="mt-20 ml-5 text-red-500 text-4xl  font-bold">
-        Live Lectures
-      </div>
-      <div className = "mt-2 ml-5 bg-red-400 w-20 rounded-lg h-1"></div>
-      <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
-        {ninjas
-          .filter((val) => {
-            if (search == "") {
-              return val;
-            } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
-              return val;
-            }
-          })
-          .map((ninja) => (
-            <Link href={"/ninjas/" + ninja.id} key={ninja.id}>
-              <div className="bg-gray-50 hover:shadow-2xl">
-                <Image
-                  src="/1.png"
-                  width={1200}
-                  height={650}
-                  layout="responsive"
-                 
-                ></Image>
-                <div className="ml-5 font-semibold text-lg">{ninja.pname}</div>
-                <div className="ml-5">Rs.{ninja.price}</div>
+                <div className="ml-5">Rs.{(ninja.price)/100}</div>
                 <div className="text-blue-900 font-bold">{ninja.Mode}</div>
                 <div className="float-right mr-5 mt-1 mb-2">
                   <Link href={`${ninja._id}`}>

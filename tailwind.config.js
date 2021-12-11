@@ -26,7 +26,12 @@ module.exports = {
         'address' : "url('/address.jpg')",
         'cart': "url('/cart.jpg')",
         'cartbag': "url('/cartbag.jpg')",
-        'cart2': "url('/cart2.jpg')"
+        'cartfinal': "url('/cartfinal.jpg')",
+        'feedback': "url('/feedback.jpg')",
+        'feed': "url('/feed.jpg')",
+        'addressfinal': "url('/addressfinal.jpg')",
+        'cartfinal2': "url('/cartfinal2.png')",
+
       }),
       width: {
         '6/7': '87.7142857%',

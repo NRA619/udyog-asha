@@ -63,7 +63,6 @@ export default function Login() {
       const res = await axios.post("http://localhost:5000/user/googlelogin", {
         email: email,
       });
-      console.log(res);
       if (res.data.isExists == false) {
         router.push({
           pathname: "/createprofile",
@@ -77,12 +76,11 @@ export default function Login() {
           maxAge: 3600, // Expires After 1hr
           sameSite: true,
         });
-        router.push({
-          pathname: "/",
-        });
+        window.location = "/"
+        
       }
     } catch (err) {
-      console.log(err);
+      alert("Error")
     }
   };
  
@@ -104,15 +102,19 @@ export default function Login() {
           maxAge: 3600, // Expires After 1hr
           sameSite: true,
         });
+        window.location.reload();
         router.push({
           pathname: "/",
         });
+
       } else {
         alert(
           "Credentials are incorrect!! please check your email and password"
         );
       }
-    } catch (err) {}
+    } catch (err) {
+      alert("Error")
+    }
   }
 
   

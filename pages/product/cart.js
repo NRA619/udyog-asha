@@ -17,6 +17,7 @@ const Cart = () => {
   const [loading, setloading] = useState(true);
 
   useEffect(async () => {
+    window.scrollTo(0, 0)
     const data = parseCookies();
     if(data.user) {
     let buff_dec = new Buffer.from(data.user, "base64");
@@ -30,16 +31,11 @@ const Cart = () => {
     setTimeout(() => {
       setloading(false);
     }, 3000);
-    //   const send_data = await  axios.post("http://localhost:5000/Cart/SaveCart/", {
-    //   });
-    
- 
-    
-    if (Object.keys(pname).length === 0) {
+
+    if (Object.keys(pname).length === 0 ) {
       const get_data = await axios.post("http://localhost:5000/Cart/GetCart", {
         email: email,
       });
-
       setpname(get_data.data.product_array);
     }
     if (Object.keys(pname).length !== 0) {
@@ -53,16 +49,13 @@ const Cart = () => {
     if (Object.keys(pname).length !== 0) {
       var y = 0;
       pname.map((item) => {
-
         y = y + (item.quantity * item.price);
-        console.log(y);
       });
       settotalprice(y);
     }
     const res = await axios.post("http://localhost:5000/user/get_address", {
       email: email,
     });
-    console.log(res)
     if (Object.keys(res.data.address).length !== 0  ) {
       if(Object.keys(details).length === 0){
         setdetails(res.data.address);
@@ -72,15 +65,12 @@ const Cart = () => {
       const resuser = await axios.post("http://localhost:5000/user/getdata", {
         email: emaillog,
     });
-    console.log(resuser);
       setfname(resuser.data.fullname);
       setmno(resuser.data.mobileno);
   }
-  console.log(details)
   }, [details]);
 
   const increment = async (pid) => {
-    console.log(pid);
     if (Object.keys(pname).length !== 0) {
       setpname((pname) =>
         pname.map((item) =>
@@ -104,7 +94,6 @@ const Cart = () => {
     });
   };
   const decrement = async (pid) => {
-    console.log(pid);
     if (Object.keys(pname).length !== 0) {
       setpname((pname) =>
         pname.map((item) =>
@@ -132,7 +121,6 @@ const Cart = () => {
       productId: pid,
       quantity: qty,
     });
-    console.log(update);
   };
 
   const removecart = async (pid) => {
@@ -141,7 +129,6 @@ const Cart = () => {
       id: pid,
     })
     if(remove.data.deleted_successfully === true) {
-      console.log("hello world");
       window.location.reload();
     }
     else{
@@ -164,20 +151,16 @@ const Cart = () => {
   }
 
   async function displayRazorpay() {
-    console.log(totalprice);
-    console.log(total);
     var str = ""
     pname.map((data_product) => {
-      str = str + "product:"+ " " + data_product.product_name + " " + "|" + " " + "qty:" + " "  + data_product.quantity + " " + "|" + " " + "Price:" + " " + "Rs." + data_product.price + "\n"
+      str = str + "product:"+ " " + data_product.product_name + " " + "|" + " " + "qty:" + " "  + data_product.quantity + " " + "|" + " " + "Price:" + " " + "Rs." + (data_product.quantity*data_product.price)/100 + "\n"
     })
-    console.log(str);
     const responsed = await axios.post(
       "http://localhost:5000/payment/createorder",
       {
-        price: totalprice*100,
+        price: totalprice,
       }
     );
-    console.log(responsed);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -189,7 +172,7 @@ const Cart = () => {
 
     const options = {
       key: "rzp_test_A6By7nQZCu7J7J", // Enter the Key ID generated from the Dashboard
-      amount: totalprice*100,
+      amount: totalprice,
       name: fname,
       description: str,
       order_id: responsed.data.id,
@@ -207,6 +190,7 @@ const Cart = () => {
           }
         );
         if(res.data.paymentSuccess === true ) {
+          deleteall();
           window.location = "/product/thanks"
         }else {
           window.location = "/product/error"
@@ -231,12 +215,16 @@ const Cart = () => {
   function addresspage() {
     window.location = "/product/address"
   }
-
+  async function deleteall() {
+    const remove = await axios.post("http://localhost:5000/Cart/removeall", {
+      email: emaillog,
+   })
+  }
   return (
-    <main className="w-full -mb-10 bg-cartbag bg-cover">
+    <main className="w-full -mb-10 bg-cartfinal2 bg-cover">
       {loading == true && (
         <div className="flex flex-col justify-center items-center h-screen w-screen">
-          <BarLoader color="#FFFFFF" height={4} width={100} />
+          <BarLoader color="#000000" height={4} width={100} />
         </div>
       )}
         <div className="pt-20 "></div>
@@ -255,10 +243,10 @@ const Cart = () => {
           </div>
           {Object.keys(pname).length === 0 && (
                     <div className="h-screen pb-20 w-full  space-y-2 flex flex-col justify-center items-center">
-                      <span className="text-white font-semibold text-2xl">
+                      <span className="text-blue-800 font-semibold text-2xl">
                       Your Cart is Empty
                       </span>
-                      <span className="text-white font-semibold ">
+                      <span className="text-blue-800 font-semibold ">
                         Please Add something
                       </span>
                     </div>
@@ -266,7 +254,7 @@ const Cart = () => {
           <div className="shadow-3xl md:m-10 pb-10">
             {!(Object.keys(pname).length === 0) && (
               <div className=" md:flex md:flex-row flex flex-col">
-                <div className="bg-white mt-10 shadow-xl w-full md:w-3/4 flex flex-col">
+                <div className="bg-white bg-opacity-90 mt-10 shadow-xl w-full md:w-3/4 flex flex-col">
                   <span className="text-black  pb-6">
                     <div className="flex flex-col float-left text-3xl font-bold pl-2 md:pl-10  p-6">
                       <span>
@@ -302,7 +290,7 @@ const Cart = () => {
                           </div>
   
                           <div className="w-1/5  flex  space-x-1 justify-end items-center">
-                            <div className="text-blue-800 font-semibold">Rs. </div><div className="font-semibold">{detail.price * detail.quantity}</div>
+                            <div className="text-blue-800 font-semibold">Rs. </div><div className="font-semibold">{(detail.price * detail.quantity)/100}</div>
                             <button className="pl-4 md:pl-8" onClick= {() => removecart(detail.productid)}>
                               x
                             </button>
@@ -314,7 +302,7 @@ const Cart = () => {
                   ))}
                   
                 </div>
-                <div className="bg-black text-black shadow-xl w-full md:w-1/4">
+                <div className="bg-black bg-opacity-90 text-black shadow-xl w-full md:w-1/4">
                   <div className="pt-16 px-6 font-semibold text-2xl text-white">
                     Summary
                   </div>
@@ -337,7 +325,7 @@ const Cart = () => {
                       </div>
                       <div className="flex justify-center">
                         <span className="flex justify-center break-all text-center ">
-                          Rs. {totalprice}
+                          Rs. {(totalprice)/100}
                         </span>
                       </div>
                       </div>
@@ -375,6 +363,7 @@ const Cart = () => {
             )}
           </div>
           <div className="mb-4"></div>
+          
         </div>
       )}
       {Object.keys(emaillog).length === 0 && (

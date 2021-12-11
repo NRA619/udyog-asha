@@ -40,7 +40,7 @@ export default function Personel({ ...data }) {
   else{
     setcheckemail(false);
   }
-})
+},[checkemail])
  
   // without email he cant go thorugh this link
   
@@ -54,7 +54,6 @@ export default function Personel({ ...data }) {
     const mobileno = values.mobileno
     const email = values.email
     const password_repeat = values.password_repeat
-    console.log(values);
     try {
       const res = await axios.post("http://localhost:5000/user/createprofile", {
         fullname,  age,  gender, mobileno, email, password_repeat,
@@ -65,10 +64,10 @@ export default function Personel({ ...data }) {
           maxAge: 3600, // Expires After 1hr
           sameSite: true,
         })
-        router.push("/");
+        window.location = "/"
       }
     }catch(err){
-      console.log(err)
+      alert("Error")
     }
   }
   return (
@@ -83,13 +82,11 @@ export default function Personel({ ...data }) {
     >
       <main className="h-full pt-10 w-full md:flex md:flex-col items-center">
         <div className="flex items-center py-20 relative h-1/4 md:h-1/3  w-full bg-back-about bg-cover">
-          <div className="h-full w-full flex justify-center md:block text-yellow-800 ">
+          <div className="h-full w-full  items-center space-y-4 flex flex-col justify-center text-yellow-800 ">
             {/* top Right  */}
-            <div className="float-right w-1/2 h-full hidden md:flex justify-center items-center">
-              <span className="text-white  md:w-3/4 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit consectetur
-                adipiscing elit
+            <div className=" w-1/2 h-full  md:flex justify-center items-center">
+              <span className="text-white flex justify-center md:w-3/4 text-justify">
+                Don't Reload this page
               </span>
             </div>
             {/* top left */}
@@ -324,12 +321,8 @@ export default function Personel({ ...data }) {
   {/* checking if user sign with google or not */}
     {checkemail == false &&
       <div className ="h-screen w-full flex flex-col justify-center items-center text-black">
-        Please Sign Using Google  
-        <Link href = "/login">
-            <span className = "text-blue-600 hover:cursor-pointer">
-              Google Sign In
-            </span>
-        </Link>
+        404. Page Not Found  
+        
       </div>
     }
     </div>

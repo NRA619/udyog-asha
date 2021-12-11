@@ -36,8 +36,7 @@ export default function Hometop({ name, children }) {
             setState(0)
         }
     }, 5000)
-        }
-    )
+        }, [state])
 
     return (
         <div className="h-full w-full  bg-wavebgred bg-cover">

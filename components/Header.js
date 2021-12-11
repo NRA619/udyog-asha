@@ -49,7 +49,7 @@ export default function Header() {
   }
   // const userdata = data.user
   // console.log("this is user" + userdata.replace(/"/g,"") )
-});
+}, [isLogged]);
   
   const logout = async () => {
     removeCookie("user", {

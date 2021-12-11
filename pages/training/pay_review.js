@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { parseCookies } from "../../components/cookie";
 import BarLoader from "react-spinners/BarLoader";
 
 
-const Thumbnail = ({ ninjas, ninj }) => {
+const Thumbnail = () => {
   const router = useRouter();
   const productId = router.query.data;
   const [isLogged, setisLogged] = React.useState(false);
@@ -15,13 +14,10 @@ const Thumbnail = ({ ninjas, ninj }) => {
   const [emaillog, setemaillog] = useState(" ");
   const [info, setinfo] = useState([]);
   const [details, setdetails] = useState([]);
-  function timeout(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-  
+  const [loading, setloading] = useState(true);
 
   useEffect(async () => {
-    
+    window.scrollTo(0, 0)
     const data = parseCookies();
     if(data.user) {
     let buff_dec = new Buffer.from(data.user, 'base64');
@@ -75,8 +71,10 @@ const Thumbnail = ({ ninjas, ninj }) => {
         }
       }
     }
-   
-  });
+   setTimeout(() => {
+      setloading(false);
+    }, 2000);
+  }, [info, details, productId]);
 
   async function getdata() {
     if (productId) {
@@ -117,7 +115,7 @@ const Thumbnail = ({ ninjas, ninj }) => {
       key: "rzp_test_A6By7nQZCu7J7J", // Enter the Key ID generated from the Dashboard
       amount: details.data.amount,
       name: fname,
-      description: "Course_name: " + info.pname + " " + "|" + " " + "Rs. " + info.price,
+      description: "Course_name: " + info.pname + " " + "|" + " " + "Rs. " + (info.price)/100,
       order_id: details.data.id,
       handler: async function (response) {
         const data = {
@@ -153,7 +151,7 @@ const Thumbnail = ({ ninjas, ninj }) => {
   }
   return (
     <main className="">
-      { details.data == undefined && (
+      {details.data == undefined && loading === true && (
         <div className="flex flex-col justify-center items-center h-screen w-screen">
           <BarLoader
           color="#D0021B"
@@ -163,7 +161,12 @@ const Thumbnail = ({ ninjas, ninj }) => {
         />
         </div>
       )}
-      {isLogged == false && details.data !== undefined && (
+      {details.data == undefined && loading === false && (
+        <div className="flex flex-col justify-center items-center h-screen w-screen">
+          <div>404. Page Not Found</div>
+        </div>
+      )}
+      {isLogged == false && details.data !== undefined && loading === false && (
        <div className="flex flex-col justify-center items-center h-screen w-screen">
          <span>
            Please login
@@ -224,7 +227,7 @@ const Thumbnail = ({ ninjas, ninj }) => {
               <div className="flex justify-between  pt-4">
                 <span className="flex items-center ml-5 md:ml-10">Amount</span>
                 <span className="border-b-2 w-1/2 mr-10 border-red-800 py-2 text-sm">
-                  {info.price}
+                  {(info.price)/100}
                 </span>
               </div>
               <div className="flex justify-center py-10">

@@ -20,8 +20,8 @@ const Address = () => {
   const [loading, setloading] = useState(true);
   
   useEffect(async () => {
+    window.scrollTo(0, 0)
     const data = parseCookies();
-
     if(data.user) {
     let buff_dec = new Buffer.from(data.user, "base64");
     let xyz = buff_dec.toString("ascii");
@@ -34,25 +34,19 @@ const Address = () => {
     setTimeout(() => {
       setloading(false);
     }, 3000);
-    
     const res = await axios.post("http://localhost:5000/user/get_address", {
       email: email,
     });
-   
     if (Object.keys(res.data.address).length !== 0  ) {
       setcheck("true");
       if(Object.keys(details).length === 0){
         setdetails(res.data.address);
-       
       }
-     
     }else {
         setcheck("false");   
-    }
-    
+    } 
   }, [details]);
   async function onSubmitForm(values) {
-    
     const addline1 = values.addressline1;
     const addline2 = values.addressline2;
     const city = values.city;
@@ -71,10 +65,8 @@ const Address = () => {
     }else {
       alert("oops! Something went wrong")
     }
-
   }
-  async function onSubmitForm_add(values) {
-    
+  async function onSubmitForm_add(values) { 
     const addline1 = values.addressline1;
     const addline2 = values.addressline2;
     const city = values.city;
@@ -88,7 +80,6 @@ const Address = () => {
       pincode: pincode,
       state: state,
     });
-
     if(res.data.updatedsuccessfully === true) {
       window.location = "/product/cart"
     }else {
@@ -99,7 +90,7 @@ const Address = () => {
     window.location = "/product/cart"
   }
   return (
-    <main className="pt-16 w-full h-full bg-red-600 bg-opacity-10 bg-cover">
+    <main className="pt-16 w-full h-full bg-addressfinal bg-opacity-10 bg-cover">
       {loading == true && (
         <div className="flex flex-col justify-center items-center h-screen w-screen">
           <BarLoader color="#000000" height={4} width={100} />
@@ -107,13 +98,13 @@ const Address = () => {
       )}
       {loading === false && (
       <div>
-      <button className="bg-white py-2 px-4 mt-6 shadow-xl font-medium mx-10" onClick={cartpage}>
-        Go back to Cart
+      <button className="bg-blue-800 text-white py-2 px-4 mt-6 shadow-lg font-medium mx-10" onClick={cartpage}>
+        Go back to Cart 
       </button>
       {check === "true" && 
       <div className="p-1 pt-10 md:p-10 text-white h-full md:flex md:flex-row flex flex-col">
         {Object.keys(details).length !== 0 &&
-        <div className="bg-black px-4 py-10 md:p-10 flex flex-col md:w-1/2 w-full space-y-12">
+        <div className="bg-black bg-opacity-95 px-4 py-10 md:p-10 flex flex-col md:w-1/2 w-full space-y-12">
           <div claaName="px-6 ">
             <span className="font-bold text-2xl">Current Address</span>
           </div>
@@ -141,7 +132,7 @@ const Address = () => {
         }
         <form
           onSubmit={handleSubmit(onSubmitForm)}
-          className="bg-white  px-4 py-10  md:p-10 w-full md:w-1/2 space-y-12"
+          className="bg-gray-200 bg-opacity-95  px-4 py-10  md:p-10 w-full md:w-1/2 space-y-12"
         >
           <div claaName="px-6 ">
             <span className="font-bold text-2xl text-blue-800">Change Address</span>
