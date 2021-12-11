@@ -57,7 +57,8 @@ export default function Login() {
   }, [])
   // Google Sign in Button function
   const googlesubmit = async (values) => {
-    const email = values.profileObj.email;
+    if(values){
+      const email = values.profileObj.email;
     // Backend Post
     try {
       const res = await axios.post("http://localhost:5000/user/googlelogin", {
@@ -82,11 +83,13 @@ export default function Login() {
     } catch (err) {
       alert("Error")
     }
+    }
   };
  
 // email login function
   async function loginform(values) {
-    const emailsign = values.email;
+    if(values){
+      const emailsign = values.email;
     const passwordsign = values.password_repeat;
     // backend post
     try {
@@ -114,6 +117,7 @@ export default function Login() {
       }
     } catch (err) {
       alert("Error")
+    }
     }
   }
 
