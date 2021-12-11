@@ -57,10 +57,10 @@ export default function Login() {
   }, [])
   // Google Sign in Button function
   const googlesubmit = async (values) => {
-    if(values){
+    if(Object.keys(values).length !== 0 ){
       const email = values.profileObj.email;
     // Backend Post
-    try {
+    if(email !== undefined) {
       const res = await axios.post("http://localhost:5000/user/googlelogin", {
         email: email,
       });
@@ -80,19 +80,21 @@ export default function Login() {
         window.location = "/"
         
       }
-    } catch (err) {
-      alert("Error")
+    }else {
+      console.log("wait")
     }
+    
     }
   };
  
 // email login function
   async function loginform(values) {
-    if(values){
+    if(Object.keys(values).length !== 0){
       const emailsign = values.email;
     const passwordsign = values.password_repeat;
     // backend post
-    try {
+    
+     if(email !== undefined) {
       const res = await axios.post("http://localhost:5000/user/emaillogin", {
         email: emailsign,
         password: passwordsign,
@@ -115,9 +117,10 @@ export default function Login() {
           "Credentials are incorrect!! please check your email and password"
         );
       }
-    } catch (err) {
-      alert("Error")
-    }
+   
+     }else {
+       console.log("wait")
+     }
     }
   }
 
