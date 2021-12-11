@@ -1,6 +1,7 @@
+import axios from 'axios';
 import Image from 'next/image'
 import { useState,useEffect } from 'react';
-
+import axios from 'axios';
 
 
 export default function Courses() {
@@ -9,9 +10,8 @@ export default function Courses() {
 
     useEffect(async () => {
         window.scrollTo(0, 0)
-        const res = await fetch("http://localhost:5000/tr/GetTraining");
-        const data = await res.json();
-        setDetails(data);
+        const res = await axios.post("http://localhost:5000/tr/GetTraining");
+        setDetails(res.data);
     }, [])
     return (
         <div className="mb-2">
