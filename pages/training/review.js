@@ -397,4 +397,4 @@ export const Review = () => {
   );
 };
 
-export default review;
+export default Review;
