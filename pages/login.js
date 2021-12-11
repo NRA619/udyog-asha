@@ -100,10 +100,7 @@ export default function Login() {
           maxAge: 3600, // Expires After 1hr
           sameSite: true,
         });
-        window.location.reload();
-        router.push({
-          pathname: "/",
-        });
+        window.location = "/"
 
       } else {
         alert(
@@ -114,7 +111,9 @@ export default function Login() {
       alert("Error")
     }
   }
-
+  async function failed(response) {
+    console.log(response)
+  }
   
 
   return (
@@ -258,6 +257,7 @@ export default function Login() {
                     clientId="369653107453-suc1m13pghsvjlo7q1hq7tpmoqb0iaon.apps.googleusercontent.com"
                     buttonText="Sign in with google"
                     onSuccess={googlesubmit}
+                    onFailure={failed}
                     theme="dark"
                     cookiePolicy={"single_host_origin"}
                   />
