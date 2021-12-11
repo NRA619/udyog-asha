@@ -3,29 +3,33 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, } from "react";
 import BarLoader from "react-spinners/BarLoader";
-
-export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/tr/GetTraining");
+import axios from "axios";
+// export const getStaticProps = async () => {
+//   const res = await fetch("http://localhost:5000/tr/GetTraining");
   
-  if(res) {
-    const data = await res.json();
-    return {
-      props: { ninjas: data },
-    };
-  }else {
-    const data = "empty"
-    return {
-      props: { ninjas: data },
-    };
-  }
-};
+//   if(res) {
+//     const data = await res.json();
+//     return {
+//       props: { ninjas: data },
+//     };
+//   }else {
+//     const data = "empty"
+//     return {
+//       props: { ninjas: data },
+//     };
+//   }
+// };
 
-const Training = ({ ninjas }) => {
+const Training = () => {
   const [search, setSearch] = useState("");
   const [loading, setloading] = useState(false);
+  const [ninjas, setninjas] = useState([]);
   
-  useEffect(() => {
+  useEffect(async () => {
     window.scrollTo(0, 0)
+    const res = await axios.post("http://localhost:5000/tr/GetTraining");
+    setninjas(res.data);
+    console.log(res.data);
     setloading(true);
     setTimeout(() => {
       setloading(false);

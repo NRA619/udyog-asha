@@ -3,29 +3,34 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import BarLoader from "react-spinners/BarLoader";
+import axios from "axios";
 
-
-export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/product/Getproduct");
-  if(res) {
-    const data = await res.json();
-    return {
-      props: { ninjas: data },
-    };
-  }else {
-    const data = "empty"
-    return {
-      props: { ninjas: data },
-    };
-  }
+// export const getStaticProps = async () => {
+//   const res = await fetch("http://localhost:5000/product/Getproduct");
+//   if(res) {
+//     const data = await res.json();
+//     return {
+//       props: { ninjas: data },
+//     };
+//   }else {
+//     const data = "empty"
+//     return {
+//       props: { ninjas: data },
+//     };
+//   }
 
   
-};
+// };
 
-const Product = ({ ninjas }) => {
+const Product = () => {
   const [search, setSearch] = useState("");
   const [loading, setloading] = useState(true);
+  const [ninjas, setninjas] = useState([]);
+
   useEffect(async () => {
+    const res = await axios.post("http://localhost:5000/product/Getproduct");
+    setninjas(res.data);
+    console.log(res.data);
     setTimeout(() => {
       setloading(false);
     }, 3000);
