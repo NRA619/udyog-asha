@@ -6,11 +6,18 @@ import BarLoader from "react-spinners/BarLoader";
 
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/tr/GetTraining");
-  const data = await res.json();
-
-  return {
-    props: { ninjas: data },
-  };
+  
+  if(res) {
+    const data = await res.json();
+    return {
+      props: { ninjas: data },
+    };
+  }else {
+    const data = "empty"
+    return {
+      props: { ninjas: data },
+    };
+  }
 };
 
 const Training = ({ ninjas }) => {

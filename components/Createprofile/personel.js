@@ -86,7 +86,7 @@ export default function Personel({ ...data }) {
             {/* top Right  */}
             <div className=" w-1/2 h-full  md:flex justify-center items-center">
               <span className="text-white flex justify-center md:w-3/4 text-justify">
-                Don't Reload this page
+                Do not Reload this page
               </span>
             </div>
             {/* top left */}

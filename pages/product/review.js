@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { parseCookies } from "../../components/cookie";
 
 
-export const review = () => {
+export const Review = () => {
   const router = useRouter();
   const [done, setdone] = useState(" ");
   const [emaillog, setemaillog] = useState(" ")
