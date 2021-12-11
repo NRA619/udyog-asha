@@ -133,7 +133,7 @@ const ProductDetail = () => {
             </div>
             <div className="w-10 h-1 m-1 bg-yellow-400"></div>
             <div className="mt-5 ml-2 md:ml-10">
-              {info.details.map((ch) => (
+              {/* {info.details.map((ch) => (
                 <div>
                   {
                     <div className="mt-5 ml-2 md:ml-10">
@@ -142,7 +142,7 @@ const ProductDetail = () => {
                     </div>
                   }
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
           <div className="ml-3 w-1/4 md:mr-10 md:flex md:flex-col md:items-end">
