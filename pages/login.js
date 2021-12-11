@@ -258,7 +258,6 @@ export default function Login() {
                     clientId="369653107453-suc1m13pghsvjlo7q1hq7tpmoqb0iaon.apps.googleusercontent.com"
                     buttonText="Sign in with google"
                     onSuccess={googlesubmit}
-                    onFailure={googlesubmit}
                     theme="dark"
                     cookiePolicy={"single_host_origin"}
                   />
