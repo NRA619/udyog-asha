@@ -207,4 +207,4 @@ export const Forgetpassword = () => {
   );
 };
 
-export default forgetpassword;
+export default Forgetpassword;
