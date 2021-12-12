@@ -183,9 +183,20 @@ export default function Header() {
                 </motion.div>
               </Link>
               
-              <span className="font-semibold hover:text-blue-900 hover:font-bold transition duration-700 hover:ease-in-out">
-                <Link href = "/product/product">Shopping</Link>
-              </span>
+              {router.pathname == '/product/product' && 
+            <li variants={container} initial="hidden" animate="visible" className="hover:cursor-pointer">
+              <Link href="/product/product">
+                <span className="d border-red-500 border-b-4 text-red-900 font-bold shadow-md ">Shopping</span>
+              </Link>
+            </li>
+            }
+            {router.pathname != '/product/product' && 
+            <li variants={container} initial="hidden" animate="visible" className=" hover:cursor-pointer">
+              <Link href="/product/product">
+                <span className="font-semibold hover:border-red-500 hover:border-b-4 hover:text-red-900 hover:font-bold hover:shadow-md transition duration-700 hover:ease-in-out">Shopping</span>
+              </Link>
+            </li>
+            }
               
               
             </motion.li>

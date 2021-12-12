@@ -5,7 +5,6 @@ import BarLoader from "react-spinners/BarLoader";
 import axios from "axios";
 import { parseCookies } from "../../components/cookie";
 import Image from "next/image";
-import image from "next/image";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -112,66 +111,86 @@ const ProductDetail = () => {
         </div>
       )}
       {Object.keys(info).length !== 0 && loading == false && (
-        <div className="pt-16 md:pt-20 bg-breakbg bg-cover w-full h-3/4 flex justify-between">
-          <div className="ml-5 mr-1 lg:ml-10 mt-10 w-full">
-            <div className="flex md:flex-row flex-col space-x-10">
-              <div className="mt-3 flex justify-center md:h-96 h-48 md:w-3/5 mr-3">
-                <Image src={info.img} width={1000} height={750}></Image>
+        <div className="pt-16 md:pt-20 bg-white bg-cover w-full h-3/4 flex justify-between">
+          <div className="mx-4 md:mx-10 mt-10 w-full">
+            <div className="flex md:flex-row flex-col md:space-x-10">
+              <div className="md:mt-3 flex justify-center glow-red-400-2xl shadow-2xl h-full ">
+                
+                  <Image
+                    src={info.img}
+                    width={1300}
+                    height={750}
+                    
+                  ></Image>
+                
               </div>
-              <div className="mt-5 md:w-2/5 h-36 w-4/5 text-white mb-11">
-                <div className="mt-8 text-3xl font-bold text-white underline">
+              <div className="mt-10 shadow-2xl py-10  md:w-full h-full pb-16 md:-mt-10 border border-red-500 md:shadow-xl px-4 text-black mb-10 ">
+                <div className=" text-3xl font-bold text-red-900 underline">
                   Highlights:
                 </div>
-                <ul className="space-y-1 md:mr-10 md:h-52 h-36">
-                  <li>Name: {info.pname}</li>
-                  <li>Price: {info.price}</li>
-                  <li>Discription: {info.discription}</li>
+                <ul className="mt-16 space-y-2 text-justify ">
+                  <li className="flex space-x-2">
+                    
+                    <span className="text-2xl font-semibold text-black capitalize">{info.pname}</span>
+                  </li>
+                  <li className="flex space-x-2">
+                    <span className="text-red-500 font-semibold">Price:</span>
+                    <span className="flex space-x-1 font-medium text-black capitalize">
+                      <span>Rs.</span>
+                      <span>{info.price / 2}</span>
+                    </span>
+                  </li>
+                  <li className="">
+                    <span className="text-black font-medium capitalize">
+                    {info.discription}
+                    </span>
+                  </li>
                 </ul>
-              </div>
-            </div>
-            <div className="block md:flex space-x-4">
-              {addoption == false && emaillog !== " " && (
-                <button
-                  className="mt-2 md:mt-10 bg-white text-black w-40 py-5 mb-16 rounded-sm text-xl font-bold"
-                  onClick={addtocart}
-                >
-                  <span>Add to Cart</span>
-                </button>
-              )}
-              {addoption == true && emaillog !== " " && (
-                <button
-                  className="mt-20 md:mt-10 bg-white text-black px-6 py-5 mb-16 rounded-sm text-xl font-bold"
-                  onClick={addtocart}
-                >
-                  <span>Sucessfully Added</span>
-                </button>
-              )}
-              {emaillog !== " " && (
-                <button
-                  className="mt-20 mx-0 md:mt-10 bg-white text-black w-40 py-5 mb-16 rounded-sm text-xl font-bold"
-                  onClick={cartpage}
-                >
-                  Go to cart
-                </button>
-              )}
-              {paid === true && emaillog !== " " && (
-                <div className="">
-                  <button
-                    className=" mx-0 md:mt-10 bg-white text-black w-40 py-5 mb-16 rounded-sm text-xl font-bold"
-                    onClick={reviewpage}
-                  >
-                    FeedBack
-                  </button>
+                <div className="mt-10 flex flex-col md:flex md:flex-row md:space-x-4">
+                  {addoption == false && emaillog !== " " && (
+                    <button
+                      className="flex justify-start"
+                      onClick={addtocart}
+                    >
+                      <span className="w-36 md:w-40 bg-gray-100 mx-0 mt-14   hover:bg-black hover:text-white shadow-lg text-red-500 font-semibold px-4 py-2.5  rounded-sm text-md">Add to Cart</span>
+                    </button>
+                  )}
+                  {addoption == true && emaillog !== " " && (
+                    <button
+                      className="flex justify-start"
+                      onClick={addtocart}
+                    >
+                      <span className="w-36 md:w-40 mx-0 mt-14 text-sm bg-gray-100  shadow-lg text-red-500 font-semibold px-4 py-3  rounded-sm ">Sucessfully Added</span>
+                    </button>
+                  )}
+                  {emaillog !== " " && (
+                    <button
+                      className="flex justify-start"
+                      onClick={cartpage}
+                    >
+                      <span className="w-36 md:w-40 mx-0 mt-4 md:mt-14 bg-gray-100 hover:bg-black hover:text-white shadow-lg text-red-500 font-semibold px-4 py-2.5  rounded-sm text-md">Go to cart</span>
+                    </button>
+                  )}
+                  {paid === true && emaillog !== " " && (
+                    <div className="">
+                      <button
+                        className="w-36 md:w-40 mx-0 mt-4 md:mt-14 bg-gray-100 hover:bg-black hover:text-white shadow-lg text-red-500 font-semibold px-4 py-2.5  rounded-sm text-md"
+                        onClick={reviewpage}
+                      >
+                        FeedBack
+                      </button>
+                    </div>
+                  )}
+                  {emaillog === " " && (
+                    <button
+                      className="w-36 mx-0 mt-14  bg-gray-100 hover:bg-black hover:text-white shadow-lg text-red-500 font-semibold px-4 py-2  rounded-sm text-lg"
+                      onClick={loginpage}
+                    >
+                      Login Now
+                    </button>
+                  )}
                 </div>
-              )}
-              {emaillog === " " && (
-                <button
-                  className=" mx-0 md:mt-10 bg-white text-black w-40 py-5 mb-16 rounded-sm text-xl font-bold"
-                  onClick={loginpage}
-                >
-                  Login Now
-                </button>
-              )}
+              </div>
             </div>
           </div>
         </div>
