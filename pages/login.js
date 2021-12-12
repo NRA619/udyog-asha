@@ -114,7 +114,9 @@ export default function Login() {
   async function failed(responsed) {
     console.log(responsed)
   }
-  
+  async function forgetpassword(){
+    window.location = "/forgetpassword"
+  }
 
   return (
     <main className="md:flex md:justify-center bg-emptybg bg-no-repeat bg-cover">
@@ -181,9 +183,10 @@ export default function Login() {
                 <div className="flex flex-col justify-center h-1/4 w-full md:h-full items-center space-y-10 mt-10 md:mt-0">
                   {/* Login form */}
                   {/* emaillogin form */}
+                  <div className="flex flex-col md:flex md:flex-col  mt-28 md:mt-0 2-3/4 md:w-1/2">
                     <form
                       onSubmit={handleSubmit(loginform)}
-                      className="md:flex md:flex-col space-y-3 mt-20 md:mt-0 2-3/4 md:w-1/2"
+                      className="space-y-2"
                     >
                       <div className="flex flex-col">
                         {/* email field */}
@@ -233,7 +236,7 @@ export default function Login() {
                             <span className = "text-xs">Please fill this field</span>
                           )}
                       </div>
-
+                      
                       <div className="flex flex-col items-center ">
                         <button
                           type="submit"
@@ -247,14 +250,18 @@ export default function Login() {
                         </div>
                       </div>
                     </form>
-               
-                
+                    <button onClick={forgetpassword} className="text-black text-sm flex justify-centerflex flex-col justify-center items-center text-justify">
+                        <span className="text-justify font-bold">
+                        forget password?
+                        </span>
+                      </button>
+                    </div>
                   {/* Login Button */}
                   {/* google login */}
                   {/* button animation */}
                   <GoogleLogin
                     className="flex justify-center rounded-3xl p-4 shadow-xl transition duration-500 ease-in-out bg-black hover:bg-blue-600 transform hover:-translate-y-1 hover:scale-110"
-                    clientId="369653107453-7cn37ce491sj19e88tmisa7ide4fjklv.apps.googleusercontent.com"
+                    clientId="369653107453-suc1m13pghsvjlo7q1hq7tpmoqb0iaon.apps.googleusercontent.com"
                     buttonText="Sign in with google"
                     onSuccess={googlesubmit}
                     onFailure={googlesubmit}
@@ -270,6 +277,7 @@ export default function Login() {
                   2021 <CopyrightRoundedIcon fontSize="small" />
                   All rights reserved.
                 </span>
+                
               </div>
             </div>
           </div>
