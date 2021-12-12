@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { useState,useEffect } from 'react';
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
-import { AnimatePresence } from 'framer-motion';
 
 
 const container = {
@@ -25,7 +24,7 @@ const container = {
       opacity: 1,
     },
   };
-export default function Hometop({ name, children }) {
+export default function Hometop() {
     const [state, setState] =  useState(2);
 
     useEffect(() => {
@@ -55,7 +54,7 @@ export default function Hometop({ name, children }) {
                 <motion.span variants={item} className = "text-white text-md md:text-2xl pt-1 font-medium md:font-semibold">
                     Vocational Education & Training Board
                 </motion.span>
-                <motion.span variants={item} className = "text-xxs md:text-sm pt-1 text-black-500 font-medium md:font-semibold animate-pulse">
+                <motion.span variants={item} className = "text-xxs md:text-sm pt-1 text-gray-100 font-medium md:font-semibold animate-pulse">
                     An ISO 9001: 2021 Certified Vocational Board 
                 </motion.span>
                 <motion.span variants={item} className="text-white text-md md:text-2xl pt-1 font-medium md:font-semibold ">
