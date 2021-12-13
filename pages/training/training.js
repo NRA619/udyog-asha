@@ -22,7 +22,7 @@ import axios from "axios";
 
 const Training = () => {
   const [search, setSearch] = useState("");
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(true);
   const [ninjas, setninjas] = useState([]);
   
   useEffect(async () => {
@@ -30,7 +30,7 @@ const Training = () => {
     const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/GetTraining");
     setninjas(res.data);
     console.log(res.data);
-    setloading(true);
+    
     setTimeout(() => {
       setloading(false);
     }, 3000);
@@ -99,7 +99,7 @@ const Training = () => {
             }
           })
           .map((ninja) => (
-            <Link href={"/ninjas/" + ninja.id} key={ninja.id}>
+            <div key={ninja.id}>
               <div className="bg-gray-50 hover:shadow-2xl">
                 <Image
                   src={ninja.img}
@@ -120,7 +120,7 @@ const Training = () => {
                   </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
       </div>
       {/* Category 2 */}
@@ -142,7 +142,7 @@ const Training = () => {
             }
           })
           .map((ninja) => (
-            <Link href={"/ninjas/" + ninja.id} key={ninja.id}>
+            <div key={ninja.id}>
               <div className="bg-gray-50 hover:shadow-2xl">
                 <Image
                   src={ninja.img}
@@ -162,7 +162,7 @@ const Training = () => {
                   </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
       </div>
       </div>
