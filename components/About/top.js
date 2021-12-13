@@ -3,6 +3,7 @@ import Image from "next/image";
 import BeenhereTwoToneIcon from "@material-ui/icons/BeenhereTwoTone";
 import { motion } from "framer-motion";
 import BookmarkIcon from '@material-ui/icons/Bookmark';
+import  {useEffect, useState} from 'react';
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -25,6 +26,17 @@ const item = {
 };
 
 export default function Top() {
+  const [state, setState] =  useState(9);
+
+    useEffect(() => {
+        setTimeout(() => {
+        if(state < 1) {
+        setState(9)
+        } else {
+            setState(state - 1)
+        }
+    }, 6000)
+        }, [state])
   return (
     <main className="h-screen w-full ">
       {/* 1st container*/}
@@ -86,8 +98,9 @@ export default function Top() {
           </motion.div>
         </div>
         {/* Swiper  */}
-        <span className="hidden md:block w-1/2 md:w-1/4  scale-150 md:scale-100 bg-indigo-50 filter drop-shadow-lg rounded-md shadow-md contrast-125">
-          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+        <span className="hidden md:block w-1/2 md:w-1/3  scale-150 md:scale-100 bg-indigo-50 filter drop-shadow-lg rounded-md shadow-md contrast-125 mt-10">
+          {state == 0 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg ">
             <Image
               src="/images/about5.jpeg"
               className="rounded-md  filter  saturate-120 shadow-2xl"
@@ -96,6 +109,107 @@ export default function Top() {
               layout="responsive"
             ></Image>
           </div>
+          )}
+          {state == 1 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/fLBFQqv1/20160212-112634.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 2 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/WzzyNmWz/20160212-112742.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 3 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/tCLcbxhR/20160425-132007.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 4 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/4y0SmKq5/20160212-164804.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 5 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/gk5C05PW/20160215-170105.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 6 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/QtXPPZcp/20160215-170108.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 7 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/RZHjJRMn/20160218-112735.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 8 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/4y0SmKq5/20160212-164804.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}    
+          {state == 9 && (
+          <div className="transform translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 glow-blue-500-lg">
+            <Image
+              src="https://i.postimg.cc/d0cg2y1N/20160218-112658.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={1350}
+              height={950}
+              layout="responsive"
+            ></Image>
+          </div>
+          )} 
+
         </span>
         {/* 2nd Container */}
       </div>

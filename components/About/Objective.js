@@ -7,10 +7,10 @@ export default function Objective({ name, children }) {
 
     useEffect(() => {
         setTimeout(() => {
-        if(state <= 1) {
-        setState(state + 1)
+        if(state < 1) {
+        setState(5)
         } else {
-            setState(0)
+            setState(state - 1)
         }
     }, 4000)
         }, [state])
@@ -97,9 +97,10 @@ export default function Objective({ name, children }) {
          {/* hidden for desktop version */}
          <span className="w-1/2  md:hidden">
          <div className="md:w-3/4 mt-5">
+         {state == 0 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="/images/about4.jpeg"
+              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -107,6 +108,55 @@ export default function Objective({ name, children }) {
             ></Image>
          
          </div>
+         }
+         {state == 1 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/85zCjy0d/20150216-111737.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 2 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/hjZtx9kk/20150216-111845.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 3 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 4 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/bNtwDS35/20150325-121053.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
          </div>
          </span>
          <span className="w-5/6 pb-4 text-justify md:mr-5 md:hidden">
@@ -119,9 +169,10 @@ export default function Objective({ name, children }) {
          </span>
          <span className="w-3/4">
          <div className="md:w-3/4 float-right my-10">
-         <div className=" glow-blue-900-2xl">   
+         {state == 0 &&
+         <div className=" glow-blue-900-xl">   
             <Image
-              src="/images/about4.jpeg"
+              src="https://i.postimg.cc/dQX0Vjmd/20150411-144345.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -129,6 +180,68 @@ export default function Objective({ name, children }) {
             ></Image>
          
          </div>
+         }
+         {state == 1 &&
+         <div className=" glow-blue-900-xl">   
+            <Image
+              src="https://i.postimg.cc/yxJYTDBk/20151207-134240.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 2 &&
+         <div className=" glow-blue-900-xl">   
+            <Image
+              src="https://i.postimg.cc/qq9BDpMQ/20151209-141023.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 3 &&
+         <div className=" glow-blue-900-xl">   
+            <Image
+              src="https://i.postimg.cc/XvVjzH4M/20151210-091439.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 4 &&
+         <div className=" glow-blue-900-xl">   
+            <Image
+              src="https://i.postimg.cc/vm3YFrZ4/20151210-123821.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 5 &&
+         <div className=" glow-blue-900-xl">   
+            <Image
+              src="https://i.postimg.cc/gjShGmC3/20151216-112703.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         
          </div>
          </span>
          
