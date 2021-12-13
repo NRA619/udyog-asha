@@ -1,15 +1,27 @@
 import Image from 'next/image'
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-
+import React, {useEffect, useState} from 'react';
 
 export default function Objective({ name, children }) {
+   const [state, setState] =  useState(4);
+
+    useEffect(() => {
+        setTimeout(() => {
+        if(state <= 1) {
+        setState(state + 1)
+        } else {
+            setState(0)
+        }
+    }, 4000)
+        }, [state])
     return (
      <main className = "h-full w-full bg-blackbg bg-cover"> 
       <div className=" flex flex-col justify-around md:grid md:grid-cols-2 md:justify-items-center items-center  md:h-1/2  text-white">
          <div className="w-1/2 md:w-3/4">
+         {state == 0 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="/images/about1.jpeg"
+              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -17,6 +29,67 @@ export default function Objective({ name, children }) {
             ></Image>
          
          </div>
+         }
+         {state == 1 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/85zCjy0d/20150216-111737.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 2 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/hjZtx9kk/20150216-111845.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 3 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 4 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/bNtwDS35/20150325-121053.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 0 &&
+         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+            <Image
+              src="https://i.postimg.cc/bw0YLcXH/20150325-131638.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
          </div>
          <span className="w-5/6 text-justify ">
          सन 2006 पासून संस्था शहरी व ग्रामीण भागातील युवक युवतींना व्यवसायाभिमुख प्रशिक्षण प्रात्यक्षिकासह मार्गदर्शन करीत आहे. वाढत चाललेली बेरोजगारी व स्पर्धा ,उच्च शिक्षण करूनही नोकरीची शाश्‍वती नाही. यावर मात करण्याकरिता योग्य मार्गदर्शन व प्रशिक्षण देण्याची आवश्यकता विचारात घेता. आधुनिक पद्धतीचा अवलंब करून गरजेनुसार प्रशिक्षण आयोजित केले . आजपर्यंत प्रशिक्षण घेतलेले प्रशिक्षणार्थी बहुतांश स्वतः व्यावसायिक (उद्योजक) झाले आहे. काही नोकरी सही लागले आहेत. शासनाचे (राज्य व केंद्र) उपक्रम शहरी व ग्रामीण भागात उपलब्ध करून देणारी ही एकमेव संस्था आहे. शासन व उद्योजक यांच्यामधील उत्तम माध्यम राहून प्रामाणिकपनाचे  ध्येय व स्वयंरोजगाराचा भास नव्हेतर ध्यास घेऊन कार्य करण्या करिता उद्योगआशा उदयास आली आहे.  
