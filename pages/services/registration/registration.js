@@ -20,6 +20,7 @@ export const registation = () => {
         if(res.data.applied == "already_applied"){
           alert("Already applied for this service...")
         }else {
+          
           window.location = "/services/service"
         }
           }
