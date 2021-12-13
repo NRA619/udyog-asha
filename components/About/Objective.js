@@ -3,12 +3,12 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import React, {useEffect, useState} from 'react';
 
 export default function Objective({ name, children }) {
-   const [state, setState] =  useState(4);
+   const [state, setState] =  useState(5);
 
     useEffect(() => {
         setTimeout(() => {
         if(state <= 1) {
-        setState(state + 1)
+        setState(state - 1)
         } else {
             setState(0)
         }
@@ -78,7 +78,7 @@ export default function Objective({ name, children }) {
          
          </div>
          }
-         {state == 0 &&
+         {state == 5 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
               src="https://i.postimg.cc/bw0YLcXH/20150325-131638.jpg"
