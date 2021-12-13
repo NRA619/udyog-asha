@@ -99,7 +99,7 @@ const Training = () => {
             }
           })
           .map((ninja) => (
-            <div key={ninja.id}>
+            <Link href={`${ninja._id}`} key={ninja.id}>
               <div className="bg-gray-50 hover:shadow-2xl">
                 <Image
                   src={ninja.img}
@@ -120,7 +120,7 @@ const Training = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
       </div>
       {/* Category 2 */}
@@ -142,7 +142,7 @@ const Training = () => {
             }
           })
           .map((ninja) => (
-            <div key={ninja.id}>
+            <Link href={`${ninja._id}`} key={ninja.id}>
               <div className="bg-gray-50 hover:shadow-2xl">
                 <Image
                   src={ninja.img}
@@ -162,7 +162,7 @@ const Training = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
       </div>
       </div>
