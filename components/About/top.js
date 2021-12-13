@@ -213,13 +213,117 @@ export default function Top() {
         </span>
         {/* 2nd Container */}
       </div>
-      <div className="hidden h-1/4 my-10 md:flex gap-x-10 justify-center items-center text-center ">
-        <span className=" text-black font-semibold md:w-1/2 w-3/4 text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit
-        </span>
+      <div className="h-1/4 my-10 flex justify-center items-center md:hidden text-center ">
+      {state == 0 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="/images/about5.jpeg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 1 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/fLBFQqv1/20160212-112634.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 2 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/WzzyNmWz/20160212-112742.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 3 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/tCLcbxhR/20160425-132007.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 4 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/4y0SmKq5/20160212-164804.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 5 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/gk5C05PW/20160215-170105.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 6 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/QtXPPZcp/20160215-170108.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 7 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/RZHjJRMn/20160218-112735.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
+          {state == 8 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/4y0SmKq5/20160212-164804.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}    
+          {state == 9 && (
+          <div className="glow-blue-500-lg w-3/4 h-full mx-10">
+            <Image
+              src="https://i.postimg.cc/d0cg2y1N/20160218-112658.jpg"
+              className="rounded-md  filter  saturate-120 shadow-2xl"
+              width={190}
+              height={120}
+              layout="responsive"
+            ></Image>
+          </div>
+          )}
       </div>
     </main>
   );
