@@ -112,7 +112,7 @@ const ProductDetail = () => {
             {emaillog === " " && (
               <div className="">
                 <button
-                  className="md:mt-32 bg-white text-black w-40 py-5 mb-16 rounded-sm text-xl font-bold"
+                  className="md:mt-28 mt-10 bg-white text-black w-36 py-3 mb-16 rounded-sm text-lg font-bold"
                   onClick={loginpage}
                 >
                   Login Now
