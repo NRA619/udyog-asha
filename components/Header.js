@@ -57,6 +57,18 @@ export default function Header() {
     window.location.reload();
   };
 
+  async function homepage() {
+    window.location = "/"
+  }
+  async function trainingpage() {
+    window.location = "/training/training"
+  }
+  async function shoppingpage() {
+    window.location = "/product/product"
+  }
+  async function aboutpage() {
+    window.location = "/about"
+  }
   return (
     // Header
     <div className="fixed flex z-50 bg-white justify-between shadow-md border w-full">
@@ -93,28 +105,28 @@ export default function Header() {
             onClick={toggleDrawer}
           />
           <ul className="mt-20">
-            <li className="space-x-3 pl-10 py-4 border-t-2 border-b-2 border-gray-900 border-opacity-50 shadow-2xl  hover:bg-gray-800">
+            <li onClick={homepage} className="space-x-3 pl-10 py-4 border-t-2 border-b-2 border-gray-900 border-opacity-50 shadow-2xl  hover:bg-gray-800">
               <HomeRoundedIcon />
               <Link className="" href="/">
                 Home
               </Link>
             </li>
 
-            <li className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800">
+            <li onClick={trainingpage} className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800">
               <LayersRoundedIcon />
               <Link href="/training/training">Training</Link>
             </li>
-            <li className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800">
+            <li onClick={homepage} className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800">
               <InfoRoundedIcon />
               <a>Services</a>
             </li>
-            <li className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800 hover:cursor-pointer">
+            <li onClick={aboutpage} className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800 hover:cursor-pointer">
               <SupervisedUserCircleRoundedIcon />
               <Link href="/about" className="">
                 About Us
               </Link>
             </li>
-            <li className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800 hover:cursor-pointer">
+            <li onClick={shoppingpage} className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800 hover:cursor-pointer">
               <LocalMallIcon color="secondary" />
               <Link href="/product/product" className="">
                 Shopping
