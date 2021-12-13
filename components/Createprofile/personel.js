@@ -55,7 +55,7 @@ export default function Personel({ ...data }) {
     const email = values.email
     const password_repeat = values.password_repeat
     try {
-      const res = await axios.post("http://localhost:5000/user/createprofile", {
+      const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/createprofile", {
         fullname,  age,  gender, mobileno, email, password_repeat,
       });
       if(res.data.isExists == true) {

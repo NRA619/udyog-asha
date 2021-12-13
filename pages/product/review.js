@@ -20,7 +20,7 @@ export const Review = () => {
   const pid = router.query.data
   useEffect(async () => {
     window.scrollTo(0, 0)
-    const check = await axios.post("http://localhost:5000/product/checkproduct", {
+    const check = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/product/checkproduct", {
       pid: pid
     })
     if (check.data.product === true) {
@@ -32,7 +32,7 @@ export const Review = () => {
         if (email && pid) {
           email = email.replace(/"/g, "");
           setemaillog(email)
-          const response = await axios.post("http://localhost:5000/product/reviewvalidate", {
+          const response = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/product/reviewvalidate", {
             email: email,
             pid: pid
           })
@@ -61,7 +61,7 @@ export const Review = () => {
       let xyz = buff_dec.toString('ascii');
       var email = xyz;
       email = email.replace(/"/g, "");
-      const res = await axios.post("http://localhost:5000/product/review", {
+      const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/product/review", {
         email: email,
         pid: pid,
         product_quality: product_quality,

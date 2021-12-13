@@ -60,7 +60,7 @@ export default function Login() {
     const email = values.profileObj.email;
     // Backend Post
    
-      const res = await axios.post("http://localhost:5000/user/googlelogin", {
+      const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/googlelogin", {
         email: email,
       });
       if (res.data.isExists == false) {
@@ -88,7 +88,7 @@ export default function Login() {
     const passwordsign = values.password_repeat;
     // backend post
     try {
-      const res = await axios.post("http://localhost:5000/user/emaillogin", {
+      const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/emaillogin", {
         email: emailsign,
         password: passwordsign,
       });

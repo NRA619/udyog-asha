@@ -34,7 +34,7 @@ const Address = () => {
     setTimeout(() => {
       setloading(false);
     }, 3000);
-    const res = await axios.post("http://localhost:5000/user/get_address", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/get_address", {
       email: email,
     });
     if (Object.keys(res.data.address).length !== 0  ) {
@@ -52,7 +52,7 @@ const Address = () => {
     const city = values.city;
     const pincode = values.pincode;
     const state = values.state;
-    const res = await axios.post("http://localhost:5000/user/update_address", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/update_address", {
       email: emaillog,
       addline1: addline1,
       addline2: addline2,
@@ -72,7 +72,7 @@ const Address = () => {
     const city = values.city;
     const pincode = values.pincode;
     const state = values.state;
-    const res = await axios.post("http://localhost:5000/user/update_address", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/update_address", {
       email: emaillog,
       addline1: addline1,
       addline2: addline2,

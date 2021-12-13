@@ -26,12 +26,12 @@ const ProductDetail = () => {
       }
     }
     if (productId) {
-      const check = await axios.post("http://localhost:5000/tr/checkproduct", {
+      const check = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/checkproduct", {
         pid: productId,
       });
       if (check.data.product === true && Object.keys(info).length === 0) {
         const res = await fetch(
-          `http://localhost:5000/tr/Details/${productId}`
+          `https://murmuring-eyrie-62394.herokuapp.com/tr/Details/${productId}`
         );
         const post = await res.json();
         setinfo(post);
@@ -44,7 +44,7 @@ const ProductDetail = () => {
   }, [productId, emaillog]);
   async function checkPaid() {
     if (emaillog !== " ") {
-      const resp = await axios.post("http://localhost:5000/tr/reviewcheck", {
+      const resp = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/reviewcheck", {
         email: emaillog,
         pid: productId,
       });

@@ -6,7 +6,7 @@ import BarLoader from "react-spinners/BarLoader";
 import axios from "axios";
 
 // export const getStaticProps = async () => {
-//   const res = await fetch("http://localhost:5000/product/Getproduct");
+//   const res = await fetch("https://murmuring-eyrie-62394.herokuapp.com/product/Getproduct");
 //   if(res) {
 //     const data = await res.json();
 //     return {
@@ -28,7 +28,7 @@ const Product = () => {
   const [ninjas, setninjas] = useState([]);
 
   useEffect(async () => {
-    const res = await axios.post("http://localhost:5000/product/Getproduct");
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/product/Getproduct");
     setninjas(res.data);
     console.log(res.data);
     setTimeout(() => {

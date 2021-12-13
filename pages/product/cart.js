@@ -33,7 +33,7 @@ const Cart = () => {
     }, 3000);
 
     if (Object.keys(pname).length === 0 ) {
-      const get_data = await axios.post("http://localhost:5000/Cart/GetCart", {
+      const get_data = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/Cart/GetCart", {
         email: email,
       });
       setpname(get_data.data.product_array);
@@ -53,7 +53,7 @@ const Cart = () => {
       });
       settotalprice(y);
     }
-    const res = await axios.post("http://localhost:5000/user/get_address", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/get_address", {
       email: email,
     });
     if (Object.keys(res.data.address).length !== 0  ) {
@@ -62,7 +62,7 @@ const Cart = () => {
       } 
     }
     if(Object.keys(emaillog).length !== 0) {
-      const resuser = await axios.post("http://localhost:5000/user/getdata", {
+      const resuser = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/getdata", {
         email: emaillog,
     });
       setfname(resuser.data.fullname);
@@ -116,7 +116,7 @@ const Cart = () => {
   const updatequantity = async (xyz) => {
     const pid = xyz.productid;
     const qty = xyz.quantity;
-    const update = await axios.post("http://localhost:5000/Cart/SaveCart", {
+    const update = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/Cart/SaveCart", {
       email: emaillog,
       productId: pid,
       quantity: qty,
@@ -124,7 +124,7 @@ const Cart = () => {
   };
 
   const removecart = async (pid) => {
-    const remove = await axios.post("http://localhost:5000/Cart/remove", {
+    const remove = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/Cart/remove", {
       email: emaillog,
       id: pid,
     })
@@ -156,7 +156,7 @@ const Cart = () => {
       str = str + "product:"+ " " + data_product.product_name + " " + "|" + " " + "qty:" + " "  + data_product.quantity + " " + "|" + " " + "Price:" + " " + "Rs." + (data_product.quantity*data_product.price)/100 + "\n"
     })
     const responsed = await axios.post(
-      "http://localhost:5000/payment/createorder",
+      "https://murmuring-eyrie-62394.herokuapp.com/payment/createorder",
       {
         price: totalprice,
       }
@@ -185,7 +185,7 @@ const Cart = () => {
         };
 
         const res = await axios.post(
-          `http://localhost:5000/payment/payments/${data.razorpayPaymentId}`, {
+          `https://murmuring-eyrie-62394.herokuapp.com/payment/payments/${data.razorpayPaymentId}`, {
             product_array: pname,
           }
         );
@@ -216,7 +216,7 @@ const Cart = () => {
     window.location = "/product/address"
   }
   async function deleteall() {
-    const remove = await axios.post("http://localhost:5000/Cart/removeall", {
+    const remove = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/Cart/removeall", {
       email: emaillog,
    })
   }

@@ -5,7 +5,7 @@ import { useState, useEffect, } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import axios from "axios";
 // export const getStaticProps = async () => {
-//   const res = await fetch("http://localhost:5000/tr/GetTraining");
+//   const res = await fetch("https://murmuring-eyrie-62394.herokuapp.com/tr/GetTraining");
   
 //   if(res) {
 //     const data = await res.json();
@@ -27,7 +27,7 @@ const Training = () => {
   
   useEffect(async () => {
     window.scrollTo(0, 0)
-    const res = await axios.post("http://localhost:5000/tr/GetTraining");
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/GetTraining");
     setninjas(res.data);
     console.log(res.data);
     setloading(true);

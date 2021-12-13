@@ -28,7 +28,7 @@ export const Forgetpassword = () => {
   password.current = watch("password", "");
   async function onSubmitForm(values) {
     const email = values.email;
-    const res = await axios.post("http://localhost:5000/user/forgetpassword", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/forgetpassword", {
       email: email,
     });
     if (res.data.otp === "notfound") {
@@ -44,7 +44,7 @@ export const Forgetpassword = () => {
   async function onSubmitForm_2(values) {
     const email = values.email;
     const password = values.password_repeat;
-    const res = await axios.post("http://localhost:5000/user/updatepassword", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/updatepassword", {
       email: email,
       password: password,
     });

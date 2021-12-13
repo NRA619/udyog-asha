@@ -38,7 +38,7 @@ const Thumbnail = () => {
         Object.keys(setmno).length === 0 ||
         Object.keys(setemaillog).length === 0
       ) {
-        const res = await axios.post("http://localhost:5000/user/getdata", {
+        const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/getdata", {
           email: email,
         });
         setfname(res.data.fullname);
@@ -47,7 +47,7 @@ const Thumbnail = () => {
       }
     }
 
-    // const response = await fetch("http://localhost:5000/payment/createorder");
+    // const response = await fetch("https://murmuring-eyrie-62394.herokuapp.com/payment/createorder");
     // const data = await response.json();
     // console.log(data);
     if (Object.keys(info).length === 0) {
@@ -60,7 +60,7 @@ const Thumbnail = () => {
       if (Object.keys(details).length === 0) {
         try {
           const res = await axios.post(
-            "http://localhost:5000/payment/createorder",
+            "https://murmuring-eyrie-62394.herokuapp.com/payment/createorder",
             {
               price: p,
             }
@@ -79,7 +79,7 @@ const Thumbnail = () => {
   async function getdata() {
     if (productId) {
       const respo = await fetch(
-        `http://localhost:5000/tr/Details/${productId}`
+        `https://murmuring-eyrie-62394.herokuapp.com/tr/Details/${productId}`
       );
       const dat = await respo.json();
       setinfo(dat);
@@ -126,7 +126,7 @@ const Thumbnail = () => {
         };
 
         const res = await axios.post(
-          `http://localhost:5000/payment/payments/${data.razorpayPaymentId}`, {
+          `https://murmuring-eyrie-62394.herokuapp.com/payment/payments/${data.razorpayPaymentId}`, {
             product_array: info,
           }
         );

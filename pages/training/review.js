@@ -20,7 +20,7 @@ export const Review = () => {
   useEffect(async () => {
     window.scrollTo(0, 0);
     const check = await axios.post(
-      "http://localhost:5000/tr/checkproduct",
+      "https://murmuring-eyrie-62394.herokuapp.com/tr/checkproduct",
       {
         pid: pid,
       }
@@ -35,7 +35,7 @@ export const Review = () => {
           email = email.replace(/"/g, "");
           setemaillog(email);
           const response = await axios.post(
-            "http://localhost:5000/tr/reviewvalidate",
+            "https://murmuring-eyrie-62394.herokuapp.com/tr/reviewvalidate",
             {
               email: email,
               pid: pid,
@@ -63,7 +63,7 @@ export const Review = () => {
       let xyz = buff_dec.toString("ascii");
       var email = xyz;
       email = email.replace(/"/g, "");
-      const res = await axios.post("http://localhost:5000/tr/review", {
+      const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/review", {
         email: email,
         pid: pid,
         audio: audio,

@@ -10,7 +10,7 @@ export default function Courses() {
 
     useEffect(async () => {
         window.scrollTo(0, 0)
-        const res = await axios.post("http://localhost:5000/tr/GetTraining");
+        const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/GetTraining");
         setDetails(res.data);
     }, [])
     return (
