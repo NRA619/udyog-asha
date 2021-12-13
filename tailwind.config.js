@@ -26,6 +26,7 @@ module.exports = {
         'addressfinal': "url('/addressfinal.jpg')",
         'cartfinal2': "url('/cartfinal2.png')",
         'forgetpassword': "url('/forgetpassword.png')",
+        'breakbg': "url('/breakbg.jpg')",
 
       }),
       width: {
