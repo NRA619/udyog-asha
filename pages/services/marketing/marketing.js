@@ -21,7 +21,7 @@ export const marketing = () => {
         if(res.data.applied == "already_applied"){
           alert("Already applied for this service...")
         }if(res.data.applied == "applied"){
-          window.location == "/services/service"
+          window.location = "/services/service"
         }
           }
       }else {
