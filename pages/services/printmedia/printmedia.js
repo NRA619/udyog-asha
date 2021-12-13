@@ -4,7 +4,6 @@ import { parseCookies } from "../../../components/cookie";
 
 export const printmedia = () => {
     async function apply(values) {
-        console.log(values)
         const data = parseCookies();
         if (data.user) {
           let buff_dec = new Buffer.from(data.user, "base64");
@@ -21,7 +20,7 @@ export const printmedia = () => {
         if(res.data.applied == "already_applied"){
           alert("Already applied for this service...")
         }else {
-          console.log(res)
+          window.location = "/services/service"
         }
           }
       }else {
