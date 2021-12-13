@@ -19,8 +19,8 @@ export const printmedia = () => {
         })
         if(res.data.applied == "already_applied"){
           alert("Already applied for this service...")
-        }else {
-          window.location = "/services/service"
+        }if(res.data.applied == "applied"){
+          window.location == "/services/service"
         }
           }
       }else {
