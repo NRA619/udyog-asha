@@ -8,7 +8,7 @@ export default function Objective({ name, children }) {
     useEffect(() => {
         setTimeout(() => {
         if(state <= 1) {
-        setState(state - 1)
+        setState(state + 1)
         } else {
             setState(0)
         }
