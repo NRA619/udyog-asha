@@ -98,9 +98,9 @@ export default function Objective({ name, children }) {
          <span className="w-1/2  md:hidden">
          <div className="md:w-3/4 mt-5">
          {state == 0 &&
-         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+         <div className=" glow-blue-900-xl">   
             <Image
-              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
+              src="https://i.postimg.cc/dQX0Vjmd/20150411-144345.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -110,9 +110,9 @@ export default function Objective({ name, children }) {
          </div>
          }
          {state == 1 &&
-         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+         <div className=" glow-blue-900-xl">   
             <Image
-              src="https://i.postimg.cc/85zCjy0d/20150216-111737.jpg"
+              src="https://i.postimg.cc/yxJYTDBk/20151207-134240.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -122,9 +122,9 @@ export default function Objective({ name, children }) {
          </div>
          }
          {state == 2 &&
-         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+         <div className=" glow-blue-900-xl">   
             <Image
-              src="https://i.postimg.cc/hjZtx9kk/20150216-111845.jpg"
+              src="https://i.postimg.cc/qq9BDpMQ/20151209-141023.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -134,9 +134,9 @@ export default function Objective({ name, children }) {
          </div>
          }
          {state == 3 &&
-         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+         <div className=" glow-blue-900-xl">   
             <Image
-              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
+              src="https://i.postimg.cc/XvVjzH4M/20151210-091439.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -146,9 +146,21 @@ export default function Objective({ name, children }) {
          </div>
          }
          {state == 4 &&
-         <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
+         <div className=" glow-blue-900-xl">   
             <Image
-              src="https://i.postimg.cc/bNtwDS35/20150325-121053.jpg"
+              src="https://i.postimg.cc/vm3YFrZ4/20151210-123821.jpg"
+              className="filter saturate-150 shadow-xl"
+              width={1300}
+              height={800}
+              layout="responsive"
+            ></Image>
+         
+         </div>
+         }
+         {state == 5 &&
+         <div className=" glow-blue-900-xl">   
+            <Image
+              src="https://i.postimg.cc/gjShGmC3/20151216-112703.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
