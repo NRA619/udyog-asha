@@ -73,7 +73,7 @@ const Thumbnail = () => {
     }
    setTimeout(() => {
       setloading(false);
-    }, 2000);
+    }, 5000);
   }, [info, details, productId]);
 
   async function getdata() {
