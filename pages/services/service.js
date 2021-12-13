@@ -17,7 +17,7 @@ export const service = () => {
 
     return (
         <div className="h-full min-h-screen w-full pt-20 px-10">
-            <div className="bg-yellow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-full w-full mt-20 gap-4">
+            <div className="bg-yellow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-full w-full mt-20 gap-4 mb-20">
                 <div onClick={bussiness} className="flex flex-col justify-between bg-yellow-400 rounded-lg h-72  shadow-md">
                     <span className="text-center pt-10 px-5 text-black">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
