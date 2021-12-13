@@ -6,7 +6,7 @@ export default function Review({ name, children }) {
             <div className="flex flex-col gap-2">
                 <div className="">
                     <PersonOutlineIcon fontSize="large"> </PersonOutlineIcon>
-                    <span className="text-xl font-semibold block">Rushikesh kulkarni</span>
+                    <span className="text-xl font-semibold block">Hrithik Singh</span>
                     <span className="text-large block text-gray-800">founder and ceo</span>
                 </div>
                 <div>
