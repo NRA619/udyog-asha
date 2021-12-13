@@ -69,6 +69,9 @@ export default function Header() {
   async function aboutpage() {
     window.location = "/about"
   }
+  async function servicepage() {
+    window.location = "/services/service"
+  }
   return (
     // Header
     <div className="fixed flex z-50 bg-white justify-between shadow-md border w-full">
@@ -116,9 +119,9 @@ export default function Header() {
               <LayersRoundedIcon />
               <Link href="/training/training">Training</Link>
             </li>
-            <li onClick={homepage} className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800">
+            <li onClick={servicepage} className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800">
               <InfoRoundedIcon />
-              <a>Services</a>
+              <Link href="/services/service">Services</Link>
             </li>
             <li onClick={aboutpage} className="space-x-3 pl-10 py-4 border-b-2 border-gray-900 border-opacity-50 hover:bg-gray-800 hover:cursor-pointer">
               <SupervisedUserCircleRoundedIcon />
@@ -196,16 +199,34 @@ export default function Header() {
               </Link>
             </li>
           )}
-          <li
-            variants={container}
-            initial="hidden"
-            animate="visible"
-            className="md:pt-4 hover:cursor-pointer"
-          >
-            <a className="font-semibold hover:border-blue-500 hover:border-b-4 hover:text-blue-900 hover:font-bold hover:shadow-md transition duration-700 hover:ease-in-out">
-              Services
-            </a>
-          </li>
+           {router.pathname == "/services/service" && (
+            <li
+              variants={container}
+              initial="hidden"
+              animate="visible"
+              className="md:pt-4 hover:cursor-pointer"
+            >
+              <Link href="/services/service">
+                <span className=" border-blue-500 border-b-4 text-blue-900 font-bold shadow-md transition duration-700 hover:ease-in-out">
+                  Services
+                </span>
+              </Link>
+            </li>
+          )}
+          {router.pathname != "/services/service" && (
+            <li
+              variants={container}
+              initial="hidden"
+              animate="visible"
+              className="md:pt-4 hover:cursor-pointer"
+            >
+              <Link href="/services/service">
+                <span className="font-semibold hover:border-blue-500 hover:border-b-4 hover:text-blue-900 hover:font-bold hover:shadow-md transition duration-700 hover:ease-in-out">
+                  Services
+                </span>
+              </Link>
+            </li>
+          )}
           {router.pathname == "/about" && (
             <li
               variants={container}
