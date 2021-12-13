@@ -59,7 +59,14 @@ export default function Personel({ ...data }) {
         fullname,  age,  gender, mobileno, email, password_repeat,
       });
       if(res.data.isExists == true) {
-        window.location = "/login"
+        let buff = new Buffer.from(res.data.email);
+        let stringToBase64 = buff.toString('base64');
+        setCookie("user", JSON.stringify(stringToBase64), {
+          path: "/",
+          maxAge: 3600, // Expires After 1hr
+          sameSite: true,
+        });
+        window.location = "/"
       }
     }catch(err){
       alert("Error")
