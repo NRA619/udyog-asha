@@ -84,7 +84,7 @@ export const Review = () => {
       )}
       {emaillog !== " " && (
         <div className="bg-feed bg-cover h-full w-full flex justify-center">
-          <div className="bg-white bg-opacity-95 border border-blue-400 h-1/2 w-3/4 my-20 shadow-xl">
+          <div className="bg-white bg-opacity-95 border border-blue-400 h-1/2 w-full md:w-3/4 my-20 shadow-xl">
             <div className="flex justify-center">
               <span className="p-4 pt-10 text-3xl font-bold underline">
                 FeedBack Form
