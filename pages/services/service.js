@@ -22,7 +22,7 @@ export const service = () => {
                     <span className="text-center pt-10 px-5 text-black">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-yellow-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-yellow-100 hover:bg-black hover:text-white rounded-b-lg text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Bussiness Support
                     </button>
                 </div>
@@ -30,7 +30,7 @@ export const service = () => {
                     <span className="text-center pt-10 px-5 text-black">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-green-100 hover:bg-black hover:text-white rounded-b-lg text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Registration
                     </button>
                 </div>
@@ -38,15 +38,15 @@ export const service = () => {
                     <span className="text-center pt-10 px-5 text-black">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-blue-100 hover:bg-black hover:text-white rounded-b-lg text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Print Media
                     </button>
                 </div>
-                <div onClick={marketing} className="flex flex-col justify-between bg-blue-400 rounded-lg h-72  shadow-md">
+                <div onClick={marketing} className="flex flex-col justify-between bg-red-400 rounded-lg h-72  shadow-md">
                     <span className="text-center pt-10 px-5 text-black">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-red-100 hover:bg-black hover:text-white rounded-b-lg text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Social Media Marketing
                     </button>
                 </div>

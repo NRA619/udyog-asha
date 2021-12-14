@@ -35,7 +35,7 @@ export const printmedia = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Graphic Designing
           </span>
-          <button onClick={() => apply("Graphic Designing")} className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Graphic Designing")} className="bg-blue-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -43,7 +43,7 @@ export const printmedia = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Product labelling
           </span>
-          <button onClick={() => apply("Product labelling")} className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Product labelling")} className="bg-blue-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -51,7 +51,7 @@ export const printmedia = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             label printing
           </span>
-          <button onClick={() => apply("label printing")} className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("label printing")} className="bg-blue-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -59,7 +59,7 @@ export const printmedia = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
               Packaging
           </span>
-          <button onClick={() => apply("Packaging")} className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Packaging")} className="bg-blue-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -67,7 +67,7 @@ export const printmedia = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
               I card
           </span>
-          <button onClick={() => apply("I card")} className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("I card")} className="bg-blue-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -75,7 +75,7 @@ export const printmedia = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Sticker
           </span>
-          <button onClick={() => apply("Sticker")} className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Sticker")} className="bg-blue-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -83,7 +83,7 @@ export const printmedia = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Visiting cards
           </span>
-          <button onClick={() => apply("Visiting cards")} className="bg-blue-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Visiting cards")} className="bg-blue-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>

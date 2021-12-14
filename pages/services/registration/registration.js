@@ -35,7 +35,7 @@ export const registation = () => {
           <span className="text-xl text-center pt-10 px-5 text-black">
             Busniess registration (LLP partnership proprietorship up Private Limited public limited)
           </span>
-          <button onClick={() => apply("Busniess registration (LLP partnership proprietorship up Private Limited public limited)")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Busniess registration (LLP partnership proprietorship up Private Limited public limited)")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -43,7 +43,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             GST
           </span>
-          <button onClick={() => apply("GST")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("GST")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -51,7 +51,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             e-PAN card
           </span>
-          <button onClick={() => apply("e-PAN card")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("e-PAN card")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -59,7 +59,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
               Trademark registration
           </span>
-          <button onClick={() => apply("Trademark registration")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Trademark registration")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -67,7 +67,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Fssai (food) licence and registration
           </span>
-          <button onClick={() => apply("Fssai (food) licence and registration")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Fssai (food) licence and registration")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -75,7 +75,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Shop act licence
           </span>
-          <button onClick={() => apply("Shop act licence")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Shop act licence")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -83,7 +83,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Udemy msme registration
           </span>
-          <button onClick={() => apply("Udemy msme registration")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Udemy msme registration")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -91,7 +91,7 @@ export const registation = () => {
           <span className="text-xl text-center pt-10 px-5 text-black">
             DSC certificate
           </span>
-          <button onClick={() => apply("DSC certificate")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("DSC certificate")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -99,7 +99,7 @@ export const registation = () => {
           <span className="text-xl text-center pt-10 px-5 text-black">
             import export code
           </span>
-          <button onClick={() => apply("import export code")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("import export code")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -107,7 +107,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Barcode
           </span>
-          <button onClick={() => apply("Barcode")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Barcode")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -115,7 +115,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             apeda registration
           </span>
-          <button onClick={() => apply("apeda registration")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("apeda registration")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -123,7 +123,7 @@ export const registation = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
              Spices Board registration
           </span>
-          <button onClick={() => apply("Spices Board registration")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Spices Board registration")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
              Apply Now
           </button>
         </div>
@@ -131,7 +131,7 @@ export const registation = () => {
           <span className="text-xl text-center pt-10 px-5 text-black">
             ISO certification
           </span>
-          <button onClick={() => apply("ISO certification")} className="bg-green-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("ISO certification")} className="bg-green-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>

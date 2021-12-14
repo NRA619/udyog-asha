@@ -37,7 +37,7 @@ export const bussiness_support = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Basic 6 month
           </span>
-          <button onClick={() => apply("Basic 6 month")} className="bg-yellow-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Basic 6 month")} className="bg-yellow-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -45,7 +45,7 @@ export const bussiness_support = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Expert advice best way to validate your are idea
           </span>
-          <button onClick={() => apply("Expert advice best way to validate your are idea")} className="bg-yellow-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Expert advice best way to validate your are idea")} className="bg-yellow-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -53,13 +53,13 @@ export const bussiness_support = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Professional up to 25 lacs
           </span>
-          <button onClick={() => apply("Professional up to 25 lacs")} className="bg-yellow-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Professional up to 25 lacs")} className="bg-yellow-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
         <div className="flex flex-col justify-between bg-yellow-300 rounded-lg h-72 shadow-md">
           <span className="text-2xl text-center pt-10 px-5 text-black">Custom</span>
-          <button onClick={() => apply("Custom")} className="bg-yellow-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Custom")} className="bg-yellow-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>

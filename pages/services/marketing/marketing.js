@@ -37,7 +37,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Facebook page create and setup
           </span>
-          <button onClick={() => apply("Facebook page create and setup")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Facebook page create and setup")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -45,7 +45,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Youtube channel create and setup
           </span>
-          <button onClick={() => apply("Youtube channel create and setup")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Youtube channel create and setup")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -53,7 +53,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             WhatsApp business
           </span>
-          <button onClick={() => apply("WhatsApp business")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("WhatsApp business")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -61,7 +61,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Facebook marketing
           </span>
-          <button onClick={() => apply("Facebook marketing")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Facebook marketing")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -69,7 +69,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
              Banner designing
           </span>
-          <button onClick={() => apply("Banner designing")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Banner designing")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -77,7 +77,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Digital visiting card
           </span>
-          <button onClick={() => apply("Digital visiting card")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Digital visiting card")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -85,7 +85,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Google my business create and setup
           </span>
-          <button onClick={() => apply("Google my business create and setup")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Google my business create and setup")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -93,7 +93,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Website development
           </span>
-          <button onClick={() => apply("Website development")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Website development")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -101,7 +101,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Block development
           </span>
-          <button onClick={() => apply("Block development")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Block development")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
@@ -109,7 +109,7 @@ export const marketing = () => {
           <span className="text-2xl text-center pt-10 px-5 text-black">
             Promotional video creation
           </span>
-          <button onClick={() => apply("Promotional video creation")} className="bg-red-100 text-gray-800 bg-opacity-60 shadow-xl py-4">
+          <button onClick={() => apply("Promotional video creation")} className="bg-red-100 text-gray-800 hover:bg-black hover:text-white rounded-b-lg bg-opacity-60 shadow-xl py-4">
             Apply Now
           </button>
         </div>
