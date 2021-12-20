@@ -27,7 +27,10 @@ module.exports = {
         'cartfinal2': "url('/cartfinal2.png')",
         'forgetpassword': "url('/forgetpassword.png')",
         'breakbg': "url('/breakbg.jpg')",
-
+        'bsupport': "url('/bsupport.jpg')",
+        'registration': "url('/registration.jpg')",
+        'pmedia': "url('/pmedia.jpg')",
+        'marketing': "url('/marketing.png')",
       }),
       width: {
         '6/7': '87.7142857%',
