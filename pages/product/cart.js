@@ -202,7 +202,7 @@ const Cart = () => {
         contact: "+91" + mno,
       },
       notes: {
-        address: details[0].addressline1 + "," + " " + details[0].addressline2 + "," + " " + details[0].city + "," + " " + details[0].pincode + "," + " " + details[0].state,
+        address: details[0][0].addressline1 + "," + " " + details[0][0].addressline2 + "," + " " + details[0][0].city + "," + " " + details[0][0].pincode + "," + " " + details[0][0].state,
       },
       theme: {
         color: "#FF0000",
@@ -315,7 +315,7 @@ const Cart = () => {
                       </div>
                       <div className="flex justify-center mt-4">
                         <span className="flex justify-center break-all text-center italic">
-                        {details[0].addressline1}, {details[0].addressline2}, {details[0].city}, {details[0].pincode}, {details[0].state}.
+                        {details[0][0].addressline1}, {details[0][0].addressline2}, {details[0][0].city}, {details[0][0].pincode}, {details[0][0].state}.
                         </span>
                       </div>
                       </div>
