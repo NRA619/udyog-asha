@@ -50,7 +50,7 @@ export default function Footer() {
                     <span className="text-white ml-2">+9192939494</span>
                 </span>
                 <span className='text-white'>
-                udyogaasha@ gmail.com 
+                udyogaasha@gmail.com 
                 </span>
                 <div className="font-light text-white">
                     <span className="block">102 c/26 , Bhawani peth</span>
@@ -140,7 +140,7 @@ export default function Footer() {
 
                 <div className="flex md:justify-center text-white w-1/2 p-2 space-x-5">
                     <InstagramIcon fontSize="small" className=""></InstagramIcon>
-                    <FacebookIcon fontSize="small" className=""></FacebookIcon>
+                    <FacebookIcon onClick={() => window.location = "https://www.facebook.com/udyogaasha/"} fontSize="small" className=""></FacebookIcon>
                     <TwitterIcon fontSize="small"></TwitterIcon>
                 </div>
                 </div>
