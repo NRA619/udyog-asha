@@ -30,6 +30,7 @@ export default function Footer() {
 
       if(res.data.done === true) {
           alert("Mail send successfully");
+          window.location.reload();
       }else {
           alert("Oops! Something went wrong");
       }
