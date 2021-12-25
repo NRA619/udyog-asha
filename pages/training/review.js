@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { parseCookies } from "../../components/cookie";
+import BarLoader from "react-spinners/BarLoader";
 
 export const Review = () => {
   const router = useRouter();
@@ -16,6 +17,7 @@ export const Review = () => {
     handleSubmit,
     watch,
   } = useForm();
+  const [loading, setloading] = useState(true)
   const pid = router.query.data;
   useEffect(async () => {
     window.scrollTo(0, 0);
@@ -41,6 +43,7 @@ export const Review = () => {
               pid: pid,
             }
           );
+          setloading(false);
           if (response.data.Done === true) {
             setdone(true);
           } else {
@@ -77,12 +80,17 @@ export const Review = () => {
   }
   return (
     <div className="h-full w-full pt-6">
-      {emaillog === " " && (
+      {loading == true && (
+        <div className="flex flex-col justify-center items-center h-screen w-screen">
+          <BarLoader color="#000000" height={4} width={100} />
+        </div>
+      )}
+      {emaillog === " " && loading == false && (
         <div className="h-screen w-full flex justify-center items-center">
           404. Page not found
         </div>
       )}
-      {emaillog !== " " && (
+      {emaillog !== " " && loading == false && (
         <div className="bg-feed bg-cover h-full w-full flex justify-center">
           <div className="bg-white bg-opacity-95 border border-blue-400 h-1/2 w-full md:w-3/4 my-20 shadow-xl">
             <div className="flex justify-center">
