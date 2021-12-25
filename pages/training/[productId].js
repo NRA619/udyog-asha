@@ -138,8 +138,16 @@ const ProductDetail = () => {
                 <div key={ch.id}>
                   {
                     <div className="mt-5 ml-2 md:ml-10">
-                      <div className="text-xl">Chapter: {ch.name}</div>
-                      <p className="ml-10 md:ml-20">{ch.details}</p>
+                      <div className="text-xl">Day: {ch.name}</div>
+                      <p className="ml-10 md:ml-20">{ch.details.map((item, index) => (
+                        <div key={index}>
+                          {
+                            <div className="bg-black text-white h-40">
+                              {item[index]}
+                            </div>
+                          }
+                        </div>
+                      ))}</p>
                     </div>
                   }
                 </div>
