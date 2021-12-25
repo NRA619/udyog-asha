@@ -82,7 +82,7 @@ const Training = () => {
         ></input>
       </div>
       {/* Category1 */}
-      <div className="mt-20 ml-5 text-red-500 text-xl w-full flex">
+      <div className="mt-20 ml-5 text-red-500 text-xl w-full md:flex grid grid-cols-3">
         <button onClick={() => setfood(0)} className="">
           {food == 0 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 ">Food and Food Product</div>}
         </button>
