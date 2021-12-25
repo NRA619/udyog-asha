@@ -83,15 +83,15 @@ const Training = () => {
       </div>
       {/* Category1 */}
       <div className="mt-20 ml-5 text-red-500 text-xl w-full flex">
-        <button onClick={() => setfood(0)} className="text-red-500">
-          Food and Food Product
+        <button onClick={() => setfood(0)} className="">
+          {food == 0 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 border-b border-red-500">Food and Food Product</div>}
         </button>
         <button onClick={() => setfood(1)} className="text-red-500">
-          Agro Processing
+        {food == 1 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Agro-Processing</div> : <div className="text-red-500 px-3 py-1 border-b border-red-500">Agro-Processing</div>}
         </button>
       </div>
       <span className="h-1 w-full bg-black"></span>
-      <div className = "mt-2 ml-5 bg-red-400 w-20 rounded-lg h-1"></div>
+      
       {food == 0 && (
         <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
         {ninjas
@@ -134,8 +134,6 @@ const Training = () => {
       )}
       
       {/* Category 2 */}
-      
-      <div className = "mt-2 ml-5 bg-red-400 w-12 rounded-lg h-1"></div>
       {food == 1 && (
         <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
         {ninjas
