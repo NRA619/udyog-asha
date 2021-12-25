@@ -27,7 +27,7 @@ export const service = () => {
                     </button>
                 </div>
                 <div onClick={registration} className="flex flex-col justify-between bg-registration bg-cover rounded-lg h-72  shadow-md">
-                    <span className="invisible text-center pt-10 px-5 rounded-t-lg text-black bg-green-100 bg-opacity-60 h-full">
+                    <span className=" text-center pt-10 px-5 rounded-t-lg text-black bg-green-100 bg-opacity-60 h-full">
                     <span className="invisible">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>         
                     </span>
                     <button className="bg-green-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-black text-gray-800 bg-opacity-60 shadow-xl py-4">
@@ -35,7 +35,7 @@ export const service = () => {
                     </button>
                 </div>
                 <div onClick={printmedia} className="flex flex-col justify-between bg-pmedia bg-cover rounded-lg h-72  shadow-md">
-                    <span className="invisible text-center pt-10 px-5 rounded-t-lg text-black  bg-blue-100 bg-opacity-60 h-full">
+                    <span className=" text-center pt-10 px-5 rounded-t-lg text-black  bg-blue-100 bg-opacity-60 h-full">
                     <span className="invisible">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>        
                     </span>
                     <button className="bg-blue-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-black text-gray-800 bg-opacity-60 shadow-xl py-4">
@@ -43,7 +43,7 @@ export const service = () => {
                     </button>
                 </div>
                 <div onClick={marketing} className="flex flex-col justify-between bg-marketing bg-cover rounded-lg h-72  shadow-md">
-                    <span className="invisible text-center pt-10 px-5 rounded-t-lg  text-black bg-red-100 bg-opacity-60 h-full">
+                    <span className=" text-center pt-10 px-5 rounded-t-lg  text-black bg-red-100 bg-opacity-60 h-full">
                     <span className="invisible">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>         
                     </span>
                     <button className="bg-red-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-black text-gray-800 bg-opacity-60 shadow-xl py-4">
