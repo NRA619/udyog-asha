@@ -110,23 +110,23 @@ const Address = () => {
           </div>
           <div className="flex justify-between">
             <span>Address line 1</span>
-            <span className="underline break-all">{details[0][0].addressline1}</span>
+            <span className="underline break-all">{details[0].addressline1}</span>
           </div>
           <div className="flex justify-between">
             <span>Address line 2</span>
-            <span className="underline break-all">{details[0][0].addressline2}</span>
+            <span className="underline break-all">{details[0].addressline2}</span>
           </div>
           <div className="flex justify-between">
             <span>City</span>
-            <span className="underline break-all">{details[0][0].city}</span>
+            <span className="underline break-all">{details[0].city}</span>
           </div>
           <div className="flex justify-between">
             <span>State</span>
-            <span className="underline break-all">{details[0][0].state}</span>
+            <span className="underline break-all">{details[0].state}</span>
           </div>
           <div className="flex justify-between">
             <span>Pin Code</span>
-            <span className="underline break-all">{details[0][0].pincode}</span>
+            <span className="underline break-all">{details[0].pincode}</span>
           </div>
         </div>
         }
@@ -305,7 +305,7 @@ const Address = () => {
           {...register("state", {
             required: true,
           })}
-          className="text-white bg-transparent border-b-2 border-red-500 w-2/3 focus:outline-none"
+          className="text-black bg-transparent border-b-2 border-red-500 w-2/3 focus:outline-none"
         >
           <option value="Andhra Pradesh">Andhra Pradesh</option>
           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
