@@ -43,7 +43,7 @@ export default function Hometop() {
             <div className = "flex flex-col w-full md:w-1/2  h-3/4 pt-20 md:pt-0 md:justify-center md:items-start pl-2 md:pl-10 text-start">
             <motion.div variants={container} initial="hidden" animate="visible" className="flex  flex-col  justify-start pl-4">
             <div className = "hidden md:flex">
-                <Image src = "/MOVTC13.png" width={180} height= {180}></Image>
+                <Image src = "/MOVTC13.png" width={220} height= {220}></Image>
             </div>
             <div className = "md:hidden flex">
                 <Image src = "/MOVTC13.png" width={100} height= {100}></Image>
