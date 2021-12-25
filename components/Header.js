@@ -86,7 +86,7 @@ export default function Header() {
       {/*  Logo */}
       <h1 className=" text-md flex font-bold text-gray-800 items-center md:ml-5">
         <div className="flex justify-center">
-          <Image src="/MOVTC1.png" width={60} height={60}></Image>
+          {/* <Image src="/MOVTC1.png" width={60} height={60}></Image> */}
         </div>
         <span className="text-lg flex">
           <span className="text-red-700">उद्योग</span>
