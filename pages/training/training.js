@@ -84,10 +84,19 @@ const Training = () => {
       {/* Category1 */}
       <div className="mt-20 ml-5 text-red-500 text-xl w-full flex">
         <button onClick={() => setfood(0)} className="">
-          {food == 0 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 ">Food and Food Product</div>}
+          {food == 0 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 ">Food and Food Product</div>}
         </button>
         <button onClick={() => setfood(1)} className="text-red-500">
-        {food == 1 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Agro-Processing</div> : <div className="text-red-500 px-3 py-1">Agro-Processing</div>}
+        {food == 1 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Agro-Processing</div> : <div className="text-red-500 px-3 py-1">Agro-Processing</div>}
+        </button>
+        <button onClick={() => setfood(2)} className="text-red-500">
+        {food == 2 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Technical Training</div> : <div className="text-red-500 px-3 py-1">Technical Training</div>}
+        </button>
+        <button onClick={() => setfood(3)} className="text-red-500">
+        {food == 3 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Business Idea</div> : <div className="text-red-500 px-3 py-1">Business Idea</div>}
+        </button>
+        <button onClick={() => setfood(4)} className="text-red-500">
+        {food == 4 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Entrepreneurship Development</div> : <div className="text-red-500 px-3 py-1">Entrepreneurship Development</div>}
         </button>
       </div>
       <span className="h-1 w-full bg-black"></span>
@@ -144,6 +153,126 @@ const Training = () => {
               }
             } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
               if (val.category == "agro-processing" || val.category == "Agro-Processing") {
+                return val;
+              }
+            }
+          })
+          .map((ninja) => (
+            <Link href={`${ninja._id}`} key={ninja.id}>
+              <div className="bg-gray-50 hover:shadow-2xl">
+                <Image
+                  src={ninja.img}
+                  width={1200}
+                  height={650}
+                  layout="responsive"
+                 
+                ></Image>
+                <div className="ml-5 font-semibold text-lg">{ninja.pname}</div>
+                <div className="ml-5">Rs.{(ninja.price)/100}</div>
+                <div className="text-blue-900 font-bold">{ninja.Mode}</div>
+                <div className="float-right mr-5 mt-1 mb-2">
+                  <Link href={`${ninja._id}`}>
+                    <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
+                      Details
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </Link>
+          ))}
+      </div>
+      )}
+      {/* Category 3 */}
+      {food == 2 && (
+        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        {ninjas
+          .filter((val) => {
+            if (search == "") {
+              if (val.category == "technical training" || val.category == "Technical Training") {
+                return val;
+              }
+            } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
+              if (val.category == "technical training" || val.category == "Technical Training") {
+                return val;
+              }
+            }
+          })
+          .map((ninja) => (
+            <Link href={`${ninja._id}`} key={ninja.id}>
+              <div className="bg-gray-50 hover:shadow-2xl">
+                <Image
+                  src={ninja.img}
+                  width={1200}
+                  height={650}
+                  layout="responsive"
+                 
+                ></Image>
+                <div className="ml-5 font-semibold text-lg">{ninja.pname}</div>
+                <div className="ml-5">Rs.{(ninja.price)/100}</div>
+                <div className="text-blue-900 font-bold">{ninja.Mode}</div>
+                <div className="float-right mr-5 mt-1 mb-2">
+                  <Link href={`${ninja._id}`}>
+                    <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
+                      Details
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </Link>
+          ))}
+      </div>
+      )}
+      {/* Category 4 */}
+      {food == 3 && (
+        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        {ninjas
+          .filter((val) => {
+            if (search == "") {
+              if (val.category == "business idea" || val.category == "Business Idea") {
+                return val;
+              }
+            } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
+              if (val.category == "business idea" || val.category == "Business Idea") {
+                return val;
+              }
+            }
+          })
+          .map((ninja) => (
+            <Link href={`${ninja._id}`} key={ninja.id}>
+              <div className="bg-gray-50 hover:shadow-2xl">
+                <Image
+                  src={ninja.img}
+                  width={1200}
+                  height={650}
+                  layout="responsive"
+                 
+                ></Image>
+                <div className="ml-5 font-semibold text-lg">{ninja.pname}</div>
+                <div className="ml-5">Rs.{(ninja.price)/100}</div>
+                <div className="text-blue-900 font-bold">{ninja.Mode}</div>
+                <div className="float-right mr-5 mt-1 mb-2">
+                  <Link href={`${ninja._id}`}>
+                    <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
+                      Details
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </Link>
+          ))}
+      </div>
+      )}
+      {/* Category 5 */}
+      {food == 4 && (
+        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        {ninjas
+          .filter((val) => {
+            if (search == "") {
+              if (val.category == "Entrepreneurship training program" || val.category == "Entrepreneurship Training Program") {
+                return val;
+              }
+            } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
+              if (val.category == "Entrepreneurship training program" || val.category == "Entrepreneurship Training Program") {
                 return val;
               }
             }
