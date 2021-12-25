@@ -24,8 +24,7 @@ const Training = () => {
   const [search, setSearch] = useState("");
   const [loading, setloading] = useState(true);
   const [ninjas, setninjas] = useState([]);
-  const [food, setfood] = useState(true)
-  const [agro, setagro] = useState(false)
+  const [food, setfood] = useState(0)
   
   useEffect(async () => {
     window.scrollTo(0, 0)
@@ -84,16 +83,16 @@ const Training = () => {
       </div>
       {/* Category1 */}
       <div className="mt-20 ml-5 text-red-500 text-xl w-full flex">
-        <button onClick={() => setfood(true), setagro(false)} className="text-red-500">
+        <button onClick={() => setfood(0)} className="text-red-500">
           Food and Food Product
         </button>
-        <button onClick={() => setagro(true), setfood(false)} className="text-red-500">
+        <button onClick={() => setagro(1)} className="text-red-500">
           Agro Processing
         </button>
       </div>
       <span className="h-1 w-full bg-black"></span>
       <div className = "mt-2 ml-5 bg-red-400 w-20 rounded-lg h-1"></div>
-      {food == true && (
+      {food == 0 && (
         <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
         {ninjas
           .filter((val) => {
@@ -137,7 +136,7 @@ const Training = () => {
       {/* Category 2 */}
       
       <div className = "mt-2 ml-5 bg-red-400 w-12 rounded-lg h-1"></div>
-      {agro == true && (
+      {agro == 1 && (
         <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
         {ninjas
           .filter((val) => {
