@@ -84,25 +84,25 @@ const Training = () => {
       {/* Category1 */}
       <div className="mt-20 ml-5 text-red-500 text-xl w-full flex">
         <button onClick={() => setfood(0)} className="">
-          {food == 0 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 ">Food and Food Product</div>}
+          {food == 0 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 ">Food and Food Product</div>}
         </button>
         <button onClick={() => setfood(1)} className="text-red-500">
-        {food == 1 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Agro-Processing</div> : <div className="text-red-500 px-3 py-1">Agro-Processing</div>}
+        {food == 1 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Agro-Processing</div> : <div className="text-red-500 px-3 py-1">Agro-Processing</div>}
         </button>
         <button onClick={() => setfood(2)} className="text-red-500">
-        {food == 2 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Technical Training</div> : <div className="text-red-500 px-3 py-1">Technical Training</div>}
+        {food == 2 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Technical Training</div> : <div className="text-red-500 px-3 py-1">Technical Training</div>}
         </button>
         <button onClick={() => setfood(3)} className="text-red-500">
-        {food == 3 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Business Idea</div> : <div className="text-red-500 px-3 py-1">Business Idea</div>}
+        {food == 3 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Business Idea</div> : <div className="text-red-500 px-3 py-1">Business Idea</div>}
         </button>
         <button onClick={() => setfood(4)} className="text-red-500">
-        {food == 4 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-gray-400 font-medium border-red-500">Entrepreneurship Development</div> : <div className="text-red-500 px-3 py-1">Entrepreneurship Development</div>}
+        {food == 4 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Entrepreneurship Development</div> : <div className="text-red-500 px-3 py-1">Entrepreneurship Development</div>}
         </button>
       </div>
-      <span className="h-1 w-full bg-black"></span>
+      <span className="h-2 w-full bg-black mt-4"></span>
       
       {food == 0 && (
-        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        <div className="grid md:grid-cols-3 gap-8 pb-14 m-5">
         {ninjas
           .filter((val) => {
             if (search == "") {
@@ -144,7 +144,7 @@ const Training = () => {
       
       {/* Category 2 */}
       {food == 1 && (
-        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        <div className="grid md:grid-cols-3 gap-8 pb-14 m-5">
         {ninjas
           .filter((val) => {
             if (search == "") {
@@ -184,7 +184,7 @@ const Training = () => {
       )}
       {/* Category 3 */}
       {food == 2 && (
-        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        <div className="grid md:grid-cols-3 gap-8 pb-14 m-5">
         {ninjas
           .filter((val) => {
             if (search == "") {
@@ -224,7 +224,7 @@ const Training = () => {
       )}
       {/* Category 4 */}
       {food == 3 && (
-        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        <div className="grid md:grid-cols-3 gap-8 pb-14 m-5">
         {ninjas
           .filter((val) => {
             if (search == "") {
@@ -264,7 +264,7 @@ const Training = () => {
       )}
       {/* Category 5 */}
       {food == 4 && (
-        <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
+        <div className="grid md:grid-cols-3 gap-8 pb-14 m-5">
         {ninjas
           .filter((val) => {
             if (search == "") {
