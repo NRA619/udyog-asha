@@ -142,8 +142,8 @@ const ProductDetail = () => {
                       <p className="ml-10 md:ml-20">{ch.details.map((item, index) => (
                         <div key={index}>
                           {
-                            <div className="bg-black text-white h-40">
-                              {item[index]}
+                            <div className=" text-black h-40">
+                              {item}
                             </div>
                           }
                         </div>
