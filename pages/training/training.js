@@ -82,18 +82,18 @@ const Training = () => {
       </div>
       {/* Category1 */}
       <div className="mt-20 ml-5 text-red-500 text-4xl  font-bold">
-        Recommendation
+        Food and Food Product
       </div>
       <div className = "mt-2 ml-5 bg-red-400 w-20 rounded-lg h-1"></div>
       <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
         {ninjas
           .filter((val) => {
             if (search == "") {
-              if (val.category == "recommendation" || val.category == "Recommendation") {
+              if (val.category == "food and food product" || val.category == "Food and Food Product") {
                 return val;
               }
             } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
-              if (val.category == "recommendation" || val.category == "Recommendation") {
+              if (val.category == "food and food product" || val.category == "Food and Food Product") {
                 return val;
               }
             }
@@ -125,18 +125,18 @@ const Training = () => {
       </div>
       {/* Category 2 */}
       <div className="mt-20 ml-5 text-red-500 text-4xl  font-bold">
-        Popular
+        Agro-Processing
       </div>
       <div className = "mt-2 ml-5 bg-red-400 w-12 rounded-lg h-1"></div>
       <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
         {ninjas
           .filter((val) => {
             if (search == "") {
-              if (val.category == "Live" || val.category == "live") {
+              if (val.category == "agro-processing" || val.category == "Agro-Processing") {
                 return val;
               }
             } else if (val.pname.toLowerCase().includes(search.toLowerCase())) {
-              if (val.category == "Live" || val.category == "live") {
+              if (val.category == "agro-processing" || val.category == "Agro-Processing") {
                 return val;
               }
             }
