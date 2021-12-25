@@ -84,10 +84,10 @@ const Training = () => {
       {/* Category1 */}
       <div className="mt-20 ml-5 text-red-500 text-xl w-full flex">
         <button onClick={() => setfood(0)} className="">
-          {food == 0 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 border-b border-red-500">Food and Food Product</div>}
+          {food == 0 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Food and Food Product</div> : <div className="text-red-500 px-3 py-1 ">Food and Food Product</div>}
         </button>
         <button onClick={() => setfood(1)} className="text-red-500">
-        {food == 1 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Agro-Processing</div> : <div className="text-red-500 px-3 py-1 border-b border-red-500">Agro-Processing</div>}
+        {food == 1 ? <div className="text-red-500 px-3 py-1 border-b border-red-500">Agro-Processing</div> : <div className="text-red-500 px-3 py-1">Agro-Processing</div>}
         </button>
       </div>
       <span className="h-1 w-full bg-black"></span>
