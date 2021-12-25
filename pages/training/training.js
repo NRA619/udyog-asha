@@ -86,7 +86,7 @@ const Training = () => {
         <button onClick={() => setfood(0)} className="text-red-500">
           Food and Food Product
         </button>
-        <button onClick={() => setagro(1)} className="text-red-500">
+        <button onClick={() => setfood(1)} className="text-red-500">
           Agro Processing
         </button>
       </div>
@@ -136,7 +136,7 @@ const Training = () => {
       {/* Category 2 */}
       
       <div className = "mt-2 ml-5 bg-red-400 w-12 rounded-lg h-1"></div>
-      {agro == 1 && (
+      {food == 1 && (
         <div className="grid md:grid-cols-3 gap-8 mb-14 m-5">
         {ninjas
           .filter((val) => {
