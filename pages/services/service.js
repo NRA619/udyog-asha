@@ -22,7 +22,7 @@ export const service = () => {
                     <span className="text-center pt-10 px-5 rounded-t-lg text-black bg-yellow-100 bg-opacity-50 h-full ">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-yellow-300  hover:border-2 hover:border-white hover:text-white font-medium rounded-b-lg text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-yellow-300  hover:border-2 hover:border-white hover:text-black font-medium rounded-b-lg text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Bussiness Support
                     </button>
                 </div>
@@ -30,7 +30,7 @@ export const service = () => {
                     <span className="text-center pt-10 px-5 rounded-t-lg text-black bg-green-100 bg-opacity-60 h-full">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-green-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-white text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-green-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-black text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Registration
                     </button>
                 </div>
@@ -38,7 +38,7 @@ export const service = () => {
                     <span className="text-center pt-10 px-5 rounded-t-lg text-black  bg-blue-100 bg-opacity-60 h-full">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-blue-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-white text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-blue-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-black text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Print Media
                     </button>
                 </div>
@@ -46,7 +46,7 @@ export const service = () => {
                     <span className="text-center pt-10 px-5 rounded-t-lg  text-black bg-red-100 bg-opacity-60 h-full">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
-                    <button className="bg-red-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-white text-gray-800 bg-opacity-60 shadow-xl py-4">
+                    <button className="bg-red-300 rounded-b-lg hover:border-2 hover:border-white font-medium hover:text-black text-gray-800 bg-opacity-60 shadow-xl py-4">
                         Social Media Marketing
                     </button>
                 </div>
