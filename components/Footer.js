@@ -49,7 +49,9 @@ export default function Footer() {
                     <CallIcon className="text-white"></CallIcon>
                     <span className="text-white ml-2">+9192939494</span>
                 </span>
-
+                <span className='text-white'>
+                udyogaasha@ gmail.com 
+                </span>
                 <div className="font-light text-white">
                     <span className="block">102 c/26 , Bhawani peth</span>
                     <span className="block">solapur</span>
@@ -63,7 +65,7 @@ export default function Footer() {
 
                 <span className="block mt-4">
                     <CallIcon className="text-white"></CallIcon>
-                    <span className="text-white ml-2">+9192939494</span>
+                    <span className="text-white ml-2">+918275282238</span>
                 </span>
 
                 <div className="font-light text-white">

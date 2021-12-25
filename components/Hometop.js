@@ -179,10 +179,16 @@ export default function Hometop() {
                 Registered with: MHRD (Under C.R. Act )  |  Ministry of MSME |  NITI Aayog |   NSDC (T.P)   |      
                 </span>
                 <span className="px-96 text-blue-900 font-semibold">
-                Member of:              |                       |                           |               |
+                Member of: national safety Council | quality Council of  India | British Council | MCC I
                 </span>
                 <span className="px-96 text-blue-900 font-semibold">
                 Approved By: Ministry OF Labour & Employment (M.l.w.b.) Govt. OF Maharashtra (vide Letter No.: 
+                </span>
+                <span className="px-96 text-blue-900 font-semibold">
+                Training partner:  National Skill Development Corporation
+                </span>
+                <span className="px-96 text-blue-900 font-semibold">
+                Affiliation:  Maharashtra labour welfare board.
                 </span>
             </Marquee> 
             
