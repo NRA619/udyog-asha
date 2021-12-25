@@ -20,7 +20,11 @@ export default function Courses() {
 
             <div className="grid md:grid-cols-3 gap-4 ">
 
-            {details.map(item => (
+            {details.filter((val)=>{
+                    if (val.featured == true){
+                        return val;
+                    }
+                }).map(item => (
                     <div key={item._id} className="mt-5 cursor-pointer hover:opacity-75 md:p-2">
                         <Image src={item.img} alt="cource1" width={1350} height={650} layout="responsive"></Image>
                     </div>
