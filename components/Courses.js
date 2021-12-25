@@ -33,11 +33,7 @@ export default function Courses() {
 
 
 
-                <div className="w-full">
-
-                    <button className="w-1/2 py-2 px-2 md:px-4 text-base md:text-xl font-medium rounded-lg text-center bg-black text-white  ">show more</button>
-
-                </div>
+               
             </div>
 
         </div>
