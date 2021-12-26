@@ -21,7 +21,7 @@ export default function Objective({ name, children }) {
          {state == 0 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
+              src="https://i.postimg.cc/7L0NhKqX/IMG-20181026-135911655-HDR.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -33,7 +33,7 @@ export default function Objective({ name, children }) {
          {state == 1 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="https://i.postimg.cc/85zCjy0d/20150216-111737.jpg"
+              src="https://i.postimg.cc/6pH0F8YL/IMG-20171229-151135.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -45,7 +45,7 @@ export default function Objective({ name, children }) {
          {state == 2 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="https://i.postimg.cc/hjZtx9kk/20150216-111845.jpg"
+              src="https://i.postimg.cc/bN9LHCn5/IMG-20180121-123028.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -57,7 +57,7 @@ export default function Objective({ name, children }) {
          {state == 3 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="https://i.postimg.cc/SxbNWQPx/20150325-122453.jpg"
+              src="https://i.postimg.cc/j2pVH8J2/IMG-20180325-164644349.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -69,7 +69,7 @@ export default function Objective({ name, children }) {
          {state == 4 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="https://i.postimg.cc/bNtwDS35/20150325-121053.jpg"
+              src="https://i.postimg.cc/k5BcC7Hr/IMG-20171229-165709.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
@@ -81,7 +81,7 @@ export default function Objective({ name, children }) {
          {state == 5 &&
          <div className="md:w-3/4 my-10 glow-blue-900-2xl">   
             <Image
-              src="https://i.postimg.cc/bw0YLcXH/20150325-131638.jpg"
+              src="https://i.postimg.cc/Njy9fLQx/IMG-20180425-124309640.jpg"
               className="filter saturate-150 shadow-xl"
               width={1300}
               height={800}
