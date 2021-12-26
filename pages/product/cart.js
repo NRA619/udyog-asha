@@ -341,13 +341,13 @@ const Cart = () => {
                     </div>
                   )}
                   {Object.keys(details).length === 0 && (
-                    <div className="m-6 mt-10 flex flex-col h-1/2 justify-center space-y-2 text-white">
+                    <div className="m-6 flex flex-col h-1/2 justify-center space-y-2 text-white">
                       <div className="flex justify-center items-center">
                         Please Add Your address.
                       </div>
                       <button
                       onClick={addresspage}
-                      className="mb-10 bg-white px-4 text-black font-medium py-2"
+                      className=" bg-white px-4 text-black font-medium py-2"
                     >
                       Add Adress
                     </button>
