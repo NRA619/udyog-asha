@@ -10,7 +10,7 @@ const thankyou = () => {
         <div className="">
             <div className="h-screen bg-white text-black space-y-4 w-screen  flex flex-col justify-center items-center">
                 <div>
-                    Thansk for choosing us, Please Check your Email
+                    Thanks for choosing us, Please Check your Email
                 </div>
                 <div>
                     You have paid Successfully,
