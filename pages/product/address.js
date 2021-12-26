@@ -305,7 +305,7 @@ const Address = () => {
           {...register("state", {
             required: true,
           })}
-          className="text-black bg-transparent border-b-2 border-red-500 w-2/3 focus:outline-none"
+          className="text-blue-600 bg-transparent border-b-2 border-red-500 w-2/3 focus:outline-none"
         >
           <option value="Andhra Pradesh">Andhra Pradesh</option>
           <option value="Arunachal Pradesh">Arunachal Pradesh</option>

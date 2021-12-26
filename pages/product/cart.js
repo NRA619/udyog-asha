@@ -347,7 +347,7 @@ const Cart = () => {
                       </div>
                       <button
                       onClick={addresspage}
-                      className=" bg-white px-4 text-black font-medium py-2"
+                      className="mb-10 bg-white px-4 text-black font-medium py-2"
                     >
                       Add Adress
                     </button>
