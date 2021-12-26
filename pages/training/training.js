@@ -95,7 +95,7 @@ const Training = () => {
         <button onClick={() => setfood(3)} className="text-red-500">
         {food == 3 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Business Idea</div> : <div className="text-red-500 px-3 py-1">Business Idea</div>}
         </button>
-        <button onClick={() => setfood(4)} className="text-red-500">
+        <button onClick={() => setfood(4)} className="text-red-500 col-span-2">
         {food == 4 ? <div className="text-red-500 px-3 py-1 border-b-2 bg-white font-medium border-red-500">Entrepreneurship Development</div> : <div className="text-red-500 px-3 py-1">Entrepreneurship Development</div>}
         </button>
       </div>
