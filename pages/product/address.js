@@ -305,35 +305,35 @@ const Address = () => {
           {...register("state", {
             required: true,
           })}
-          className="text-blue-600 bg-transparent border-b-2 border-red-500 w-2/3 focus:outline-none"
+          className="text-white bg-transparent border-b-2 border-red-500 w-2/3 focus:outline-none"
         >
-          <option value="Andhra Pradesh">Andhra Pradesh</option>
-          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-          <option value="Assam">Assam</option>
-          <option value="Chhattisgarh">Chhattisgarh</option>
-          <option value="Goa">Goa</option>
-          <option value="Gujarat">Gujarat</option>
-          <option value="Haryana">Haryana</option>
-          <option value="Himachal Pradesh">Himachal Pradesh</option>
-          <option value="Jharkhand">Jharkhand</option>
-          <option value="Karnataka">Karnataka</option>
-          <option value="Kerala">Kerala</option>
-          <option value="Madhya Pradesh">Madhya Pradesh</option>
-          <option value="Maharashtra">Maharashtra</option>
-          <option value="Manipur">Manipur</option>
-          <option value="Meghalaya">Meghalaya</option>
-          <option value="Mizoram">Mizoram</option>
-          <option value="Nagaland">Nagaland</option>
-          <option value="Odisha">Odisha</option>
-          <option value="Punjab">Punjab</option>
-          <option value="Rajasthan">Rajasthan</option>
-          <option value="Sikkim">Sikkim</option>
-          <option value="Tamil Nadu">Tamil Nadu</option>
-          <option value="Telangana">Telangana</option>
-          <option value="Tripura">Tripura</option>
-          <option value="Uttar Pradesh">Uttar Pradesh</option>
-          <option value="Uttarakhand">Uttarakhand</option>
-          <option value="West Bengal">West Bengal</option>
+          <option value="Andhra Pradesh" className="text-black">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh" className="text-black">Arunachal Pradesh</option>
+          <option value="Assam" className="text-black">Assam</option>
+          <option value="Chhattisgarh" className="text-black">Chhattisgarh</option>
+          <option value="Goa" className="text-black">Goa</option>
+          <option value="Gujarat" className="text-black">Gujarat</option>
+          <option value="Haryana" className="text-black">Haryana</option>
+          <option value="Himachal Pradesh" className="text-black">Himachal Pradesh</option>
+          <option className="text-black" value="Jharkhand">Jharkhand</option>
+          <option className="text-black" value="Karnataka">Karnataka</option>
+          <option className="text-black" value="Kerala">Kerala</option>
+          <option className="text-black" value="Madhya Pradesh">Madhya Pradesh</option>
+          <option className="text-black" value="Maharashtra">Maharashtra</option>
+          <option className="text-black" value="Manipur">Manipur</option>
+          <option className="text-black" value="Meghalaya">Meghalaya</option>
+          <option className="text-black" value="Mizoram">Mizoram</option>
+          <option className="text-black" value="Nagaland">Nagaland</option>
+          <option className="text-black" value="Odisha">Odisha</option>
+          <option className="text-black" value="Punjab">Punjab</option>
+          <option className="text-black" value="Rajasthan">Rajasthan</option>
+          <option className="text-black" value="Sikkim">Sikkim</option>
+          <option className="text-black" value="Tamil Nadu">Tamil Nadu</option>
+          <option className="text-black" value="Telangana">Telangana</option>
+          <option className="text-black" value="Tripura">Tripura</option>
+          <option className="text-black" value="Uttar Pradesh">Uttar Pradesh</option>
+          <option className="text-black" value="Uttarakhand">Uttarakhand</option>
+          <option className="text-black" value="West Bengal">West Bengal</option>
         </select>
       </div>
       <button
