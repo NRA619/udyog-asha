@@ -9,6 +9,16 @@ module.exports = {
       borderRadius: {
         large: "3rem",
       },
+      spacing: {
+        '128': '32rem',
+        '156': '48rem',
+        '256': '60rem',
+        '500': '80rem',
+        '88' : '22rem',
+      },
+      height: {
+        '0.1': '0.05rem'
+      },
       backgroundImage: (theme) => ({
         "back-image": "url('/1.jpg')",
         'pb-image': "url('/pb.jpg')",
@@ -19,18 +29,24 @@ module.exports = {
         'wavebgred': "url('/wave-light.jpg')",
         'redback': "url('/redback.png')",
         'blueback': "url('/blueback.png')",
+        'yellowback': "url('/yellowback.jpg')",
         'bluebg' : "url('/bluebg.jpg')",
         'emptybg' : "url('/emptybg.jpg')",
+        'breakbg' : "url('/breakbg.jpg')",
         'address' : "url('/address.jpg')",
+        'cart': "url('/cart.jpg')",
+        'cartbag': "url('/cartbag.jpg')",
+        'cartfinal': "url('/cartfinal.jpg')",
+        'feedback': "url('/feedback.jpg')",
         'feed': "url('/feed.jpg')",
         'addressfinal': "url('/addressfinal.jpg')",
         'cartfinal2': "url('/cartfinal2.png')",
         'forgetpassword': "url('/forgetpassword.png')",
-        'breakbg': "url('/breakbg.jpg')",
         'bsupport': "url('/bsupport.jpg')",
         'registration': "url('/registration.jpg')",
         'pmedia': "url('/pmedia.jpg')",
         'marketing': "url('/marketing.png')",
+
       }),
       width: {
         '6/7': '87.7142857%',
@@ -50,7 +66,10 @@ module.exports = {
       fontWeight: ["hover"],
       mixBlendMode: ["hover"],
       cursor: ['hover', 'focus'],
+      display: ['group-hover'],
     },
   },
-  plugins: [require("tailwindcss-glow")()],
+  plugins: [
+    require("tailwindcss-glow")(),
+    require('@tailwindcss/forms'),],
 };
