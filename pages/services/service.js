@@ -16,10 +16,10 @@ export const Service = () => {
     
 
     return (
-        <div className="h-full min-h-screen w-full pt-20 px-10">
+        <div className="h-full min-h-screen w-full pt-20 px-10 flex justify-center">
             {Object.keys(data).length !== 0 && (
 
-            <div className="bg-yellow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-full w-full mt-20 gap-4">
+            <div className="bg-yellow grid grid-cols-1  md:grid-cols-2 h-full w-full md:w-3/5  mt-20 gap-4">
                 <div className="flex flex-col justify-between bg-registration bg-cover bg-opacity-40 rounded-lg h-72  shadow-md">
                     <span className="text-center pt-10 px-5 rounded-t-lg text-black bg-yellow-100 bg-opacity-50 h-full ">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         

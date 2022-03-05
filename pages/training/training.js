@@ -65,7 +65,7 @@ const Training = () => {
                 type="text"
                 list="title_product"
                 placeholder="Search.."
-                className="bg-red-200 text-blue-800 rounded-full focus:outline-none w-3/4 m-0 pl-1"
+                className="bg-red-200 text-blue-800 outline-none ring-0 border-0 rounded-full focus:outline-none w-3/4 m-0 pl-1"
                 value={search.toLowerCase()}
                 onChange={(e) => setSearch(e.target.value)}
               ></input>
@@ -79,7 +79,7 @@ const Training = () => {
                 type="text"
                 list="title_product"
                 placeholder="Search.."
-                className="bg-red-200 text-blue-800 rounded-full focus:outline-none w-3/4 m-0 pl-1"
+                className="bg-red-200 text-blue-800 outline-none ring-0 border-0 rounded-full focus:outline-none w-3/4 m-0 pl-1"
                 value={search.toLowerCase()}
                 onChange={(e) => setSearch(e.target.value)}
               ></input>
