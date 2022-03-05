@@ -187,7 +187,7 @@ export const Sub_services = () => {
                       </div>
                       <div className="flex flex-col items-center mt-10">
                         <span>
-                          *All files are necessary and must be in pdf format.
+                          *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
@@ -281,7 +281,7 @@ export const Sub_services = () => {
                       </div>
                       <div className="flex flex-col items-center mt-10">
                         <span>
-                          *All files are necessary and must be in pdf format.
+                          *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
@@ -319,7 +319,7 @@ export const Sub_services = () => {
                       {pro == true && (
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Proprietorship.map((idp, index) => (
-                            <div className="flex flex-col space-y-2">
+                            <div className="flex flex-col space-y-2" key={index}>
                               <label className="text-yellow-600 font-medium flex space-x-1">
                                 <span>*{idp}</span>
                                 <div className="group text-black flex"></div>
@@ -409,7 +409,7 @@ export const Sub_services = () => {
                       </div>
                       <div className="flex flex-col items-center mt-10">
                         <span>
-                          *All files are necessary and must be in pdf format.
+                          *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
@@ -467,7 +467,7 @@ export const Sub_services = () => {
                       </div>
                       <div className="flex flex-col items-center mt-10">
                         <span>
-                          *All files are necessary and must be in pdf format.
+                          *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
@@ -622,7 +622,7 @@ export const Sub_services = () => {
                       </div>
                       <div className="flex flex-col items-center mt-10">
                         <span>
-                          *All files are necessary and must be in pdf format.
+                          *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
@@ -666,6 +666,7 @@ export const Sub_services = () => {
                                   type="file"
                                   {...register(`cdp${index}`, {
                                     // validations
+                                    required:true,
                                   })}
                                   className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
                                 ></input>
@@ -729,7 +730,7 @@ export const Sub_services = () => {
                       </div>
                       <div className="flex flex-col items-center mt-10">
                         <span>
-                          *All files are necessary and must be in pdf format.
+                          *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
@@ -787,7 +788,7 @@ export const Sub_services = () => {
                       </div>
                       <div className="flex flex-col items-center mt-10">
                         <span>
-                          *All files are necessary and must be in pdf format.
+                          *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
@@ -806,7 +807,7 @@ export const Sub_services = () => {
                             name="type_of_service"
                             defaultChecked
                           />
-                          LLP/Company/Proprietor's
+                          LLP/Company/Proprietors
                         </div>
                         <div>
                           <input

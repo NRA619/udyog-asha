@@ -3,7 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 
 
-export const service = () => {
+export const Service = () => {
 
     const [data, setdata] = useState([])
 
@@ -46,4 +46,4 @@ export const service = () => {
     )
 }
 
-export default service;
+export default Service;
