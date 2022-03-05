@@ -27,6 +27,7 @@ export const Sub_services = () => {
     watch,
   } = useForm();
   useEffect(async () => {
+    
     if (pid && ss) {
       const res = await axios.post(
         "https://murmuring-eyrie-62394.herokuapp.com/service/subservdata",
@@ -125,6 +126,7 @@ export const Sub_services = () => {
         } else {
           return alert("error");
         }
+        console.log(email);
         formdata.append("email", email);
         formdata.append("service", "registration");
         console.log("213131231313123");
