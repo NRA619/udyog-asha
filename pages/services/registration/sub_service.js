@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import BarLoader from "react-spinners/BarLoader";
 import { useRouter } from "next/router";
 
-export const sub_services = () => {
+export const Sub_services = () => {
   const router = useRouter();
   const pid = router.query.id;
   const ss = router.query.sub_service;
@@ -194,7 +194,7 @@ export const sub_services = () => {
 
                       <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.identity_proof.map((idp, index) => (
-                          <div className="flex flex-col space-y-2">
+                          <div className="flex flex-col space-y-2" key={index}>
                             <label className="text-yellow-600 font-medium flex space-x-1">
                               <span>*{idp}</span>
                               <div className="group text-black flex"></div>
@@ -212,7 +212,7 @@ export const sub_services = () => {
                       </div>
                       <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.address_proof.map((adp, index) => (
-                          <div className="flex flex-col space-y-2">
+                          <div className="flex flex-col space-y-2" key={index}>
                             <label className="text-yellow-600 font-medium flex space-x-1">
                               <span>*{adp}</span>
                               <div className="group text-black flex"></div>
@@ -230,7 +230,7 @@ export const sub_services = () => {
                       </div>
                       <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.proof_of_registered_office.map((rdp, index) => (
-                          <div className="flex flex-col space-y-2">
+                          <div className="flex flex-col space-y-2" key={index}>
                             <label className="text-yellow-600 font-medium flex space-x-1">
                               <span>*{rdp}</span>
                               <div className="group text-black flex"></div>
@@ -248,7 +248,7 @@ export const sub_services = () => {
                       </div>
                       <div className="flex justify-center mt-5 items-center">
                         <input
-                          class="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                           type="checkbox"
                           required
                         ></input>
@@ -294,7 +294,7 @@ export const sub_services = () => {
                                 setpriv(false),
                                 settype_of_service("Proprietorship");
                             }}
-                            class="form-check-input appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="Proprietorship"
                             name="type_of_service"
                             defaultChecked
@@ -309,7 +309,7 @@ export const sub_services = () => {
                                 setpriv(true),
                                 settype_of_service("Private_Limited_Company");
                             }}
-                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="Private_Limited_Company"
                             name="type_of_service"
                           />
@@ -339,7 +339,7 @@ export const sub_services = () => {
                       {priv == true && (
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Private_Limited_Company.map((rdp, index) => (
-                            <div className="flex flex-col space-y-2">
+                            <div className="flex flex-col space-y-2" key={index}>
                               <label className="text-yellow-600 font-medium flex space-x-1">
                                 <span>*{rdp}</span>
                                 <div className="group text-black flex"></div>
@@ -358,7 +358,7 @@ export const sub_services = () => {
                       )}
                       <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.proof_of_address_of_director.map((adp, index) => (
-                          <div className="flex flex-col space-y-2">
+                          <div className="flex flex-col space-y-2" key={index}>
                             <label className="text-yellow-600 font-medium flex space-x-1">
                               <span>*{adp}</span>
                               <div className="group text-black flex"></div>
@@ -376,7 +376,7 @@ export const sub_services = () => {
                       </div>
                       <div className="flex justify-center mt-5 items-center">
                         <input
-                          class="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                           type="checkbox"
                           required
                         ></input>
@@ -416,7 +416,7 @@ export const sub_services = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.documents.map((doc, index) => (
-                          <div className="flex flex-col space-y-2">
+                          <div className="flex flex-col space-y-2" key={index}>
                             <label className="text-yellow-600 font-medium flex space-x-1">
                               <span>*{doc}</span>
                               <div className="group text-black flex"></div>
@@ -434,7 +434,7 @@ export const sub_services = () => {
                       </div>
                       <div className="flex justify-center mt-5 items-center">
                         <input
-                          class="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                           type="checkbox"
                           required
                         ></input>
@@ -483,7 +483,7 @@ export const sub_services = () => {
                                   "Individuals and SoleProprietorship"
                                 );
                             }}
-                            class=" appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className=" appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="Individuals and SoleProprietorship"
                             name="type_of_service"
                             defaultChecked
@@ -501,7 +501,7 @@ export const sub_services = () => {
                                   "Partnership/LLP/Company-Small-Enterprise or Startup"
                                 );
                             }}
-                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="Partnership_LLP_Company_Small_Enterprise_Startup"
                             name="type_of_service"
                           />
@@ -516,7 +516,7 @@ export const sub_services = () => {
                                 setoth(true),
                                 settype_of_service("Other Applicants");
                             }}
-                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="Other_Applicants"
                             name="type_of_service"
                           />
@@ -527,7 +527,7 @@ export const sub_services = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Individuals_Sole_Proprietorship.map(
                             (doc, index) => (
-                              <div className="flex flex-col space-y-2">
+                              <div className="flex flex-col space-y-2" key={index}>
                                 <label className="text-yellow-600 font-medium flex space-x-1">
                                   <span>*{doc}</span>
                                   <div className="group text-black flex"></div>
@@ -549,7 +549,7 @@ export const sub_services = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Partnership_LLP_Company_Small_Enterprise_Startup.map(
                             (doc, index) => (
-                              <div className="flex flex-col space-y-2">
+                              <div className="flex flex-col space-y-2" key={index}>
                                 <label className="text-yellow-600 font-medium flex space-x-1">
                                   <span>*{doc}</span>
                                   <div className="group text-black flex"></div>
@@ -570,7 +570,7 @@ export const sub_services = () => {
                       {oth == true && (
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Other_Applicants.map((doc, index) => (
-                            <div className="flex flex-col space-y-2">
+                            <div className="flex flex-col space-y-2" key={index}>
                               <label className="text-yellow-600 font-medium flex space-x-1">
                                 <span>*{doc}</span>
                                 <div className="group text-black flex"></div>
@@ -589,7 +589,7 @@ export const sub_services = () => {
                       )}
                       <div className="flex justify-center mt-5 items-center">
                         <input
-                          class="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                           type="checkbox"
                           required
                         ></input>
@@ -633,7 +633,7 @@ export const sub_services = () => {
                             onClick={() => {
                               setpro(true), setpriv(false);
                             }}
-                            class="form-check-input appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="For_the_FSSAI_Central_License"
                             name="type_of_service"
                             defaultChecked
@@ -646,7 +646,7 @@ export const sub_services = () => {
                             onClick={() => {
                               setpro(false), setpriv(true);
                             }}
-                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="For_the_State_License"
                             name="type_of_service"
                           />
@@ -657,7 +657,7 @@ export const sub_services = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.For_the_FSSAI_Central_License.map(
                             (doc, index) => (
-                              <div className="flex flex-col space-y-2">
+                              <div className="flex flex-col space-y-2" key={index}>
                                 <label className="text-yellow-600 font-medium flex space-x-1">
                                   <span>*{doc}</span>
                                   <div className="group text-black flex"></div>
@@ -677,7 +677,7 @@ export const sub_services = () => {
                       {priv == true && (
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.For_the_State_License.map((doc, index) => (
-                            <div className="flex flex-col space-y-2">
+                            <div className="flex flex-col space-y-2" key={index}>
                               <label className="text-yellow-600 font-medium flex space-x-1">
                                 <span>*{doc}</span>
                                 <div className="group text-black flex"></div>
@@ -696,7 +696,7 @@ export const sub_services = () => {
                       )}
                       <div className="flex justify-center mt-5 items-center">
                         <input
-                          class="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                           type="checkbox"
                           required
                         ></input>
@@ -736,7 +736,7 @@ export const sub_services = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.documents.map((doc, index) => (
-                          <div className="flex flex-col space-y-2">
+                          <div className="flex flex-col space-y-2" key={index}>
                             <label className="text-yellow-600 font-medium flex space-x-1">
                               <span>*{doc}</span>
                               <div className="group text-black flex"></div>
@@ -754,7 +754,7 @@ export const sub_services = () => {
                       </div>
                       <div className="flex justify-center mt-5 items-center">
                         <input
-                          class="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                           type="checkbox"
                           required
                         ></input>
@@ -801,7 +801,7 @@ export const sub_services = () => {
                                 setoth(false),
                                 settype_of_service("LLP_Company_Proprietor");
                             }}
-                            class="form-check-input appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="LLP_Company_Proprietor"
                             name="type_of_service"
                             defaultChecked
@@ -819,7 +819,7 @@ export const sub_services = () => {
                                   "Partners_Directors_Proprietor"
                                 );
                             }}
-                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="Partners_Directors_Proprietor"
                             name="type_of_service"
                           />
@@ -834,7 +834,7 @@ export const sub_services = () => {
                                 setoth(true),
                                 settype_of_service("Other_Applicants");
                             }}
-                            class="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                             value="Other_Applicants"
                             name="type_of_service"
                           />
@@ -844,7 +844,7 @@ export const sub_services = () => {
                       {pro == true && (
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.LLP_Company_Proprietor.map((doc, index) => (
-                            <div className="flex flex-col space-y-2">
+                            <div className="flex flex-col space-y-2" key={index}>
                               <label className="text-yellow-600 font-medium flex space-x-1">
                                 <span>*{doc}</span>
                                 <div className="group text-black flex"></div>
@@ -865,7 +865,7 @@ export const sub_services = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Partners_Directors_Proprietor.map(
                             (doc, index) => (
-                              <div className="flex flex-col space-y-2">
+                              <div className="flex flex-col space-y-2" key={index}>
                                 <label className="text-yellow-600 font-medium flex space-x-1">
                                   <span>*{doc}</span>
                                   <div className="group text-black flex"></div>
@@ -886,7 +886,7 @@ export const sub_services = () => {
                       {oth == true && (
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Other_Applicants.map((doc, index) => (
-                            <div className="flex flex-col space-y-2">
+                            <div className="flex flex-col space-y-2" key={index}>
                               <label className="text-yellow-600 font-medium flex space-x-1">
                                 <span>*{doc}</span>
                                 <div className="group text-black flex"></div>
@@ -905,7 +905,7 @@ export const sub_services = () => {
                       )}
                       <div className="flex justify-center mt-5 items-center">
                         <input
-                          class="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                          className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                           type="checkbox"
                           required
                         ></input>
@@ -931,4 +931,4 @@ export const sub_services = () => {
   );
 };
 
-export default sub_services;
+export default Sub_services;

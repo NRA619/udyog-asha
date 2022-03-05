@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import BarLoader from "react-spinners/BarLoader";
 import { useRouter } from "next/router";
 
-export const business_sub_services = () => {
+export const Business_sub_services = () => {
   const router = useRouter();
   const pid = router.query.id;
   const ss = router.query.sub_service;
@@ -138,7 +138,7 @@ export const business_sub_services = () => {
         {Object.keys(data).length !== 0 && (
           <div className="h-128 w-156 px-4  flex justify-center bg-green-900 shadow-sm my-20  glow-green-400-xl rounded-xl ">
             {data.map((data) => (
-              <div className="h-128 w-full flex flex-col justify-between bg-green-50 bg-opacity-95 rounded-2xl  transform  -translate-y-16">
+              <div className="h-128 w-full flex flex-col justify-between bg-green-50 bg-opacity-95 rounded-2xl  transform  -translate-y-16" key={data.name}>
                 <div className="flex justify-center h-16 items-center">
                   <span className="flex text-2xl font-semibold">
                     {data.name}
@@ -168,4 +168,4 @@ export const business_sub_services = () => {
   );
 };
 
-export default business_sub_services;
+export default Business_sub_services;

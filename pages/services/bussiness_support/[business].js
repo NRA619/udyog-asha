@@ -6,7 +6,7 @@ import Image from "next/image";
 import { parseCookies } from "../../../components/cookie";
 import { useForm } from "react-hook-form";
 
-const business = () => {
+const Business = () => {
   const router = useRouter();
   const productId = router.query.business;
   const [data, setdata] = useState([]);
@@ -89,4 +89,4 @@ const business = () => {
   );
 };
 
-export default business;
+export default Business;

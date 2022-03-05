@@ -6,7 +6,7 @@ import Image from "next/image";
 import { parseCookies } from "../../../components/cookie";
 import { useForm } from "react-hook-form";
 
-const registation = () => {
+const Registation = () => {
   const router = useRouter();
   const productId = router.query.registration;
   const [data, setdata] = useState([]);
@@ -72,4 +72,4 @@ const registation = () => {
   );
 };
 
-export default registation;
+export default Registation;
