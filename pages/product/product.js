@@ -111,7 +111,7 @@ const Product = () => {
             </button>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-14 m-5 md:mt-32 mt-10">
+          <div className="grid md:grid-cols-3 gap-8 pb-14 p-5 md:mt-32 mt-10">
             {ninjas
               .filter((val) => {
                 if (search == "") {
