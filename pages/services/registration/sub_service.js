@@ -139,12 +139,14 @@ export const Sub_services = () => {
           setloading(false);
           alert("Already applied for this service...");
           return window.location.reload();
-        } else {
+        } else if(res.data.applied == "false"){
           setloading(false);
           alert(
             "Wait for 1-2 weeks for verification for your files, we will mail you once it verified"
           );
-          return window.location.reload();
+          return window.location = "/"
+        }else {
+          return alert("Something went wrong")
         }
       }
     }
@@ -193,7 +195,13 @@ export const Sub_services = () => {
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
-
+                      <div className="flex justify-start items-center px-6 space-x-2 mt-12">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-xl font-medium text-yellow-600">
+                          Identity Proof of Directors and Shareholders
+                        </span>
+                      </div>
+                      <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
                       <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.identity_proof.map((idp, index) => (
                           <div className="flex flex-col space-y-2" key={index}>
@@ -212,6 +220,13 @@ export const Sub_services = () => {
                           </div>
                         ))}
                       </div>
+                      <div className="flex justify-start items-center px-6 space-x-2 mt-12">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-xl font-medium text-yellow-600">
+                          Address Proof of Directors and Shareholders
+                        </span>
+                      </div>
+                      <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
                       <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.address_proof.map((adp, index) => (
                           <div className="flex flex-col space-y-2" key={index}>
@@ -230,6 +245,13 @@ export const Sub_services = () => {
                           </div>
                         ))}
                       </div>
+                      <div className="flex justify-start items-center px-6 space-x-2 mt-12">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-xl font-medium text-yellow-600">
+                          Proof of Registered office
+                        </span>
+                      </div>
+                      <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
                       <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.proof_of_registered_office.map((rdp, index) => (
                           <div className="flex flex-col space-y-2" key={index}>
@@ -287,6 +309,41 @@ export const Sub_services = () => {
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
+                      <div className="flex mt-4 justify-start items-center space-x-2 px-6">
+                        <div className="h-2 w-2 bg-yellow-600 rounded-full"></div>
+                        <span className="text-yellow-600 text-lg font-medium">
+                          Who needs a GST Registration?
+                        </span>
+                      </div>
+                      <div className="flex flex-col justify-center items-start px-10">
+                        <span className="text-md text-justify mt-1">
+                          Every business or corporation that is involved in the
+                          buying and selling and good of services has to
+                          register for GST. It is mandatory for companies whose
+                          turnover is more than Rs.20 lakhs (for the supply of
+                          services) and Rs. 40 lakhs ( for the supply of goods)
+                          yearly to register for a GST.
+                        </span>
+                        <span className="text-md text-justify">
+                          All businesses making interstate outward supplies of
+                          goods have to register for a GST too. The same applies
+                          to businesses making taxable supplies on behalf of
+                          other taxable persons, for example, Agents, and
+                          Brokers.
+                        </span>
+                        <span className="text-md text-justify">
+                          Also, as per the recent notification, e-commerce
+                          sellers/aggregators need not register if total sales
+                          are less than Rs.20 lakhs.
+                        </span>
+                      </div>
+                      <div className="flex mt-8 justify-start items-center space-x-2 px-6">
+                        <div className="h-2 w-2 bg-yellow-600 rounded-full"></div>
+                        <span className="text-lg text-yellow-600 font-medium">
+                          Mandatory documents for Online GST registration
+                        </span>
+                      </div>
+                      <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
                       <div className="form-check pt-10 flex flex-col items-start px-10 md:flex-row md:justify-around md:items-center ">
                         <div>
                           <input
@@ -358,6 +415,14 @@ export const Sub_services = () => {
                           ))}
                         </div>
                       )}
+                      <div className="flex justify-start items-center px-6 space-x-2 mt-10">
+                        <div className="h-2 w-2 rounded-full bg-yellow-600"></div>
+                        <span className="text-yellow-600 font-medium text-lg">
+                          The following can be shown as proof of address of a
+                          director
+                        </span>
+                      </div>
+                      <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
                       <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.proof_of_address_of_director.map((adp, index) => (
                           <div className="flex flex-col space-y-2" key={index}>
@@ -415,7 +480,13 @@ export const Sub_services = () => {
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
-
+                      <div className="flex mt-8 justify-start items-center space-x-2 px-6">
+                        <div className="h-2 w-2 bg-yellow-600 rounded-full"></div>
+                        <span className="text-lg text-yellow-600 font-medium">
+                          Mandatory documents for Online PAN Card registration
+                        </span>
+                      </div>
+                      <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
                       <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.documents.map((doc, index) => (
                           <div className="flex flex-col space-y-2" key={index}>
@@ -473,6 +544,33 @@ export const Sub_services = () => {
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
                       </div>
+                      <div className="flex mt-8 justify-start items-center space-x-2 px-6">
+                        <div className="h-2 w-2 bg-yellow-600 rounded-full"></div>
+                        <span className="text-lg text-yellow-600 font-medium">
+                          Documents required for Trademark Registration
+                        </span>
+                      </div>
+                      <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
+                      <div className="flex justify-start mt-4 items-center px-10 text-justify">
+                        <div className="flex flex-col space-y-2">
+                          <span>
+                            Trademark registration is an essential mechanism
+                            through which a brand can be protected from unwanted
+                            use and infringement. The Indian Government has
+                            simplified the trademark registration process. The
+                            Entrepreneurs can now easily obtain trademark
+                            registration for their brands within a few months.
+                            In this article, we look at the documents required
+                            for obtaining trademark registration in India.
+                          </span>
+                          <span>
+                            Note: During the trademark application process,
+                            there is no requirement for submitting original
+                            documents. Scan copy of the original document would
+                            suffice the requirement.
+                          </span>
+                        </div>
+                      </div>
                       <div className="form-check pt-10 flex md:flex-row flex-col px-10 md:px-2 justify-start items-start md:justify-around md:items-center">
                         <div>
                           <input
@@ -526,6 +624,18 @@ export const Sub_services = () => {
                         </div>
                       </div>
                       {pro == true && (
+                        <div>
+                        <div className="flex justify-start  px-20 text-justify mt-10">
+                          <span>
+                            Any individual - Indian National or Foreign
+                            National can easily register a trademark in India.
+                            There is no requirement for forming a legal entity
+                            or business entity to register a trademark.
+                            Further, the documents required to register a
+                            trademark in the name of a proprietorship are the
+                            same as that of an individual as under:
+                          </span>
+                        </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Individuals_Sole_Proprietorship.map(
                             (doc, index) => (
@@ -546,8 +656,24 @@ export const Sub_services = () => {
                             )
                           )}
                         </div>
+                        </div>
                       )}
                       {priv == true && (
+                        <div>
+                        <div className="flex justify-start  px-20 text-justify mt-10">
+                          <span>
+                            The trademark registration fee varies from Rs.4500
+                            to Rs.9500. For small enterprises, startups,
+                            proprietorships and individuals, the lower
+                            trademark fee of Rs.4500 is applicable. For all
+                            other entities, the trademark government fee
+                            applicable is Rs.9500. To be classified as a small
+                            enterprise, the applicant would have to provide
+                            Udyog Aadhar registration certificate. Further, in
+                            addition to the Udyog Aadhar registration, the
+                            following details would be required.
+                          </span>
+                        </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Partnership_LLP_Company_Small_Enterprise_Startup.map(
                             (doc, index) => (
@@ -568,8 +694,18 @@ export const Sub_services = () => {
                             )
                           )}
                         </div>
+                        </div>
                       )}
                       {oth == true && (
+                        <div>
+                        <div className="flex justify-start  px-20 text-justify mt-10">
+                          <span>
+                            All other applicants, including companies that do
+                            not have Udyog Aadhar registration, will have to
+                            submit the following documents to obtain trademark
+                            registration in India.
+                          </span>
+                        </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Other_Applicants.map((doc, index) => (
                             <div className="flex flex-col space-y-2" key={index}>
@@ -587,6 +723,7 @@ export const Sub_services = () => {
                               ></input>
                             </div>
                           ))}
+                        </div>
                         </div>
                       )}
                       <div className="flex justify-center mt-5 items-center">
@@ -606,6 +743,33 @@ export const Sub_services = () => {
                         </button>
                       </div>
                     </form>
+                    <div className="flex mt-4 justify-start items-center px-6 space-x-2">
+                      <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                      <span className="text-yellow-600 text-xl font-medium">Other Related Guides</span>
+                    </div>
+                    <div className="mx-10 w-10 h-1 rounded-full bg-yellow-900"></div>
+                    <div className="flex flex-col px-10 justify-start mt-4 pb-10">
+                      <div className="flex flex-col">
+                        <span className="text-yellow-500 text-lg font-base ">Trademark Class 29: Meat, Fruits, Milk and Oils</span>
+                        <span className="">Trademark Class 29: Meat, Fruits, Milk and Oils A comprehensive guide to Class 29 of the Trademark Filing Classification. Trademarks must be applied ...</span>
+                        </div>
+                        <div className="flex flex-col">
+                        <span className="text-yellow-500 text-lg font-base ">Trademark Class 37: Building Construction and Repa...</span>
+                        <span className="">Trademark Class 37: Building Construction and Repairs A comprehensive guide to Class 37 of the Trademark Filing Classification. Trademarks must be ap...</span>
+                        </div>
+                        <div className="flex flex-col">
+                        <span className="text-yellow-500 text-lg font-base ">Shape Trademark in India</span>
+                        <span className="">Shape Trademark in India A distinctive shape of goods or its packaging or any three dimensional object capable of being represented graphically, can ...</span>
+                        </div>
+                        <div className="flex flex-col">
+                        <span className="text-yellow-500 text-lg font-base ">Trademark Class 14: Jewellery, Precious Metals and...</span>
+                        <span className="">Trademark Class 14: Jewellery, Precious Metals and Stones A comprehensive guide to Class 14 of the Trademark Filing Classification. Trademarks must b...</span>
+                        </div>
+                        <div className="flex flex-col">
+                        <span className="text-yellow-500 text-lg font-base ">Penalty for Trademark Infringement in India</span>
+                        <span className="">Penalty for Trademark Infringement in India A registered trademark is a distinctive mark or symbol to which a person or company has declared ownershi...</span>
+                        </div>
+                    </div>
                   </div>
                 </div>
               )}
@@ -627,6 +791,9 @@ export const Sub_services = () => {
                           *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
+                      </div>
+                      <div className="flex justify-start px-10 text-justify mt-10">
+                        <span>According to the Food Safety and Standards Act, an FSSAI registration is mandatory for all food business operators. This registration must be obtained through the FSSAI Food Licensing and Registration System. When applying for this license, keep a document checklist handy for ease.</span>
                       </div>
                       <div className="form-check pt-10 flex flex-col items-start px-10 md:flex-row justify-around md:items-center ">
                         <div>
@@ -697,6 +864,20 @@ export const Sub_services = () => {
                           ))}
                         </div>
                       )}
+                      <div className="flex justify-start items-center px-6 mt-8 space-x-2">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-yellow-600 font-medium text-xl">Where to File</span>
+                      </div>
+                      <div className="mt-3 flex justify-start px-10 text-justify">
+                        <span>The FSSAI license, whether of the central or state variety, may be initiated online by submitting an application in Form B to the Food Safety and Standards Authority of India on their website. Click here to know more on How to get FSSAI certificate.</span>
+                      </div>
+                      <div className="flex justify-start items-center px-6 mt-4 space-x-2">
+                         <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                         <span className="text-yellow-600 font-medium text-xl">Things to Remember</span>
+                      </div>
+                      <div className="mt-3 flex justify-start px-10 text-justify">
+                        <span>For medium and large scale FBO businesses, it is mandatory to obtain an FSSAI license. Medium scale FBOs such as manufacturing units, marketers, transporters, traders and so on must also apply to the state government. Large scale FBOs such as manufacturers, exporters, importers and so on must apply to the central government.</span>
+                      </div>
                       <div className="flex justify-center mt-5 items-center">
                         <input
                           className="form-check-input appearance-none h-4 w-4 border border-yellow-300 rounded-sm bg-white checked:bg-yellow-600 checked:border-yellow-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -793,6 +974,38 @@ export const Sub_services = () => {
                           *All files are necessary and must be in pdf format
                         </span>
                         <span>*Maximum size allowed is 100KB</span>
+                      </div>
+                      <div className="flex mt-4 justify-start items-center px-6 space-x-2">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-yellow-600 text-lg font-medium">Benefits of filing Import Export Code</span>
+                      </div>
+                      <div className="flex mt-3 justify-start px-10 text-justify">
+                        <span>It acts as a license for Importing and Exporting goods. Through IEC number, Goods are cleared from the customs authorities. It provides dealer code details along with the details of the port from which goods are being imported and export. With the help of Import Export Code, it reduces the transport of illegal goods.</span>
+                      </div>
+                      <div className="flex mt-4 justify-start items-center px-6 space-x-2">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-yellow-600 text-lg font-medium">Service Inclusions</span>
+                      </div>
+                      <div className="flex flex-col mt-3 items-start px-10 text-justify">
+                        <span className="">1.	Assistance in applying for Import Export Certificate</span>
+                        <span>2.	Assistance in Documentation</span>
+                        <span>3.	Guidance in Registration</span>
+                        <span>4.	Information on document requirements.</span>
+                        <span>5.	Information on the process.</span>
+                      </div>
+                      <div className="flex mt-4 justify-start items-center px-6 space-x-2">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-yellow-600 text-lg font-medium">Service Exclusion</span>
+                      </div>
+                      <div className="flex flex-col mt-3 items-start px-10 text-justify">
+                        <span className="">Follow-ups with the associated government department.</span>
+                      </div>
+                      <div className="flex mt-4 justify-start items-center px-6 space-x-2">
+                        <span className="h-2 w-2 rounded-full bg-yellow-600"></span>
+                        <span className="text-yellow-600 text-lg font-medium">Average Time For Process</span>
+                      </div>
+                      <div className="flex flex-col mt-3 items-start px-10 text-justify">
+                        <span className="">Five Day Check Out</span>
                       </div>
                       <div className="form-check pt-10 flex px-10 flex-col md:flex-row items-start justify-around md:items-center">
                         <div>
