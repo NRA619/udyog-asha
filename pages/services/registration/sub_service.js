@@ -163,7 +163,7 @@ export const Sub_services = () => {
   return (
     <div className="bg-black bg-opacity-80 flex justify-center pt-14   min-h-screen w-full h-full">
       {loading == true && (
-        <div className=" flex justify-center z-20 absolute bg-black bg-opacity-40 min-h-screen  min-w-full">
+        <div className=" flex justify-center z-20 fixed bg-black bg-cover bg-opacity-40 min-h-screen h-full w-full  min-w-full">
           <div className="flex flex-col justify-center items-center w-full min-h-screen h-full">
             <BarLoader color="#ffffff" height={4} width={100} />
           </div>
