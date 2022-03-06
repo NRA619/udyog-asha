@@ -77,16 +77,9 @@ const Lecture = () => {
           </div>
           <div className="h-14 w-full  border-white flex flex-col items-center">
             <div className="w-full bg-red-500 ">
-              <ul>
-                <li className="text-xl bg-red-600 w-40 h-14 flex items-center justify-center text-white">
-                  Certificate
-                </li>
-              </ul>
             </div>
           </div>
-          <div className="text-black m-10">
-            Please click here to download the Certificate
-          </div>
+         
         </div>
 
         <div className="bg-red-50 mt-10 md:mt-0 md:h-full h-full w-full">
