@@ -36,7 +36,6 @@ const ProductDetail = () => {
         const post = await res.json();
         setinfo(post);
         checkPaid();
-        
       }
     }
     setTimeout(() => {
@@ -72,6 +71,15 @@ const ProductDetail = () => {
     window.location = "../login";
   }
 
+  async function lecturepage() {
+    await router.push({
+      pathname: "/training/lectures",
+      query: {
+        data: productId,
+      }
+    })
+  }
+
   return (
     <main className="">
       {loading == true && (
@@ -93,20 +101,27 @@ const ProductDetail = () => {
             </div>
             {paid === false && emaillog !== " " && (
               <button
-                className="md:mt-28 mt-10 bg-white text-black w-36 py-3 mb-16 rounded-sm text-lg font-bold"
+                className="mt-20 md:mt-32 bg-white text-black w-40 py-5 mb-16 rounded-sm text-xl font-bold"
                 onClick={paymentpage}
               >
                 Enroll Now
               </button>
             )}
             {paid === true && emaillog !== " " && (
-              <div className="">
+              <div className="flex space-x-2">
+                <button
+                  className="md:mt-28 mt-10 bg-white text-black w-36 py-3 mb-16 rounded-sm text-lg font-bold"
+                  onClick={lecturepage}
+                >
+                  Start Learning
+                </button>
                 <button
                   className="md:mt-28 mt-10 bg-white text-black w-36 py-3 mb-16 rounded-sm text-lg font-bold"
                   onClick={reviewpage}
                 >
                   FeedBack
                 </button>
+
               </div>
             )}
             {emaillog === " " && (
@@ -138,16 +153,8 @@ const ProductDetail = () => {
                 <div key={ch.id}>
                   {
                     <div className="mt-5 ml-2 md:ml-10">
-                      <div className="text-xl">Day: {ch.name}</div>
-                      <p className="ml-10 md:ml-20">{ch.details.map((item, index) => (
-                        <div key={index}>
-                          {
-                            <div className=" text-black">
-                              {item}
-                            </div>
-                          }
-                        </div>
-                      ))}</p>
+                      <div className="text-xl">Chapter: {ch.name}</div>
+                      <p className="ml-10 md:ml-20">{ch.details}</p>
                     </div>
                   }
                 </div>
