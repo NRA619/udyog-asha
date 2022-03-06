@@ -32,7 +32,7 @@ const Business = () => {
         if (email) {
           email = email.replace(/"/g, "");
         }
-        const response = await axios.post("http://murmuring-eyrie-62394.herokuapp.com/service/checkservice", {
+        const response = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/service/checkservice", {
           email: email,
           service_name: values
         });
