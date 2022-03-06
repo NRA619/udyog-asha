@@ -120,7 +120,7 @@ const Lecture = () => {
                 <div>
                   <div className="bg-red-400 w-full">
                     {item.details.map((details, index) => (
-                      <div className="flex w-80 min-w-full p-2">{details}</div>
+                      <div className="flex w-80 min-w-full p-2" key={index}>{details}</div>
                     ))}
                   </div>
                 </div>

@@ -20,8 +20,6 @@ const Training = () => {
   const [dropdownvalue, setdropdownvalue] = useState("Food and Food Product");
 
   useEffect(async () => {
-    
-
     const data = parseCookies();
     if (data.user) {
       let buff_dec = new Buffer.from(data.user, "base64");
@@ -34,12 +32,17 @@ const Training = () => {
       }
     }
 
-    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/GetTraining");
+    const res = await axios.post(
+      "https://murmuring-eyrie-62394.herokuapp.com/tr/GetTraining"
+    );
     setninjas(res.data);
 
-    const res1 = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/payment/Courses", {
-      email: emaillog,
-    });
+    const res1 = await axios.post(
+      "https://murmuring-eyrie-62394.herokuapp.com/payment/Courses",
+      {
+        email: emaillog,
+      }
+    );
     setCourses(res1.data);
     console.log(course);
     setTimeout(() => {
@@ -56,30 +59,24 @@ const Training = () => {
       {loading == false && (
         <div className="pt-14 ">
           <div className="md:flex flex flex-col md:flex-row items-center md:justify-between">
-            <div className="mt-6 rounded-full w-1/4 bg-red-200 hidden ml-10 shadow-md md:flex justify-start h-10">
-              <button className="p-1 pl-2">
-                <SearchSharpIcon color="primary"></SearchSharpIcon>
-              </button>
+            <div className="mt-6  w-1/4  hidden ml-10 md:flex justify-start h-10">
               <input
                 id="search_course"
                 type="text"
                 list="title_product"
                 placeholder="Search.."
-                className="bg-red-200 text-blue-800 outline-none ring-0 border-0 rounded-full focus:outline-none w-3/4 m-0 pl-1"
+                className="shadow-md w-full border border-red-900"
                 value={search.toLowerCase()}
                 onChange={(e) => setSearch(e.target.value)}
               ></input>
             </div>
-            <div className="mt-6 rounded-full bg-red-200 md:hidden  shadow-sm flex justify-start h-10 w-3/4">
-              <button className="p-1 pl-2">
-                <SearchSharpIcon color="primary"></SearchSharpIcon>
-              </button>
+            <div className="mt-6 md:hidden  flex justify-start h-10 w-3/4">
               <input
                 id="search_course"
                 type="text"
                 list="title_product"
                 placeholder="Search.."
-                className="bg-red-200 text-blue-800 outline-none ring-0 border-0 rounded-full focus:outline-none w-3/4 m-0 pl-1"
+                className="shadow-md w-full border border-red-900"
                 value={search.toLowerCase()}
                 onChange={(e) => setSearch(e.target.value)}
               ></input>
@@ -106,10 +103,14 @@ const Training = () => {
               {dropdown == true && (
                 <div className="relative">
                   <div className="flex absolute z-10 flex-col w-72 bg-white items-start shadow-sm rounded-sm">
-                  <div>
+                    <div>
                       {loggedin == 1 && (
                         <button
-                          onClick={() => {setfood(5), setdropdownvalue("Enrolled Courses"), setdropdown(false)}}
+                          onClick={() => {
+                            setfood(5),
+                              setdropdownvalue("Enrolled Courses"),
+                              setdropdown(false);
+                          }}
                           className="py-2 px-4"
                         >
                           Enrolled Courses
@@ -171,8 +172,6 @@ const Training = () => {
                     >
                       Entrepreneurship Development
                     </button>
-                   
-                    
                   </div>
                 </div>
               )}
@@ -444,33 +443,37 @@ const Training = () => {
               {course.map((val, index) => (
                 <div key={index} className="bg-gray-50 hover:shadow-md">
                   <div>
-                    {val.product_array.filter(
-                      (value) => {
-                        if(value.pname != undefined) {
-                          return value
+                    {val.product_array
+                      .filter((value) => {
+                        if (value.pname != undefined) {
+                          return value;
                         }
-                      } 
-                    ).map((enrolled, index) => (
-                      <div href={`${enrolled._id}`} key={index} className="w-full py-5 border border-gray-300 rounded-lg shadow-sm">
-                        <div>
-                          <div className="flex justify-between w-full">
-                            <div className="ml-5 font-semibold text-lg">
-                              {enrolled.pname}
-                            </div>                            
-                            <div className="text-blue-900 font-bold">
-                              {enrolled.Mode}
-                            </div>
-                            <div className="float-right mr-5 mt-1">
-                              <Link href={`${enrolled._id}`}>
-                                <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
-                                  Details
-                                </button>
-                              </Link>
+                      })
+                      .map((enrolled, index) => (
+                        <div
+                          href={`${enrolled._id}`}
+                          key={index}
+                          className="w-full py-5 border border-gray-300 rounded-lg shadow-sm"
+                        >
+                          <div>
+                            <div className="flex justify-between w-full">
+                              <div className="ml-5 font-semibold text-lg">
+                                {enrolled.pname}
+                              </div>
+                              <div className="text-blue-900 font-bold">
+                                {enrolled.Mode}
+                              </div>
+                              <div className="float-right mr-5 mt-1">
+                                <Link href={`${enrolled._id}`}>
+                                  <button className="bg-red-500 text-white text-sm px-2 py-1 rounded-sm">
+                                    Details
+                                  </button>
+                                </Link>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
                   </div>
                 </div>
               ))}
