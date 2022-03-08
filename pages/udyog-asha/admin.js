@@ -58,7 +58,11 @@ export default function Admin() {
         subservice: subservice,
         verify: verify,
       });
-      return window.location.reload();
+      if(res.data.data == "done"){
+        return window.location.reload();
+      }else {
+        return alert("Something went wrong")
+      }
     } else {
       return;
     }
