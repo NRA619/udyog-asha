@@ -302,8 +302,8 @@ export default function Admin() {
         <>
       {Object.keys(verified).length != 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {verified.map((data) => (
-            <div className="h-full w-full">
+          {verified.map((data, index) => (
+            <div className="h-full w-full" key={index}> 
               <div className="px-4 bg-indigo-600 m-4 py-4 shadow-sm">
                 <div className="flex justify-between">
                   <span className="text-white px-2 w-3/5 truncate">
@@ -318,7 +318,7 @@ export default function Admin() {
                 </div>
                 <div className="px-2 text-white space-y-1">
                   {data.product_array.map((data, index) => (
-                    <div>
+                    <div key={index}>
                       {index + 1}. {data.product_name}
                     </div>
                   ))}
@@ -334,8 +334,8 @@ export default function Admin() {
         <>
       {Object.keys(inprogress).length != 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {inprogress.map((data) => (
-            <div className="h-full w-full">
+          {inprogress.map((data, index) => (
+            <div className="h-full w-full" key={index}>
               <div className="px-4 bg-pink-600 m-4 py-4 shadow-sm">
                 <div className="flex justify-between">
                   <span className="text-white px-2 w-3/5 truncate">
@@ -350,7 +350,7 @@ export default function Admin() {
                 </div>
                 <div className="px-2 text-white space-y-1">
                   {data.product_array.map((data, index) => (
-                    <div>
+                    <div key={index}>
                       {index + 1}. {data.name}
                     </div>
                   ))}
