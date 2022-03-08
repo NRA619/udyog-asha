@@ -128,6 +128,7 @@ const Thumbnail = () => {
         const res = await axios.post(
           `https://murmuring-eyrie-62394.herokuapp.com/payment/payments/${data.razorpayPaymentId}`, {
             product_array: info,
+            status: "completed",
           }
         );
         if(res.data.paymentSuccess === true ) {

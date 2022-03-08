@@ -109,6 +109,7 @@ export const Business_sub_services = () => {
           `https://murmuring-eyrie-62394.herokuapp.com/payment/payments/${info.razorpayPaymentId}`,
           {
             product_array: data,
+            status: "in-progress"
           }
         );
         if (res.data.paymentSuccess === true) {
