@@ -115,8 +115,10 @@ export const Business_sub_services = () => {
         if (res.data.paymentSuccess === true) {
           console.log(res);
           console.log("sucess");
+          alert("payment done successfully.. please wait 1-2 days we will contact you soon")
+          return window.location = "/"
         } else {
-          console.log("error");
+          alert("Something went wrong")
         }
       },
       prefill: {
