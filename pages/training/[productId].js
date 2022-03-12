@@ -148,13 +148,15 @@ const ProductDetail = () => {
               Details
             </div>
             <div className="w-10 h-1 m-1 bg-yellow-400"></div>
-            <div className="mt-5 ml-2 md:ml-10">
+            <div className="mt-5 ml-2 md:ml-10 ">
               {info.details.map((ch) => (
                 <div key={ch.id}>
                   {
                     <div className="mt-5 ml-2 md:ml-10">
                       <div className="text-xl">Chapter: {ch.name}</div>
+                      <div className="flex">
                       <p className="ml-10 md:ml-20">{ch.details}</p>
+                      </div>
                     </div>
                   }
                 </div>
