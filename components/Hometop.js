@@ -74,7 +74,7 @@ export default function Hometop() {
                         <span className="bg-blue-500 h-0.5 w-auto" />
                     </span>
                     <span className="text-xxs flex items-center justify-center text-justify text-blue-600 font-medium pt-1">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
+                    Thanks to ISO to be a contributing partner.
                     </span>
                 </div>
             </motion.div>
@@ -91,7 +91,7 @@ export default function Hometop() {
                        <span className="bg-yellow-500 h-0.5 w-auto" />
                    </span>
                    <span className="text-xxs flex items-center justify-center text-justify text-yellow-600 font-medium pt-1">
-                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
+                  Thanks to Skill India in helping us to grow.
                    </span>
                </div>
            </motion.div>
@@ -108,7 +108,7 @@ export default function Hometop() {
                             <span className="bg-red-500 h-0.5 w-auto" />
                         </span>
                         <span className="text-xxs flex items-center justify-center text-justify text-red-600 font-medium pt-1">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. 
+                        Thanks to National Skill Development Corporation for supporting us.
                         </span>
                     </div>
                 </motion.div>

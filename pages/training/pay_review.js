@@ -183,17 +183,14 @@ const Thumbnail = () => {
               </span>
 
               <span className="text-black flex pt-4 text-justify">
-                - Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.
+                - Please Dont reload this page. Keep your calm.
               </span>
 
               <span className="text-black flex pt-4 text-justify">
-                - Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.
+                - Once payment is done we will mail you the recipet.
               </span>
               <span className="text-black flex pt-4 text-justify">
-                - Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry.
+                - For any query please fill the form on the footer.
               </span>
             </div>
             <div className="bg-redback md:bg-white mt-20 bg-cover md:shadow-xl md:border md:border-red-600 w-full md:w-1/2 h-full  md:h-3/4 pb-2 md:pb-0 justify-center md:my-10 md:transform md:translate-x-36">
