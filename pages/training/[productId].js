@@ -155,7 +155,11 @@ const ProductDetail = () => {
                     <div className="mt-5 ml-2 md:ml-10">
                       <div className="text-xl">Chapter: {ch.name}</div>
                       <div className="flex">
-                      <p className="ml-10 md:ml-20">{ch.details}</p>
+                      <p className="ml-10 md:ml-20">{ch.details.map((ch, index) => (
+                        <div key={index}>
+                          {ch}
+                        </div>
+                      ))}</p>
                       </div>
                     </div>
                   }
