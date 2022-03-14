@@ -154,7 +154,7 @@ export default function Footer() {
                 <div className="flex flex-col md:justify-center text-white w-1/2 p-2">
                     <Link href="/about">About Us</Link>
                     <Link href="/training/training">Courses</Link>
-                    <Link href="/product/products">See our products</Link>
+                    <Link href="/product/products">Products</Link>
                     
                 </div>
                 </div>
