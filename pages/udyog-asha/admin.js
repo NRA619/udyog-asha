@@ -217,8 +217,8 @@ export default function Admin() {
           </div>
       {dropdownvalue == "Unverified services" && (
           <div className="bg-gray-200 m-4 p-4">
-            {servicedata.map((service) => (
-              <>
+            {servicedata.map((service, index) => (
+              <div key ={index}>
                 {service.unverified > 0 && (
                   <div
                     key={service.email}
@@ -306,7 +306,7 @@ export default function Admin() {
                     )}
                   </div>
                 )}
-              </>
+              </div>
             ))}
           </div>
         
