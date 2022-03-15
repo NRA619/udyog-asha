@@ -38,9 +38,9 @@ const ProductDetail = () => {
         checkPaid();
       }
     }
-    setTimeout(() => {
+   
       setloading(false);
-    }, 2000);
+  
   }, [productId, emaillog]);
   async function checkPaid() {
     if (emaillog !== " ") {

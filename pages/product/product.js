@@ -32,9 +32,9 @@ const Product = () => {
     );
     setninjas(res.data);
     console.log(res.data);
-    setTimeout(() => {
+    
       setloading(false);
-    }, 3000);
+   
   }, []);
 
   return (

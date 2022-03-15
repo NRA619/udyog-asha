@@ -39,8 +39,8 @@ export default function Admin_login() {
 
     return(
         <div className="min-h-screen w-full ">
-            <div className="min-h-screen w-500 flex justify-center items-center">
-                <div className="h-96 w-128 bg-blue-400">
+            <div className="min-h-screen w-full flex justify-center items-center">
+                <div className="h-96 w-128 bg-gray-800">
                     <div className="flex justify-center mt-4 text-4xl text-white">Welcome Admin</div>
                     <form onSubmit={handleSubmit(loginform)} className="flex flex-col mt-10 items-center h-full space-y-10">
                         <div className="flex flex-col space-y-1">
@@ -49,7 +49,7 @@ export default function Admin_login() {
                             // validations
                             required: true,
                           })}
-                          name="username" className="bg-white focus:outline-none px-2 h-10 w-80 shadow-sm rounded-md"></input>
+                          name="username" className="text-white bg-gray-900 border-0 focus:ring-1 focus:ring-white shadow-md focus:outline-none px-2 h-10 w-80"></input>
                         </div>
                         <div className="flex flex-col space-y-1">
                             <label className="text-blue-50">Password*</label>
@@ -57,10 +57,10 @@ export default function Admin_login() {
                             // validations
                             required: true,
                           })}
-                          name="password" className="bg-white focus:outline-none px-2 h-10 w-80 shadow-sm rounded-md"></input>
+                          name="password" className="text-white bg-gray-900 border-0 focus:ring-1 focus:ring-white shadow-md focus:outline-none px-2 h-10 w-80"></input>
                         </div>
                         <div>
-                            <button className="py-1.5 px-4 bg-white shadow-sm rounded-sm text-blue-900">Login</button>
+                            <button className="py-1.5 px-4 bg-gray-900 text-white shadow-sm rounded-sm">Login</button>
                         </div>
                     </form>
                 </div>

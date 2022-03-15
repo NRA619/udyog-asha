@@ -58,11 +58,7 @@ export default function Admin() {
         subservice: subservice,
         verify: verify,
       });
-      if(res.data.data == "done"){
-        return window.location.reload();
-      }else {
-        return alert("Something went wrong")
-      }
+      return window.location.reload();
     } else {
       return;
     }
@@ -194,6 +190,27 @@ export default function Admin() {
                   >
                     Business support
                   </button>
+                  <span className="h-0.1 bg-pink-400 w-72"></span>
+                  <button
+                    onClick={() => window.location = "/udyog-asha/admin-train"}
+                    className="py-2 px-4"
+                  >
+                    Upload courses
+                  </button>
+                  <span className="h-0.1 bg-pink-400 w-72"></span>
+                  <button
+                    onClick={() => window.location = "/udyog-asha/admin-train-update"}
+                    className="py-2 px-4"
+                  >
+                    Update  courses
+                  </button>
+                  <span className="h-0.1 bg-pink-400 w-72"></span>
+                  <button
+                    onClick={() => window.location = "/udyog-asha/admin-train-delete"}
+                    className="py-2 px-4"
+                  >
+                    delete courses
+                  </button>
                 </div>
               </div>
             )}
@@ -306,8 +323,8 @@ export default function Admin() {
         <>
       {Object.keys(verified).length != 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {verified.map((data, index) => (
-            <div className="h-full w-full" key={index}> 
+          {verified.map((data) => (
+            <div className="h-full w-full">
               <div className="px-4 bg-indigo-600 m-4 py-4 shadow-sm">
                 <div className="flex justify-between">
                   <span className="text-white px-2 w-3/5 truncate">
@@ -322,7 +339,7 @@ export default function Admin() {
                 </div>
                 <div className="px-2 text-white space-y-1">
                   {data.product_array.map((data, index) => (
-                    <div key={index}>
+                    <div>
                       {index + 1}. {data.product_name}
                     </div>
                   ))}
@@ -338,8 +355,8 @@ export default function Admin() {
         <>
       {Object.keys(inprogress).length != 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {inprogress.map((data, index) => (
-            <div className="h-full w-full" key={index}>
+          {inprogress.map((data) => (
+            <div className="h-full w-full">
               <div className="px-4 bg-pink-600 m-4 py-4 shadow-sm">
                 <div className="flex justify-between">
                   <span className="text-white px-2 w-3/5 truncate">
@@ -354,7 +371,7 @@ export default function Admin() {
                 </div>
                 <div className="px-2 text-white space-y-1">
                   {data.product_array.map((data, index) => (
-                    <div key={index}>
+                    <div>
                       {index + 1}. {data.name}
                     </div>
                   ))}

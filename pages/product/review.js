@@ -73,7 +73,13 @@ export const Review = () => {
         recommendation: recommendation,
         review: review,
       })
+      alert("Data saved successfully")
+      return window.location = "/";
+    }else {
+      alert("please login");
+      return window.location = "/";
     }
+    
   }
   return (
     <div className="h-full w-full pt-6">

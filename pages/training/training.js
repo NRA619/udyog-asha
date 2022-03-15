@@ -45,9 +45,9 @@ const Training = () => {
     );
     setCourses(res1.data);
     console.log(course);
-    setTimeout(() => {
+  
       setloading(false);
-    }, 3000);
+    
   }, [emaillog, loading, course]);
   return (
     <main className="bg-red-600 bg-opacity-5">

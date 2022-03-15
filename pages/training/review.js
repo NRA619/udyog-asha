@@ -76,6 +76,11 @@ export const Review = () => {
         question_answered: question_answered,
         review_comment: review,
       });
+      alert("Data saved successfully")
+      return window.location = "/";
+    }else {
+      alert("please login");
+      return window.location = "/";
     }
   }
   return (
