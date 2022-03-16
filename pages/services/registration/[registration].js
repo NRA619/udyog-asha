@@ -55,10 +55,11 @@ const Registation = () => {
           <div className="bg-yellow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-full w-full pt-14 gap-4 pb-10">
             {data.map((data) => (
               <div key={data.name} className="">
-                <div
-                  className={` bg-${data.img} bg-cover  rounded-lg h-72  shadow-md`}
-                >
-                  <div className="bg-gray-800 bg-opacity-60 w-full flex flex-col justify-between rounded-lg h-72 shadow-md">
+                <div className="relative rounded-lg h-72 w-full  shadow-md">
+                  <div className="absolute h-full rounded-lg object-contain -z-10 flex items-center p-1">
+                  <Image height={300} width={400} src={data.img} className="flex object-contain"></Image>
+                  </div>
+                  <div className="absolute bg-gray-800 bg-opacity-60 w-full flex flex-col justify-between rounded-lg h-72 shadow-md">
                     <span className="text-xl text-center pt-10 px-5 text-white">
                       {data.name}
                     </span>
