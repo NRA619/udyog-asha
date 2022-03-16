@@ -137,7 +137,7 @@ const ProductDetail = () => {
                     <span className="text-red-500 font-semibold">Price:</span>
                     <span className="flex space-x-1 font-medium text-black capitalize">
                       <span>Rs.</span>
-                      <span>{info.price / 2}</span>
+                      <span>{info.price / 100}</span>
                     </span>
                   </li>
                   <li className="">
