@@ -155,7 +155,7 @@ export default function Admin_training() {
                             link: e.target.value,
                           }))
                         }
-                        value={samcoursefield.video}
+                        value={samcoursefield.link}
                         className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-60"
                       ></input>
                     </div>
