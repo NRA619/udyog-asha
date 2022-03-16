@@ -14,7 +14,7 @@ export default function Admin_training() {
   const [loading, setloading] = useState(true);
   const [samcoursefield, setSamcoursefield] = useState({
     name: "",
-    video: "",
+    link: "",
     details: [],
   });
   const [sam3coursefield, setSam3coursefield] = useState({
@@ -67,13 +67,13 @@ export default function Admin_training() {
   //   setSam2coursefield([])
   // }
   const onSubmitForm2 = (values) => {
-    if (samcoursefield.name != "" && samcoursefield.video != "") {
-      let videolink = samcoursefield.video;
+    if (samcoursefield.name != "" && samcoursefield.link != "") {
+      let videolink = samcoursefield.link;
       videolink = videolink.replace(/view\?usp\=sharing/g, "preview");
       setcoursefield((coursefield) => ({
         ...coursefield,
         name: samcoursefield.name,
-        video: videolink,
+        link: videolink,
         details: [...sam2coursefield],
       }));
       if (values == "mesure") {
@@ -81,7 +81,7 @@ export default function Admin_training() {
         console.log(sam4coursefield);
         setSamcoursefield({
           name: "",
-          video: "",
+          link: "",
         });
         setSam2coursefield([]);
       }
@@ -152,7 +152,7 @@ export default function Admin_training() {
                         onChange={(e) =>
                           setSamcoursefield((prevSamcoursefield) => ({
                             ...prevSamcoursefield,
-                            video: e.target.value,
+                            link: e.target.value,
                           }))
                         }
                         value={samcoursefield.video}
