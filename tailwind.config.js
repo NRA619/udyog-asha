@@ -46,6 +46,17 @@ module.exports = {
         'registration': "url('/registration.jpg')",
         'pmedia': "url('/pmedia.jpg')",
         'marketing': "url('/marketing.png')",
+        'business_reg': "url('/business.jpg')",
+        'gst': "url('/gst.jpg')",
+        'trademark': "url('/trademark.jpg')",
+        'msme': "url('/msme.png')",
+        'flr' : "url('/flr.jpg')",
+        'pan_card': "url('/pan_card.png')",
+        'iec': "url('/iec.png')",
+        'b6m': "url('/b6m.jpg')",
+        'ea': "url('/ea.jpg')",
+        'p25': "url('/p25.jpg')",
+        'custom': "url('/custom.jpg')",
 
       }),
       width: {

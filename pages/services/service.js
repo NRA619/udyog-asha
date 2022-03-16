@@ -21,12 +21,12 @@ export const Service = () => {
 
             <div className="bg-yellow grid grid-cols-1  md:grid-cols-2 h-full w-full md:w-3/5  mt-20 gap-4">
                 <div className="flex flex-col justify-between bg-registration bg-cover bg-opacity-40 rounded-lg h-72  shadow-md">
-                    <span className="text-center pt-10 px-5 rounded-t-lg text-black bg-yellow-100 bg-opacity-50 h-full ">
+                    <span className="text-center pt-10 px-5 rounded-t-lg text-white bg-gray-600 bg-opacity-50 h-full ">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.         
                     </span>
                     <span className="flex justify-center">
                     <Link href={`registration/${data[0]._id}`} className="">
-                        <span className="bg-yellow-300  w-full flex justify-center hover:bg-black hover:text-white font-medium rounded-b-lg text-gray-800 bg-opacity-60 shadow-xl py-4">{data[0].service_name}</span>
+                        <span className="bg-gray-800  w-full flex justify-center hover:bg-black hover:text-white font-medium rounded-b-lg text-white bg-opacity-60 shadow-xl py-4">{data[0].service_name}</span>
                     </Link>
                     </span>
                 </div>

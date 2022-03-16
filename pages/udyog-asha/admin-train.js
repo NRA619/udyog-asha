@@ -174,7 +174,7 @@ export default function Admin_training() {
                         }))
                       }
                       value={sam3coursefield.details}
-                      className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-whitel border-0 focus:outline-none h-9 w-48 md:w-60"
+                      className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-whitel border-0 focus:outline-none h-9 w-48 md:w-60 text-white"
                     ></input>
                     <button onClick={onSubmitForm3} className="text-yellow-400">
                       <QueueIcon />
