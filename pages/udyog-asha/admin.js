@@ -211,6 +211,27 @@ export default function Admin() {
                   >
                     delete courses
                   </button>
+                  <span className="h-0.1 bg-pink-400 w-72"></span>
+                  <button
+                    onClick={() => window.location = "/udyog-asha/admin-product"}
+                    className="py-2 px-4"
+                  >
+                    Upload products
+                  </button>
+                  <span className="h-0.1 bg-pink-400 w-72"></span>
+                  <button
+                    onClick={() => window.location = "/udyog-asha/admin-product-update"}
+                    className="py-2 px-4"
+                  >
+                    Update products
+                  </button>
+                  <span className="h-0.1 bg-pink-400 w-72"></span>
+                  <button
+                    onClick={() => window.location = "/udyog-asha/admin-product-delete"}
+                    className="py-2 px-4"
+                  >
+                    delete products
+                  </button>
                 </div>
               </div>
             )}
@@ -340,7 +361,7 @@ export default function Admin() {
                 <div className="px-2 text-white space-y-1">
                   {data.product_array.map((data, index) => (
                     <div key={index}>
-                      {index + 1}. {data.product_name}
+                      {index + 1}. {data.product_name} - {data.quantity}
                     </div>
                   ))}
                 </div>

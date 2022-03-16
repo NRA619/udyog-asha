@@ -123,7 +123,7 @@ const Product = () => {
                 }
               })
               .map((ninja) => (
-                <div className="bg-gray-50 hover:shadow-2xl" key={ninja.id}>
+                <div className="bg-gray-50 hover:shadow-2xl" key={ninja._id}>
                   <div>
                     <Image
                       src={ninja.img}

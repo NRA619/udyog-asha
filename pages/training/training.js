@@ -202,7 +202,7 @@ const Training = () => {
                   }
                 })
                 .map((ninja) => (
-                  <Link href={`${ninja._id}`} key={ninja.id}>
+                  <Link href={`${ninja._id}`} key={ninja._id}>
                     <div className="bg-gray-50 hover:shadow-2xl">
                       <Image
                         src={ninja.img}
@@ -255,7 +255,7 @@ const Training = () => {
                   }
                 })
                 .map((ninja) => (
-                  <Link href={`${ninja._id}`} key={ninja.id}>
+                  <Link href={`${ninja._id}`} key={ninja._id}>
                     <div className="bg-gray-50 hover:shadow-2xl">
                       <Image
                         src={ninja.img}
@@ -306,7 +306,7 @@ const Training = () => {
                   }
                 })
                 .map((ninja) => (
-                  <Link href={`${ninja._id}`} key={ninja.id}>
+                  <Link href={`${ninja._id}`} key={ninja._id}>
                     <div className="bg-gray-50 hover:shadow-2xl">
                       <Image
                         src={ninja.img}
@@ -357,7 +357,7 @@ const Training = () => {
                   }
                 })
                 .map((ninja) => (
-                  <Link href={`${ninja._id}`} key={ninja.id}>
+                  <Link href={`${ninja._id}`} key={ninja._id}>
                     <div className="bg-gray-50 hover:shadow-2xl">
                       <Image
                         src={ninja.img}
@@ -408,7 +408,7 @@ const Training = () => {
                   }
                 })
                 .map((ninja) => (
-                  <Link href={`${ninja._id}`} key={ninja.id}>
+                  <Link href={`${ninja._id}`} key={ninja._id}>
                     <div className="bg-gray-50 hover:shadow-2xl">
                       <Image
                         src={ninja.img}

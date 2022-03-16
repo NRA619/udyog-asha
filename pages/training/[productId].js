@@ -149,8 +149,8 @@ const ProductDetail = () => {
             </div>
             <div className="w-10 h-1 m-1 bg-yellow-400"></div>
             <div className="mt-5 ml-2 md:ml-10 ">
-              {info.details.map((ch) => (
-                <div key={ch.id}>
+              {info.details.map((ch, index) => (
+                <div key={index}>
                   {
                     <div className="mt-5 ml-2 md:ml-10">
                       <div className="text-xl">Chapter: {ch.name}</div>
