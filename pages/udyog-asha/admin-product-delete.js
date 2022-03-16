@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 import BarLoader from "react-spinners/BarLoader";
 import { useRouter } from "next/router";
 
-export default function Admin_training_delete() {
+export default function Admin_product_delete() {
   const router = useRouter();
   const [isLogged, setisLogged] = useState(false);
   const [loading, setloading] = useState(true);
@@ -31,7 +31,7 @@ export default function Admin_training_delete() {
   }, [isLogged, loading]);
 
   async function onSubmitForm(values) {
-    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/delete_train", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/delete_product", {
       values,
     });
     if (res.data.data == "updated") {
@@ -54,14 +54,14 @@ export default function Admin_training_delete() {
           {isLogged == true && loading == false && (
             <>
               <div className="flex justify-center text-white text-3xl pb-20">
-                <span>Hi Admin, want to delete a couse?</span>
+                <span>Hi Admin, want to delete a product?</span>
               </div>
               <form
                 onSubmit={handleSubmit(onSubmitForm)}
                 className="space-y-10"
               >
                 <div className="text-white flex justify-between">
-                  <label>Course name</label>
+                  <label>Product name</label>
                   <input
                     type="text"
                     {...register("pname", {
