@@ -106,7 +106,7 @@ export const Review = () => {
             <div>
               {done === false && (
                 <form onSubmit={handleSubmit(onSubmitForm)}>
-                  <div className="px-10 space-y-2">
+                  <div className="px-2 md:px-10 space-y-2">
                     <label>Is this course is interesting?</label>
                     <fieldset id="interesting" className="flex justify-between">
                       <div className="space-x-2 flex items-center w-1/6  justify-start">
@@ -133,7 +133,7 @@ export const Review = () => {
                         />
                         <label htmlFor="int">Interesting</label>
                       </div>
-                      <div className="space-x-2 flex items-center w-1/6  justify-start">
+                      <div className="space-x-2 flex items-center w-1/12 md:w-1/6 justify-start">
                         <input
                           type="radio"
                           value="notbad"
@@ -145,7 +145,7 @@ export const Review = () => {
                         />
                         <label htmlFor="nbd">Not Bad</label>
                       </div>
-                      <div className="space-x-2 flex items-center w-1/6  justify-start">
+                      <div className="space-x-2 flex items-center w-1/4 md:w-1/6 justify-start">
                         <input
                           type="radio"
                           value="notinteresting"
@@ -159,7 +159,7 @@ export const Review = () => {
                       </div>
                     </fieldset>
                   </div>
-                  <div className="px-10 space-y-2 pt-10">
+                  <div className="px-2 md:px-10 space-y-2 pt-10">
                     <label>
                       Was the classroom delivery audible and understandable?
                     </label>
@@ -214,7 +214,7 @@ export const Review = () => {
                       </div>
                     </fieldset>
                   </div>
-                  <div className="px-10 space-y-2 pt-10">
+                  <div className="px-2 md:px-10 space-y-2 pt-10">
                     <label>
                       General interaction of instructior with you was?
                     </label>
@@ -269,7 +269,7 @@ export const Review = () => {
                       </div>
                     </fieldset>
                   </div>
-                  <div className="px-10 space-y-2 pt-10">
+                  <div className="px-2 md:px-10 space-y-2 pt-10">
                     <label>Were questions answered satisfactorly?</label>
                     <fieldset
                       id="question_answered"
@@ -325,7 +325,7 @@ export const Review = () => {
                       </div>
                     </fieldset>
                   </div>
-                  <div className="px-10 space-y-2 pt-10">
+                  <div className="px-2 md:px-10 space-y-2 pt-10">
                     <label>Overall experience with this course?</label>
                     <fieldset id="experience" className="flex justify-between">
                       <div className="space-x-2 flex items-center w-1/6  justify-start">

@@ -140,7 +140,7 @@ export default function Admin() {
               <span className="mt-0.5">Logout</span>
             </button>
           </div>
-          <div className="mb-6 m-4 mt-20  text-sm md:text-md flex flex-col ">
+          <div className="mb-6 m-0  md:m-4 mt-20 text-sm md:text-md flex flex-col ">
             <div className="border border-pink-400 shadow-md py-2 px-4 w-72 flex justify-between rounded-sm">
               <span>{dropdownvalue}</span>
               {dropdow == false && (
@@ -237,13 +237,13 @@ export default function Admin() {
             )}
           </div>
       {dropdownvalue == "Unverified services" && (
-          <div className="bg-gray-200 m-4 p-4">
+          <div className="bg-gray-200 my-4 py-4 m-0 p-0 md:m-4 px-1 md:p-4">
             {servicedata.map((service, index) => (
               <>
                 {service.unverified > 0 && (
                   <div
                     key={service.email}
-                    className="flex flex-col bg-gray-100 my-5 p-5"
+                    className="flex flex-col bg-gray-100 my-5 py-5 md:p-5"
                   >
                     <span className="text-black space-x-2 flex items-center w-full">
                       
@@ -267,7 +267,7 @@ export default function Admin() {
                       </span>
                     </span>
                     {service.email == dropdown && (
-                      <div className="mx-8 bg-gray-50 mt-1 shadow-sm rounded-sm p-4">
+                      <div className="md:mx-8 bg-gray-50 mt-1 shadow-sm rounded-sm py-4 px-2 md:p-4">
                         <span className="">
                           {Object.keys(service.registration).length != 0 && (
                             <span>

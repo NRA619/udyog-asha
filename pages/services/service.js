@@ -16,7 +16,7 @@ export const Service = () => {
     
 
     return (
-        <div className="h-full min-h-screen w-full pt-20 px-10 flex justify-center">
+        <div className="h-full min-h-screen w-full py-20 px-10 flex justify-center">
             {Object.keys(data).length !== 0 && (
 
             <div className="bg-yellow grid grid-cols-1  md:grid-cols-2 h-full w-full md:w-3/5  mt-20 gap-4">
