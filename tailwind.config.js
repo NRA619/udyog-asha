@@ -61,7 +61,7 @@ module.exports = {
         'ea': "url('/ea.jpg')",
         'p25': "url('/p25.jpg')",
         'custom': "url('/custom.jpg')",
-        'certificate': "url('/cert.png')",
+        'certificate': "url('/certificate.png')",
 
       }),
       width: {
