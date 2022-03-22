@@ -171,7 +171,7 @@ const Cart = () => {
     }
 
     const options = {
-      key: "rzp_test_A6By7nQZCu7J7J", // Enter the Key ID generated from the Dashboard
+      key: "rzp_live_iQ0qtIQjfOGyaB", // Enter the Key ID generated from the Dashboard
       amount: totalprice,
       name: fname,
       description: str,
