@@ -7,8 +7,6 @@ import { useRouter } from "next/router";
 import { parseCookies } from "../../components/cookie";
 import axios from "axios";
 
-
-
 const App_pdf = () => {
   const pdfExportComponent = useRef(null);
   const contentArea = useRef(null);
@@ -16,19 +14,22 @@ const App_pdf = () => {
   const productId = router.query.data;
   const [fname, setfname] = useState("");
   const [info, setinfo] = useState([]);
-  const [paidid, setpaidid] = useState("")
+  const [paidid, setpaidid] = useState("");
 
   useEffect(async () => {
     const data = parseCookies();
-    if(productId && data.user){
+    if (productId && data.user) {
       let buff_dec = new Buffer.from(data.user, "base64");
       let xyz = buff_dec.toString("ascii");
       var email = xyz;
       if (email) {
         email = email.replace(/"/g, "");
-        const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/user/getdata", {
-          email: email,
-        });
+        const res = await axios.post(
+          "https://murmuring-eyrie-62394.herokuapp.com/user/getdata",
+          {
+            email: email,
+          }
+        );
         setfname(res.data.fullname);
         console.log(res);
         const resp = await fetch(
@@ -37,18 +38,21 @@ const App_pdf = () => {
         const post = await resp.json();
         setinfo(post);
         console.log(post);
-        const respt = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/get_paid_id", {
-          email: email,
-          pid: productId,
-        })
-        if(respt.data.data == "Not found"){
+        const respt = await axios.post(
+          "https://murmuring-eyrie-62394.herokuapp.com/tr/get_paid_id",
+          {
+            email: email,
+            pid: productId,
+          }
+        );
+        if (respt.data.data == "Not found") {
           return window.location == "/";
-        }else{
+        } else {
           setpaidid(respt.data.data);
         }
       }
     }
-  }, [productId])
+  }, [productId]);
 
   const handleExportWithComponent = (event) => {
     pdfExportComponent.current.save();
@@ -58,7 +62,6 @@ const App_pdf = () => {
     savePDF(contentArea.current, { paperSize: "A4" });
   };
 
-
   return (
     <div className="min-h-screen h-full w-full">
       <PDFExport ref={pdfExportComponent} paperSize="A4">
@@ -66,7 +69,7 @@ const App_pdf = () => {
           ref={contentArea}
           className="flex h-200 w-full justify-between relative bg-yellow-500 py-10 font-sans"
         >
-          <div className="h-full bg-certificate bg-cover -z-10 w-1/4 flex  flex-col"></div>
+          <div className="h-full bg-certificate bg-cover z-10 w-1/4 flex  flex-col"></div>
 
           <div className="flex flex-col items-center  right-0 h-full bg-white w-6/7">
             <div className="flex pt-2 space-x-3">
@@ -110,7 +113,7 @@ const App_pdf = () => {
             </div>
 
             <div className="pt-4 text-2xl font-semibold text-red-600 pr-2">
-            <Image src="/udyogmiddle.png" height={30} width={380}></Image>
+              <Image src="/udyogmiddle.png" height={30} width={380}></Image>
             </div>
             <div className="text-indigo-800 font-semibold">
               MAHARASHTRA OPEN VOCATIONAL TRAINING CENTER
@@ -128,35 +131,34 @@ const App_pdf = () => {
             </div>
             <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
               <span className="">This is to Certify that Shri./Smt./Ram.</span>
-              <div className="flex flex-col items-center">
-              <span className="text-indigo-800 ">{fname}</span>
               <span className="h-0.1 w-40 bg-black"></span>
-              </div>
             </div>
             <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
-              <span className="h-0.1 w-72 bg-black"></span>
+              <div className="flex flex-col items-center">
+                <span className="text-indigo-800 ">{fname}</span>
+                <span className="h-0.1 w-72 bg-black"></span>
+              </div>
               <span>Having Attended and</span>
             </div>
             <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
               <span>Successfully completed a Course in</span>
               <div className="flex flex-col items-center">
                 <span></span>
-              <span className="h-0.1 w-52 bg-black"></span>
+                <span className="h-0.1 w-52 bg-black"></span>
               </div>
             </div>
             <div className="flex items-end pt-4 font-Hurricane">
               <div className="flex flex-col items-center">
                 <span className="text-indigo-800">{info.pname}</span>
-              <span className="h-0.1 w-96 bg-black"></span>
+                <span className="h-0.1 w-96 bg-black"></span>
               </div>
-              
             </div>
-            
+
             <div className="flex items-end pt-4 text-xl  font-Hurricane">
               <span>by the training centre</span>
               <div className="flex flex-col items-center">
-                <span className="text-indigo-800">Udyog Asha</span> 
-              <span className="h-0.1 w-72 ml-2 bg-black"></span>
+                <span className="text-indigo-800">Udyog Asha</span>
+                <span className="h-0.1 w-72 ml-2 bg-black"></span>
               </div>
               <span className="h-0.1 w-4 bg-black"></span>
             </div>
@@ -168,7 +170,10 @@ const App_pdf = () => {
         </div>
       </PDFExport>
       <div className=" py-10 flex justify-center">
-        <button className="bg-gray-900 py-2 px-4 text-gray-100 shadow-md glow glow-gray-600-md rounded-full hover:bg-gray-800 hover:text-gray-100 transform delay-200 transition hover:scale-105" onClick={handleExportWithComponent}>
+        <button
+          className="bg-gray-900 py-2 px-4 text-gray-100 shadow-md glow glow-gray-600-md rounded-full hover:bg-gray-800 hover:text-gray-100 transform delay-200 transition hover:scale-105"
+          onClick={handleExportWithComponent}
+        >
           Download Certificate
         </button>
       </div>
