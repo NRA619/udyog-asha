@@ -1,4 +1,14 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Hurricane";
+    src: url("Hurricane-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "DejaVu Sans";
+    src: url("akshar.ttf") format("truetype");
+  }
+}

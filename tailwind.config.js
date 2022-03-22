@@ -9,7 +9,11 @@ module.exports = {
       borderRadius: {
         large: "3rem",
       },
+      fontFamily: {
+        'Hurricane': ['Hurricane', 'cursive']
+      },
       spacing: {
+        '68' : '17rem',
         '128': '32rem',
         '156': '48rem',
         '256': '60rem',
@@ -57,6 +61,7 @@ module.exports = {
         'ea': "url('/ea.jpg')",
         'p25': "url('/p25.jpg')",
         'custom': "url('/custom.jpg')",
+        'certificate': "url('/cert.png')",
 
       }),
       width: {

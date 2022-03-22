@@ -12,6 +12,7 @@ const ProductDetail = () => {
   const [loading, setloading] = useState(true);
   const [emaillog, setemaillog] = useState(" ");
   const [paid, setpaid] = useState(false);
+  const [review, setreview] = useState(false);
 
   useEffect(async () => {
     window.scrollTo(0, 0);
@@ -26,9 +27,12 @@ const ProductDetail = () => {
       }
     }
     if (productId) {
-      const check = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/checkproduct", {
-        pid: productId,
-      });
+      const check = await axios.post(
+        "https://murmuring-eyrie-62394.herokuapp.com/tr/checkproduct",
+        {
+          pid: productId,
+        }
+      );
       if (check.data.product === true && Object.keys(info).length === 0) {
         const res = await fetch(
           `https://murmuring-eyrie-62394.herokuapp.com/tr/Details/${productId}`
@@ -36,21 +40,37 @@ const ProductDetail = () => {
         const post = await res.json();
         setinfo(post);
         checkPaid();
+        checkReview();
       }
     }
-   
-      setloading(false);
-  
+
+    setloading(false);
   }, [productId, emaillog]);
   async function checkPaid() {
     if (emaillog !== " ") {
-      const resp = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/reviewcheck", {
-        email: emaillog,
-        pid: productId,
-      });
+      const resp = await axios.post(
+        "https://murmuring-eyrie-62394.herokuapp.com/tr/reviewcheck",
+        {
+          email: emaillog,
+          pid: productId,
+        }
+      );
       if (resp.data.paid === true) {
         setpaid(true);
       }
+    }
+  }
+
+  async function checkReview(){
+    const response = await axios.post(
+      "https://murmuring-eyrie-62394.herokuapp.com/tr/reviewvalidate",
+      {
+        email: emaillog,
+        pid: productId,
+      }
+    );
+    if (response.data.Done === true) {
+      setreview(true);
     }
   }
 
@@ -71,13 +91,20 @@ const ProductDetail = () => {
     window.location = "../login";
   }
 
+  async function certificatepage() {
+    await router.push({
+      pathname: "/training/pdf_check",
+      query: { data: productId }, // passing email variable
+    });
+  }
+
   async function lecturepage() {
     await router.push({
       pathname: "/training/lectures",
       query: {
         data: productId,
-      }
-    })
+      },
+    });
   }
 
   return (
@@ -108,20 +135,27 @@ const ProductDetail = () => {
               </button>
             )}
             {paid === true && emaillog !== " " && (
-              <div className="flex space-x-2">
+              <div className="flex md:flex-row flex-col space-x-2">
                 <button
-                  className="md:mt-28 mt-10 bg-white text-black w-36 py-3 mb-16 rounded-sm text-lg font-bold"
+                  className="md:mt-28 mt-10 bg-white text-black w-36 py-3 mb-4 ml-2 md:mb-16 rounded-sm text-lg font-bold"
                   onClick={lecturepage}
                 >
                   Start Learning
                 </button>
                 <button
-                  className="md:mt-28 mt-10 bg-white text-black w-36 py-3 mb-16 rounded-sm text-lg font-bold"
+                  className="md:mt-28 my-2 bg-white text-black w-36 py-3 md:mb-16 rounded-sm text-lg font-bold"
                   onClick={reviewpage}
                 >
                   FeedBack
                 </button>
-
+                {paid === true && emaillog !== " " && review === true && (
+                  <button
+                    className="md:mt-28 my-4 bg-white text-black w-36 py-3 md:mb-16 rounded-sm text-lg font-bold"
+                    onClick={certificatepage}
+                  >
+                    View Certificate
+                  </button>
+                )}
               </div>
             )}
             {emaillog === " " && (
@@ -155,11 +189,11 @@ const ProductDetail = () => {
                     <div className="mt-5 ml-2 md:ml-10">
                       <div className="text-xl">Chapter: {ch.name}</div>
                       <div className="flex">
-                      <p className="ml-10 md:ml-20">{ch.details.map((ch, index) => (
-                        <div key={index}>
-                          {ch}
-                        </div>
-                      ))}</p>
+                        <p className="ml-10 md:ml-20">
+                          {ch.details.map((ch, index) => (
+                            <div key={index}>{ch}</div>
+                          ))}
+                        </p>
                       </div>
                     </div>
                   }
@@ -173,7 +207,9 @@ const ProductDetail = () => {
                 Invigilator
               </div>
               <div className="w-10 h-1 m-1 bg-yellow-400"></div>
-              <div className="text-2xl mt-5 ml-5 md:ml-10">{info.invigilator}</div>
+              <div className="text-2xl mt-5 ml-5 md:ml-10">
+                {info.invigilator}
+              </div>
             </div>
           </div>
         </div>
