@@ -95,7 +95,8 @@ export const Review = () => {
         </div>
       )}
       {emaillog !== " " && loading == false && (
-        <div className="bg-feed bg-cover h-full w-full flex justify-center ">
+        <div className="bg-feed bg-cover h-full w-full flex flex-col items-center">
+        <div className="mt-14 bg-gray-800 text-white py-2 px-4 glow glow-gray-600-md">Please complete the course and feedback form to get your certificate </div>
           <div className="bg-white bg-opacity-95 border border-blue-400 h-1/2 w-full   md:w-3/4 my-20 shadow-xl">
             <div className="flex justify-center">
               <span className="p-4 pt-10 text-3xl font-bold underline">

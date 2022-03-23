@@ -181,7 +181,7 @@ export const Sub_services = () => {
                   <div className=" ">
                     <form
                       onSubmit={handleSubmit(onSubmitForm)}
-                      className="flex flex-col w-256 h-full"
+                      className="flex flex-col w-full h-full"
                     >
                       <div className="flex justify-center pt-4">
                         <span className="text-4xl space-x-1.5">
@@ -227,7 +227,7 @@ export const Sub_services = () => {
                         </span>
                       </div>
                       <div className="h-1 w-10 rounded-full  bg-yellow-900 mt-1 mx-10"></div>
-                      <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
+                      <div className="grid md:grid-cols-2 grid-cols-1 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.address_proof.map((adp, index) => (
                           <div className="flex flex-col space-y-2" key={index}>
                             <label className="text-yellow-600 font-medium flex space-x-1">
@@ -255,7 +255,7 @@ export const Sub_services = () => {
                       <div className="grid grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                         {data.proof_of_registered_office.map((rdp, index) => (
                           <div className="flex flex-col space-y-2" key={index}>
-                            <label className="text-yellow-600 font-medium flex space-x-1">
+                            <label className="text-yellow-600 font-medium flex space-x-1 text-xs md:text-base">
                               <span>*{rdp}</span>
                               <div className="group text-black flex"></div>
                             </label>
