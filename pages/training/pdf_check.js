@@ -74,7 +74,7 @@ const App_pdf = () => {
               <div className="h-full items-end object-contain overflow-auto relative z-10 w-1/4 flex  flex-col">
                 <div className="h-full flex items-end  absolute bottom-0">
                   <Image
-                    src="/cert.png"
+                    src="https://i.postimg.cc/NfvLb3T9/cert.png"
                     height={1700}
                     width={300}
                     className=""
@@ -156,7 +156,10 @@ const App_pdf = () => {
                   </div>
                 </div>
                 <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
-                  <span className="h-0.1 w-72 bg-black"></span>
+                  <div className="flex flex-col items-center">
+                  <span className="text-indigo-800 ">{fname}</span>
+                    <span className="h-0.1 w-72 bg-black"></span>
+                  </div>
                   <span>Having Attended and</span>
                 </div>
                 <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
