@@ -73,12 +73,12 @@ const App_pdf = () => {
             >
            
               <div className="flex justify-between right-0 h-full bg-white w-full">
-                <div className="w-44 h-full flex flex-col bg-cover">
+              <div className="w-44 h-full flex flex-col justify-end">
                 <Image
-                        src="/udyogasha.png"
-                        height={60}
+                        src="/cert.png"
+                        height={1000}
                         width={180}
-                      ></Image>              
+                      ></Image> 
                 </div>
                 <div className="flex flex-col items-center w-6/7">
                 <div className="flex pt-2 space-x-3">
