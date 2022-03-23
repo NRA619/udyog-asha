@@ -71,10 +71,11 @@ const App_pdf = () => {
               ref={contentArea}
               className="flex h-200 w-full justify-between relative bg-yellow-500 py-10 font-sans"
             >
-              <div className="h-full items-end object-contain overflow-auto relative z-10 w-1/4 flex  flex-col">
-                <div className="h-full flex items-end  absolute bottom-0">
+              <div className="h-full object-contain overflow-y-auto relative w-1/4">
+                <div className="h-full flex items-end absolute bottom-0">
                   <Image
                     src="https://i.postimg.cc/NfvLb3T9/cert.png"
+                    alt="/cert.png"
                     height={1700}
                     width={300}
                     className=""
