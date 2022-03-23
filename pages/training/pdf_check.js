@@ -69,18 +69,18 @@ const App_pdf = () => {
           <PDFExport ref={pdfExportComponent} paperSize="A4">
             <div
               ref={contentArea}
-              className="flex h-200 w-full justify-between relative bg-yellow-500 py-10 font-sans"
+              className="flex h-156 w-full justify-between relative bg-yellow-500 py-10 font-sans"
             >
            
-              <div className="flex justify-between right-0 h-full bg-white w-full">
+              <div className="flex justify-between right-0 h-full w-full">
               <div className="w-44 h-full flex flex-col justify-end">
                 <Image
-                        src="/cert.png"
-                        height={1000}
+                        src="/certification.png"
+                        height={900}
                         width={180}
                       ></Image> 
                 </div>
-                <div className="flex flex-col items-center w-6/7">
+                <div className="flex flex-col items-center bg-white w-6/7">
                 <div className="flex pt-2 space-x-3">
                   <div className="flex flex-col items-end text-sm">
                     <div className="font-bold text-red-600">UDYOGAASHA</div>
