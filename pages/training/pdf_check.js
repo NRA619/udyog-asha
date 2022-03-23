@@ -73,6 +73,7 @@ const App_pdf = () => {
             >
               <div className="h-full object-contain overflow-y-auto relative w-1/4">
                 <div className="h-full flex items-end absolute bottom-0">
+                  <div className="bg-black ">
                   <Image
                     src="https://i.postimg.cc/NfvLb3T9/cert.png"
                     alt="/cert.png"
@@ -80,6 +81,7 @@ const App_pdf = () => {
                     width={300}
                     className=""
                   ></Image>
+                  </div>
                 </div>
               </div>
 
@@ -152,7 +154,6 @@ const App_pdf = () => {
                     This is to Certify that Shri./Smt./Ram.
                   </span>
                   <div className="flex flex-col items-center">
-                    <span className="text-indigo-800 ">{fname}</span>
                     <span className="h-0.1 w-40 bg-black"></span>
                   </div>
                 </div>
