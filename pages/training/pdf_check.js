@@ -71,19 +71,11 @@ const App_pdf = () => {
               ref={contentArea}
               className="flex h-200 w-full justify-between relative bg-yellow-500 py-10 font-sans"
             >
-             <div className="h-full object-cover flex bg-black w-1/4">
-                {/* <div className="h-full flex items-end absolute bottom-0">
-                  <Image
-                    src="https://i.postimg.cc/NfvLb3T9/cert.png"
-                    alt="/cert.png"
-                    height={1700}
-                    width={300}
-                    className=""
-                  ></Image>
-                </div> */}
-              </div>
-
-              <div className="flex flex-col items-center  right-0 h-full bg-white w-6/7">
+           
+              <div className="flex justify-between right-0 h-full bg-white w-full">
+                <div className="w-44 h-full flex bg-certificate bg-cover">
+                </div>
+                <div className="flex flex-col items-center w-6/7">
                 <div className="flex pt-2 space-x-3">
                   <div className="flex flex-col items-end text-sm">
                     <div className="font-bold text-red-600">UDYOGAASHA</div>
@@ -152,14 +144,12 @@ const App_pdf = () => {
                     This is to Certify that Shri./Smt./Ram.
                   </span>
                   <div className="flex flex-col items-center">
+                    <span className="text-indigo-800 ">{fname}</span>
                     <span className="h-0.1 w-40 bg-black"></span>
                   </div>
                 </div>
                 <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
-                  <div className="flex flex-col items-center">
-                  <span className="text-indigo-800 ">{fname}</span>
-                    <span className="h-0.1 w-72 bg-black"></span>
-                  </div>
+                  <span className="h-0.1 w-72 bg-black"></span>
                   <span>Having Attended and</span>
                 </div>
                 <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
@@ -188,6 +178,8 @@ const App_pdf = () => {
                   <div ca>Center Head</div>
                   <div>Director</div>
                 </div>
+              </div>
+              
               </div>
             </div>
           </PDFExport>
