@@ -71,9 +71,8 @@ const App_pdf = () => {
               ref={contentArea}
               className="flex h-200 w-full justify-between relative bg-yellow-500 py-10 font-sans"
             >
-              <div className="h-full object-contain overflow-y-auto relative w-1/4">
-                <div className="h-full flex items-end absolute bottom-0">
-                  <div className="bg-black ">
+             <div className="h-full object-cover flex bg-black w-1/4">
+                {/* <div className="h-full flex items-end absolute bottom-0">
                   <Image
                     src="https://i.postimg.cc/NfvLb3T9/cert.png"
                     alt="/cert.png"
@@ -81,8 +80,7 @@ const App_pdf = () => {
                     width={300}
                     className=""
                   ></Image>
-                  </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="flex flex-col items-center  right-0 h-full bg-white w-6/7">
