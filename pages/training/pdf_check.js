@@ -171,16 +171,18 @@ const App_pdf = () => {
                   <div className="flex flex-col items-center">
                     <span className="text-indigo-800">{info.pname}</span>
                     <span className="h-0.1 w-96 bg-black"></span>
-                    <span className="h-0.1 w-4 bg-black"></span>
+                    
                   </div>
+                  <span className="h-0.1 w-5 bg-black"></span>
                 </div>
 
                 <div className="flex items-end pt-4 text-xl  font-Hurricane">
                   <span>by the training centre</span>
                   <div className="flex flex-col items-center">
                     <span className="text-indigo-800">Udyog Asha</span>
+                    <span className="h-0.1 w-64 ml-4 bg-black"></span>
                   </div>
-                  <span className="h-0.1 w-10 bg-black"></span>
+                  <span className="h-0.1 w-6 bg-black"></span>
                 </div>
                 <div className="flex justify-around h-full w-full pt-20 ">
                   <div ca>Center Head</div>
