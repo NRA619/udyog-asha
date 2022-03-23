@@ -149,12 +149,15 @@ const App_pdf = () => {
                     This is to Certify that Shri./Smt./Ram.
                   </span>
                   <div className="flex flex-col items-center">
-                    <span className="text-indigo-800 ">{fname}</span>
+                
                     <span className="h-0.1 w-40 bg-black"></span>
                   </div>
                 </div>
                 <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
+                  <div className="flex flex-col items-center">
+                  <span className="text-indigo-800 ">{fname}</span>
                   <span className="h-0.1 w-72 bg-black"></span>
+                  </div>
                   <span>Having Attended and</span>
                 </div>
                 <div className="flex items-end pt-4 space-x-2 text-xl font-Hurricane">
@@ -168,6 +171,7 @@ const App_pdf = () => {
                   <div className="flex flex-col items-center">
                     <span className="text-indigo-800">{info.pname}</span>
                     <span className="h-0.1 w-96 bg-black"></span>
+                    <span className="h-0.1 w-4 bg-black"></span>
                   </div>
                 </div>
 
