@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"name": "C programming",
+			"path": "..\\..\\..\\C programming"
+		},
+		{
+			"name": "web design",
+			"path": "..\\..\\..\\web design"
+		},
+		{
+			"name": "udyog-asha-backend",
+			"path": "..\\..\\..\\backend\\udyog-asha-backend"
+		},
+		{
+			"name": "udyog-asha",
+			"path": "E:\\Mern Stack\\udyog-asha"
+		},
+		{
+			"path": "..\\.."
+		}
+	],
+	"settings": {}
+}
