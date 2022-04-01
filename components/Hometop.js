@@ -55,7 +55,7 @@ export default function Hometop() {
                     Vocational Education & Training Board
                 </motion.span>
                 <motion.span variants={item} className = "text-xxs md:text-sm pt-1 text-gray-100 font-medium md:font-semibold animate-pulse">
-                    An ISO 9001: 2021 Certified Vocational Board 
+                    An ISO 9001: 2015 Certified Vocational Board 
                 </motion.span>
                 <motion.span variants={item} className="text-white text-md md:text-2xl pt-1 font-medium md:font-semibold ">
                     महाराष्ट्र मुक्त व्यवसाय प्रशिक्षण केंद्र 
