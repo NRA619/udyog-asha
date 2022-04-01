@@ -261,7 +261,7 @@ export default function Login() {
                   {/* button animation */}
                   <GoogleLogin
                     className="flex justify-center rounded-3xl p-4 shadow-xl transition duration-500 ease-in-out bg-black hover:bg-blue-600 transform hover:-translate-y-1 hover:scale-110"
-                    clientId="369653107453-7cn37ce491sj19e88tmisa7ide4fjklv.apps.googleusercontent.com"
+                    clientId="689218340556-eana7glsdmm5mog28gkrjjbqnkpjaiua.apps.googleusercontent.com"
                     buttonText="Sign in with google"
                     onSuccess={googlesubmit}
                     onFailure={googlesubmit}
