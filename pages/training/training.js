@@ -58,7 +58,7 @@ const Training = () => {
       )}
       {loading == false && (
         <div className="pt-14 ">
-          <div className="md:flex flex flex-col md:flex-row items-center md:justify-between">
+          <div className="md:flex flex flex-col items-center md:items-start md:justify-between">
             <div className="mt-6  w-1/4  hidden ml-10 md:flex justify-start h-10">
               <input
                 id="search_course"
@@ -82,8 +82,9 @@ const Training = () => {
               ></input>
             </div>
             {/* Category1 */}
-            <div className="mt-6 m-2 text-red-500 text-sm md:text-md flex flex-col ">
-              <div className="bg-gray-50 border border-gray-200 py-2 px-4 w-72 flex justify-between shadow-sm rounded-sm">
+            <div className="text-md mx-2 mt-6 text-red-500 font-semibold animate-pulse">Select Categories...</div>
+            <div className="m-2 text-red-500 text-sm md:text-md flex flex-col ">
+              <div className="bg-gray-50 border border-gray-400 py-2 px-4 w-72 flex justify-between shadow-sm rounded-sm">
                 <span>{dropdownvalue}</span>
                 {dropdown == false && (
                   <span>
