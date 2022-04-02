@@ -26,8 +26,8 @@ export default function Reviews() {
 
         <div className="">
           <Slider {...settings}>
-            <div className="h-full flex justify-center items-center">
-              <div className="mx-2 bg-gray-900 rounded-md shadow-sm y p-2 ">
+            <div className="h-96 flex justify-center items-center">
+              <div className="mx-2 h-96 bg-gray-900 rounded-md shadow-sm y p-2 ">
                 <div className="flex justify-between items-center w-full text-white space-x-14 p-4">
                   <span className="flex space-y-4 flex-col">
                     <Image
@@ -64,8 +64,8 @@ export default function Reviews() {
                 </div>
               </div>
             </div>
-            <div className="h-full flex justify-center items-center">
-              <div className="mx-2 bg-gray-900 rounded-md shadow-sm y p-2 ">
+            <div className="h-96 flex justify-center items-center">
+              <div className="mx-2 h-96 bg-gray-900 rounded-md shadow-sm y p-2 ">
                 <div className="flex justify-between items-center w-full text-white space-x-14 p-4">
                   <span className="flex space-y-4 flex-col">
                     <Image
@@ -98,8 +98,8 @@ export default function Reviews() {
                 </div>
               </div>
             </div>
-            <div className="h-full flex justify-center items-center">
-              <div className="mx-2 bg-gray-900 rounded-md shadow-sm y p-2 ">
+            <div className="h-96 flex justify-center items-center">
+              <div className="mx-2 h-96 bg-gray-900 rounded-md shadow-sm y p-2 ">
                 <div className="flex justify-between items-center w-full text-white space-x-14 p-4">
                   <span className="flex space-y-4 flex-col">
                     <Image
@@ -127,8 +127,8 @@ export default function Reviews() {
                 </div>
               </div>
             </div>
-            <div className="h-full flex justify-center items-center">
-              <div className="mx-2 bg-gray-900 rounded-md shadow-sm y p-2 ">
+            <div className="h-96 flex justify-center items-center">
+              <div className="mx-2 h-96 bg-gray-900 rounded-md shadow-sm y p-2 ">
                 <div className="flex justify-between items-center w-full text-white space-x-14 p-4">
                   <span className="flex w-full flex-col">
                     <Image
@@ -162,8 +162,8 @@ export default function Reviews() {
                 </div>
               </div>
             </div>
-            <div className="h-full flex justify-center items-center">
-              <div className="mx-2 bg-gray-900 rounded-md shadow-sm y p-2 ">
+            <div className="h-96 flex justify-center items-center">
+              <div className="mx-2 h-96 bg-gray-900 rounded-md shadow-sm y p-2 ">
                 <div className="flex justify-between items-center w-full text-white space-x-14 p-4">
                   <span className="flex space-y-4 flex-col w-1/2">
                     <Image
@@ -186,8 +186,8 @@ export default function Reviews() {
                 </div>
               </div>
             </div>
-            <div className="h-full flex justify-center items-center">
-              <div className="mx-2 bg-gray-900 rounded-md shadow-sm y p-2 ">
+            <div className="h-96 flex justify-center items-center">
+              <div className="mx-2 h-96 bg-gray-900 rounded-md shadow-sm y p-2 ">
                 <div className="flex justify-between items-center w-full text-white space-x-14 p-4">
                   <span className="flex space-y-4 flex-col">
                     <Image
