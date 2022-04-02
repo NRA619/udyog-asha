@@ -47,15 +47,12 @@ export default function Footer() {
 
                 <span className="block mt-4">
                     <CallIcon className="text-white"></CallIcon>
-                    <span className="text-white ml-2">+9192939494</span>
-                </span>
-                <span className='text-white'>
-                udyogaasha@gmail.com 
+                    <span className="text-white ml-2">+919850016113</span>
                 </span>
                 <div className="font-light text-white">
-                    <span className="block">102 c/26 , Bhawani peth</span>
-                    <span className="block">solapur</span>
-                    <span className="block">Maharahstra</span>
+                    <span className="block">12, Ramkrishna apartment</span>
+                    <span className="block">Vidyanagar sevanil</span>
+                    <span className="block">Aurangabad</span>
                 </div>
              </div>
              <div className="p-4">
@@ -67,11 +64,13 @@ export default function Footer() {
                     <CallIcon className="text-white"></CallIcon>
                     <span className="text-white ml-2">+918275282238</span>
                 </span>
-
+                <span className='text-white'>
+                udyogaasha@gmail.com 
+                </span>
                 <div className="font-light text-white">
-                    <span className="block">102 c/26 , Bhawani peth</span>
-                    <span className="block">solapur</span>
-                    <span className="block">Maharahstra</span>
+                    <span className="block">45, Hubtown coontriwood society</span>
+                    <span className="block">tilekar Nagar konda budruk</span>
+                    <span className="block">Pune</span>
                 </div>
              </div>
              </div>
