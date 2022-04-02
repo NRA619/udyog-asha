@@ -84,7 +84,7 @@ export default function Reviews() {
                       width={920}
                       className="rounded-full"
                     ></Image>
-                    <span className="pb-2 font-bold text-sm underline">
+                    <span className="pb-2 font-bold text-xs underline">
                       Mr. VINAYAK SADASHIV KULKARRNI
                     </span>
                     <Image
@@ -93,8 +93,8 @@ export default function Reviews() {
                       width={900}
                       className=""
                     ></Image>
-                    <span className="text-sm justify-center">तेजय मसाले</span>
-                    <span className="text-sm">संगमनेर ,अहमदनगर</span>
+                    <span className="text-xs justify-center">तेजय मसाले</span>
+                    <span className="text-xs">संगमनेर ,अहमदनगर</span>
                   </span>
                   <span className="text-center">
                     नमस्कार मी विनायक कुलकर्णी संगमनेर जिल्हा अहमदनगर मी प्रवीण
