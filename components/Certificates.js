@@ -25,7 +25,7 @@ export default function Certificates() {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000,
+      autoplaySpeed: 3000,
       swipeToSlide: true,
     };
     // grid md:grid-cols-2 gap-4
@@ -46,9 +46,7 @@ export default function Certificates() {
                <div className="h-full w-full px-2">
                    <Image src="/certificate/20.png"  className="mx-2"height={400} width={400}></Image>
                </div>
-               <div className="h-full w-full px-2">
-                   <Image src="/certificate/19.jpeg" className="mx-2" height={400} width={400}></Image>
-               </div>
+             
                <div className="h-full w-full px-2">
                    <Image src="/certificate/18.jpeg" className="mx-2" height={400} width={400}></Image>
                </div>
@@ -116,9 +114,7 @@ export default function Certificates() {
                <div className="h-full w-full px-2">
                    <Image src="/certificate/20.png"  className="mx-2"height={400} width={400}></Image>
                </div>
-               <div className="h-full w-full px-2">
-                   <Image src="/certificate/19.jpeg" className="mx-2" height={400} width={400}></Image>
-               </div>
+       
                <div className="h-full w-full px-2">
                    <Image src="/certificate/18.jpeg" className="mx-2" height={400} width={400}></Image>
                </div>

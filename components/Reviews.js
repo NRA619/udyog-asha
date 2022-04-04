@@ -14,7 +14,7 @@ export default function Reviews() {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     swipeToSlide: true,
   };
   var settings1 = {
@@ -24,7 +24,7 @@ export default function Reviews() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     swipeToSlide: true,
   };
   // grid md:grid-cols-2 gap-4
