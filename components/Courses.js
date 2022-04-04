@@ -61,6 +61,7 @@ export default function Courses() {
                     width={1450}
                     height={850}
                     layout="responsive"
+                    priority
                   ></Image>
                 </div>
               );
@@ -87,6 +88,7 @@ export default function Courses() {
                     width={1450}
                     height={850}
                     layout="responsive"
+                    priority
                   ></Image>
                 </div>
               );
