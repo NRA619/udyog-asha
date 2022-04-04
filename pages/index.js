@@ -7,7 +7,7 @@ import Courses from '../components/Courses'
 import Hometop from '../components/Hometop'
 import { useState, useEffect, } from "react";
 import BarLoader from "react-spinners/BarLoader";
-
+import Certificates from '../components/Certificates'
 
 export default function Home() {
   const [loading, setloading] = useState(false);
@@ -50,6 +50,9 @@ export default function Home() {
 
       <div className="p-4 ">
         <Reviews />
+      </div>
+      <div className="p-4 ">
+        <Certificates />
       </div>
 
     </div >
