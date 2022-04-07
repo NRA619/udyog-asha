@@ -33,7 +33,7 @@ const Lecture = () => {
           `https://murmuring-eyrie-62394.herokuapp.com/tr/Details/${productId}`
         );
         const post = await res.json();
-        if(post.Materials != undefined)(
+        if(post.materials != undefined)(
           setmaterial(post.materials)
           
         )
