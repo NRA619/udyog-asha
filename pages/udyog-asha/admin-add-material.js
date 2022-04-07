@@ -47,7 +47,7 @@ export default function Admin_add_material() {
   }
 
   async function submitform() {
-    const res = await axios.post("http://localhost:5000/admin/add_materials", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/add_materials", {
       cname: cname,
       materials: materials,
     });
