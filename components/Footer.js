@@ -9,8 +9,12 @@ import { Controller, useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/router";
 
+
+
+
 export default function Footer() {
     const router = useRouter();
+     
   const {
     control,
     register,
@@ -36,8 +40,8 @@ export default function Footer() {
       }
   }
     return (
-        <div className="bg-black p-6 text-md font-semibold divide-y divide-white md:divide-y-0 flex-col md:flex md:flex-row md:justify-between shadow-xl">   
-           
+        <div className="h-full w-full bg-black flex flex-col">   
+           <div className='px-6 pt-6 text-md font-semibold divide-y divide-white md:divide-y-0 flex-col md:flex md:flex-row md:justify-between shadow-xl'>
             {/* Address */}
             <div className="flex flex-col">
             <div className="p-4">
@@ -59,7 +63,7 @@ export default function Footer() {
                 <span className="text-lg border-b-4 border-white text-white font-semibold ">
                     our office
                 </span>
-
+                
                 <span className="block mt-4">
                     <CallIcon className="text-white"></CallIcon>
                     <span className="text-white ml-2">+918275282238</span>
@@ -162,7 +166,16 @@ export default function Footer() {
                         2021<CopyrightRoundedIcon /> All rights reserved.
                     </span>
                 </div>
+                
             </div>
+            </div>
+            
+            <div className='text-white right-0 flex justify-end px-5 pb-2 space-x-4 '>
+                <Link href="https://docs.google.com/document/d/1i6jUvcB56olicNp8lqeuLNBlFxQb94kO/edit?usp=sharing&ouid=100880902003497145432&rtpof=true&sd=true" > Terms and Conditions</Link>
+                <Link href="https://docs.google.com/document/d/12qjjEmtflMlgXpEAfJRgl-y8QVO4we18/edit?usp=sharing&ouid=100880902003497145432&rtpof=true&sd=true"> Privacy Policy</Link>
+                <Link href="https://docs.google.com/document/d/19hT01rqH1XHwsckiGgeHnEnImFPgc9kt/edit?usp=sharing&ouid=100880902003497145432&rtpof=true&sd=true"> Return and Refund Policy</Link>
+            </div>
+            
         </div>
      
     )
