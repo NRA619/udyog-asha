@@ -7,6 +7,7 @@ import Image from "next/image";
 import { parseCookies } from "../../components/cookie";
 import BarLoader from "react-spinners/BarLoader";
 import axios from "axios";
+import Link from "next/link";
 
 const Lecture = () => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const Lecture = () => {
   const [invi, setInvi] = useState(" ");
   const [dropdown, setdropdown] = useState(-1);
   const [paid, setpaid] = useState(false);
+  const [material, setmaterial] = useState([]);
 
   useEffect(async () => {
     const data = parseCookies();
@@ -31,6 +33,10 @@ const Lecture = () => {
           `https://murmuring-eyrie-62394.herokuapp.com/tr/Details/${productId}`
         );
         const post = await res.json();
+        if(post.Materials != undefined)(
+          setmaterial(post.materials)
+          
+        )
         setinfo(post.details);
         setVedio_link(post.details[0].link);
         setInvi(post.invigilator);
@@ -76,9 +82,26 @@ const Lecture = () => {
             />
           </div>
           <div className="h-14 w-full  border-white flex flex-col items-center">
-            <div className="w-full bg-red-500 ">
+              <div className="w-full bg-red-500 ">
+                <ul>
+                  <li className="text-xl bg-red-600 w-40 h-14  flex items-center justify-center text-white">
+                  Study Materials
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
+            {material.map((mat, index) => (
+                    <div key={index} className="text-black mx-10 mt-4">
+                      <Link className="text-blue-700" href="https://drive.google.com/file/d/0Bwep5dehKW7yRGR6OTMwSlY0WUE/view?usp=sharing&resourcekey=0-9ae8dkZ-TypULIQ5IDf-xA"  download = "file.pdf" data-keyboard="false">
+                        <span className="text-blue-700 underline hover:cursor-pointer">
+                        Material {index + 1}
+                        </span>
+                      </Link>
+                      
+                    </div>
+
+                  ))}
+          
          
         </div>
 
