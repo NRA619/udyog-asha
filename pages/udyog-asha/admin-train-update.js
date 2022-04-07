@@ -53,8 +53,9 @@ export default function Admin_training_update() {
           )}
           {isLogged == true && loading == false && (
             <>
-              <div className="flex justify-center text-white text-3xl pb-20">
+              <div className="flex flex-col items-center text-white text-3xl pb-12">
                 <span>Hi Admin, want to update a course?</span>
+                <spam onClick={() => window.location = "/udyog-asha/admin-add-material"} className="px-6 hover:cursor-pointer shadow-xl rounded-full py-2 text-base bg-black text-yellow-400 mt-5">Add Materials</spam>
               </div>
               <form
                 onSubmit={handleSubmit(onSubmitForm)}

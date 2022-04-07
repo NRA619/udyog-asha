@@ -25,6 +25,7 @@ export default function Admin_training() {
   // const [sam5coursefield, setSam5coursefield] = useState([]);
   const [ays, setays] = useState(false);
   const [form2, setform2] = useState(false);
+  const [form3, setform3] = useState(false);
   const {
     control,
     register,
@@ -33,6 +34,11 @@ export default function Admin_training() {
     watch,
     reset,
   } = useForm();
+
+  const [materials, setmaterials] = useState([]);
+  const [sammaterials, setsammaterials] = useState({
+    Materials: [],
+  });
 
   useEffect(async () => {
     setloading(true);
@@ -51,6 +57,7 @@ export default function Admin_training() {
     const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/save_train", {
       course: values,
       details: sam4coursefield,
+      materials: materials,
     });
     if (res.data.data == "added") {
       alert("data added successfully");
@@ -103,6 +110,15 @@ export default function Admin_training() {
     }
   }
 
+  async function addmaterials() {
+    console.log(sammaterials);
+    materials.push(sammaterials.Materials);
+    console.log(materials);
+    setsammaterials({
+      Materials: [],
+    });
+  }
+
   return (
     <div className="min-h-screen pt-14 w-full">
       <div className="flex justify-center items-center">
@@ -123,7 +139,7 @@ export default function Admin_training() {
                 <span className="bg-yellow-400 h-1 w-40"></span>
               </div>
 
-              {form2 == false && (
+              {form2 == false &&  form3 == false &&  (
                 <div className="mt-12 w-full flex flex-col items-center">
                   <div className="w-full flex justify-center pb-16">
                     <span className="text-white text-lg md:text-3xl font-sans font-normal underline ">
@@ -204,7 +220,7 @@ export default function Admin_training() {
                   </div>
                   <div className="flex justify-center py-10">
                     <button
-                      onClick={() => setform2(true)}
+                      onClick={() => setform3(true)}
                       className="py-2 px-5 bg-gray-900 shadow-md rounded-md text-white"
                     >
                       Finish
@@ -212,7 +228,46 @@ export default function Admin_training() {
                   </div>
                 </div>
               )}
-              {form2 == true && (
+              {form3 == true && form2 == false && (
+                <div className="flex flex-col items-center space-y-5 space-x-5 pt-10 justify-center">
+                  <label className="text-yellow-400 ">
+                    Add Study Materials*
+                  </label>
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      setsammaterials((prevsammaterials) => ({
+                        ...prevsammaterials,
+                        Materials: e.target.value,
+                      }))
+                    }
+                    value={sammaterials.Materials}
+                    className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-48 md:w-60"
+                  ></input>
+                  <button onClick={addmaterials} className="text-yellow-400">
+                    <QueueIcon />
+                  </button>
+                  <div className="flex flex-col space-y-4 justify-center py-10">
+                    <button
+                      onClick={() => {
+                        setform2(false), setform3(false);
+                      }}
+                      className="py-1.5 px-4 bg-yellow-600 text-white shadow-md rounded-md text-yellow-4000"
+                    >
+                      Go back
+                    </button>
+                    <button
+                      onClick={() => {
+                        setform2(true), setform3(false);
+                      }}
+                      className="py-2 px-5 bg-gray-900 shadow-md rounded-md text-white"
+                    >
+                      Finish
+                    </button>
+                  </div>
+                </div>
+              )}
+              {form2 == true && form3 == false && (
                 <div className="w-full h-full">
                   <div className="flex justify-center pt-10">
                     <span className="text-white text-lg md:text-3xl font-sans font-normal underline">
