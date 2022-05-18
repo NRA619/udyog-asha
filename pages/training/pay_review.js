@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { parseCookies } from "../../components/cookie";
 import BarLoader from "react-spinners/BarLoader";
-
+import Link from 'next/link'
 
 const Thumbnail = () => {
   const router = useRouter();
@@ -13,7 +13,7 @@ const Thumbnail = () => {
   const [mno, setmno] = useState(" ");
   const [emaillog, setemaillog] = useState(" ");
   const [info, setinfo] = useState([]);
-  const [details, setdetails] = useState([]);
+  
   const [loading, setloading] = useState(true);
 
   useEffect(async () => {
@@ -57,24 +57,24 @@ const Thumbnail = () => {
     if (Object.keys(info).length !== 0) {
       const p = info.price;
 
-      if (Object.keys(details).length === 0) {
-        try {
-          const res = await axios.post(
-            "https://murmuring-eyrie-62394.herokuapp.com/payment/createorder",
-            {
-              price: p,
-            }
-          );
-          setdetails(res);
-        } catch (err) {
-          console.log(err);
-        }
-      }
+      // if (Object.keys(details).length === 0) {
+      //   try {
+      //     const res = await axios.post(
+      //       "https://murmuring-eyrie-62394.herokuapp.com/payment/createorder",
+      //       {
+      //         price: p,
+      //       }
+      //     );
+      //     setdetails(res);
+      //   } catch (err) {
+      //     console.log(err);
+      //   }
+      // }
     }
    setTimeout(() => {
       setloading(false);
     }, 5000);
-  }, [info, details, productId]);
+  }, [info, productId]);
 
   async function getdata() {
     if (productId) {
@@ -85,74 +85,99 @@ const Thumbnail = () => {
       setinfo(dat);
     }
   }
+  const onBuyNowClick = async() => {
+		const data = {
+			purpose: info.pname,
+			amount: info.price/100,
+			buyer_name: fname,
+			email: emaillog,
+			phone: '9960119040',
+			redirect_url: `https://murmuring-eyrie-62394.herokuapp.com/payment/payment/callback?user_id=${emaillog}`,
+      product: info,
+		};
+    
+		await axios.post( 'https://murmuring-eyrie-62394.herokuapp.com/payment/createorder', data )
+			.then( res => {
+				console.log( 'resp', res.data );
+				window.location.href = res.data.url;
+			} )
+			.catch( ( error ) => console.log( error.response.data ) );
+	};
 
-  function loadScript(src) {
-    return new Promise((resolve) => {
-      const script = document.createElement("script");
-      script.src = src;
-      script.onload = () => {
-        resolve(true);
-      };
-      script.onerror = () => {
-        resolve(false);
-      };
-      document.body.appendChild(script);
-    });
-  }
+  // function loadScript(src) {
+  //   return new Promise((resolve) => {
+  //     const script = document.createElement("script");
+  //     script.src = src;
+  //     script.onload = () => {
+  //       resolve(true);
+  //     };
+  //     script.onerror = () => {
+  //       resolve(false);
+  //     };
+  //     document.body.appendChild(script);
+  //   });
+  // }
 
-  async function displayRazorpay() {
+  // async function displayRazorpay() {
+  //   const res = await loadScript(
+  //     "https://checkout.razorpay.com/v1/checkout.js"
+  //   );
 
-    const res = await loadScript(
-      "https://checkout.razorpay.com/v1/checkout.js"
-    );
+  //   if (!res) {
+  //     alert("Razorpay SDK failed to load. Are you online?");
+  //     return;
+  //   }
 
-    if (!res) {
-      alert("Razorpay SDK failed to load. Are you online?");
-      return;
-    }
+  //   const options = {
+  //     key: "rzp_live_iQ0qtIQjfOGyaB", // Enter the Key ID generated from the Dashboard
+  //     amount: details.data.amount,
+  //     name: fname,
+  //     description:
+  //       "Course_name: " +
+  //       info.pname +
+  //       " " +
+  //       "|" +
+  //       " " +
+  //       "Rs. " +
+  //       info.price / 100,
+  //     order_id: details.data.id,
+  //     handler: async function (response) {
+  //       const data = {
+  //         orderCreationId: details.data.id,
+  //         razorpayPaymentId: response.razorpay_payment_id,
+  //         razorpayOrderId: response.razorpay_order_id,
+  //         razorpaySignature: response.razorpay_signature,
+  //       };
 
-    const options = {
-      key: "rzp_live_iQ0qtIQjfOGyaB", // Enter the Key ID generated from the Dashboard
-      amount: details.data.amount,
-      name: fname,
-      description: "Course_name: " + info.pname + " " + "|" + " " + "Rs. " + (info.price)/100,
-      order_id: details.data.id,
-      handler: async function (response) {
-        const data = {
-          orderCreationId: details.data.id,
-          razorpayPaymentId: response.razorpay_payment_id,
-          razorpayOrderId: response.razorpay_order_id,
-          razorpaySignature: response.razorpay_signature,
-        };
+  //       const res = await axios.post(
+  //         `http://localhost:5000/payment/payments/${data.razorpayPaymentId}`,
+  //         {
+  //           product_array: info,
+  //           status: "completed",
+  //         }
+  //       );
+  //       if (res.data.paymentSuccess === true) {
+  //         window.location = "/training/thankyou";
+  //       } else {
+  //         window.location = "/training/errorpage";
+  //       }
+  //     },
+  //     prefill: {
+  //       name: fname,
+  //       email: emaillog,
+  //       contact: "+91" + mno,
+  //     },
+  //     theme: {
+  //       color: "#FF0000",
+  //     },
+  //   };
 
-        const res = await axios.post(
-          `https://murmuring-eyrie-62394.herokuapp.com/payment/payments/${data.razorpayPaymentId}`, {
-            product_array: info,
-            status: "completed",
-          }
-        );
-        if(res.data.paymentSuccess === true ) {
-          window.location = "/training/thankyou"
-        }else {
-          window.location = "/training/errorpage"
-        } 
-      },
-      prefill: {
-        name: fname,
-        email: emaillog,
-        contact: "+91" + mno,
-      },
-      theme: {
-        color: "#FF0000",
-      },
-    };
-
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
-  }
+  //   const paymentObject = new window.Razorpay(options);
+  //   paymentObject.open();
+  // }
   return (
     <main className="">
-      {details.data == undefined && loading === true && (
+      {info == undefined && loading === true && (
         <div className="flex flex-col justify-center items-center h-screen w-screen">
           <BarLoader
           color="#D0021B"
@@ -162,19 +187,19 @@ const Thumbnail = () => {
         />
         </div>
       )}
-      {details.data == undefined && loading === false && (
+      {info == undefined && loading === false && (
         <div className="flex flex-col justify-center items-center h-screen w-screen">
           <div>404. Page Not Found</div>
         </div>
       )}
-      {isLogged == false && details.data !== undefined && loading === false && (
+      {isLogged == false && info !== undefined && loading === false && (
        <div className="flex flex-col justify-center items-center h-screen w-screen">
          <span>
            Please login
          </span>
        </div>
       )}
-      {isLogged == true && details.data !== undefined && (
+      {isLogged == true && info !== undefined && (
         <div className="h-full w-full flex space-x-10  bg-redback bg-cover">
           <div className="w-full md:w-3/4 h-full pt-20 block md:flex  items-center bg-white">
             <div className="w-full px-5 md:w-1/2 flex md:pl-20 flex-col justify-center h-full">
@@ -232,7 +257,7 @@ const Thumbnail = () => {
               
               
               <button
-                onClick={displayRazorpay}
+                onClick={() => onBuyNowClick()}
                 className="bg-red-700 text-white py-2 px-6 rounded-sm shadow-xl flex justify-center"
               >
                 PAY NOW
