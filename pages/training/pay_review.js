@@ -91,7 +91,7 @@ const Thumbnail = () => {
 			amount: info.price/100,
 			buyer_name: fname,
 			email: emaillog,
-			phone: '9960119040',
+			phone: mno,
 			redirect_url: `https://murmuring-eyrie-62394.herokuapp.com/payment/payment/callback?user_id=${emaillog}`,
       product: info,
 		};
