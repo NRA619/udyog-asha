@@ -150,7 +150,7 @@ const Cart = () => {
   //   });
   // }
   const onBuyNowClick = async() => {
-    if(totalprice/100 > 9){
+    if(totalprice > 900){
     var str = ""
     pname.map((data_product) => {
       str = str + "product:"+ " " + data_product.product_name + " " + "|" + " " + "qty:" + " "  + data_product.quantity + " " + "|" + " " + "Price:" + " " + "Rs." + (data_product.quantity*data_product.price)/100 + "\n"
