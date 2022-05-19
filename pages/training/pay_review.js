@@ -94,6 +94,7 @@ const Thumbnail = () => {
 			phone: mno,
 			redirect_url: `https://murmuring-eyrie-62394.herokuapp.com/payment/payment/callback?user_id=${emaillog}`,
       product: info,
+      status_state: "completed",
 		};
     
 		await axios.post( 'https://murmuring-eyrie-62394.herokuapp.com/payment/createorder', data )
