@@ -204,7 +204,7 @@ const App_pdf = () => {
                     <span className="text-red-400 text-sm ml-44">Udyog Aasha</span>
                   </div>
                 </div>
-                <div className="flex justify-around h-full w-full pr-2 -mt-4">
+                <div className="flex justify-around h-full w-full pr-2 -mt-2">
                   <div className="invisible">Center Head</div>
                   <div className="flex flex-col mr-2">
                     <span className="text-red-400 text-sm">
