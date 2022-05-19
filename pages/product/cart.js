@@ -136,83 +136,107 @@ const Cart = () => {
     }
     
   }
-  function loadScript(src) {
-    return new Promise((resolve) => {
-      const script = document.createElement("script");
-      script.src = src;
-      script.onload = () => {
-        resolve(true);
-      };
-      script.onerror = () => {
-        resolve(false);
-      };
-      document.body.appendChild(script);
-    });
-  }
-
-  async function displayRazorpay() {
+  // function loadScript(src) {
+  //   return new Promise((resolve) => {
+  //     const script = document.createElement("script");
+  //     script.src = src;
+  //     script.onload = () => {
+  //       resolve(true);
+  //     };
+  //     script.onerror = () => {
+  //       resolve(false);
+  //     };
+  //     document.body.appendChild(script);
+  //   });
+  // }
+  const onBuyNowClick = async() => {
     var str = ""
     pname.map((data_product) => {
       str = str + "product:"+ " " + data_product.product_name + " " + "|" + " " + "qty:" + " "  + data_product.quantity + " " + "|" + " " + "Price:" + " " + "Rs." + (data_product.quantity*data_product.price)/100 + "\n"
     })
-    const responsed = await axios.post(
-      "https://murmuring-eyrie-62394.herokuapp.com/payment/createorder",
-      {
-        price: totalprice,
-      }
-    );
-    const res = await loadScript(
-      "https://checkout.razorpay.com/v1/checkout.js"
-    );
 
-    if (!res) {
-      alert("Razorpay SDK failed to load. Are you online?");
-      return;
-    }
+		const data = {
+			purpose: str,
+			amount: totalprice/100,
+			buyer_name: fname,
+			email: emaillog,
+			phone: mno,
+			redirect_url: `https://murmuring-eyrie-62394.herokuapp.com/payment/payment/callback?user_id=${emaillog}`,
+      product: pname,
+      status_state: "pending",
+		};
+    
+		await axios.post( 'https://murmuring-eyrie-62394.herokuapp.com/payment/createorder', data )
+			.then( res => {
+				console.log( 'resp', res.data );
+				window.location.href = res.data.url;
+			} )
+			.catch( ( error ) => console.log( error.response.data ) );
+	};
 
-    const options = {
-      key: "rzp_live_iQ0qtIQjfOGyaB", // Enter the Key ID generated from the Dashboard
-      amount: totalprice,
-      name: fname,
-      description: str,
-      order_id: responsed.data.id,
-      handler: async function (response) {
-        const data = {
-          orderCreationId: responsed.data.id,
-          razorpayPaymentId: response.razorpay_payment_id,
-          razorpayOrderId: response.razorpay_order_id,
-          razorpaySignature: response.razorpay_signature,
-        };
+  // async function displayRazorpay() {
+  //   var str = ""
+  //   pname.map((data_product) => {
+  //     str = str + "product:"+ " " + data_product.product_name + " " + "|" + " " + "qty:" + " "  + data_product.quantity + " " + "|" + " " + "Price:" + " " + "Rs." + (data_product.quantity*data_product.price)/100 + "\n"
+  //   })
+  //   const responsed = await axios.post(
+  //     "https://murmuring-eyrie-62394.herokuapp.com/payment/createorder",
+  //     {
+  //       price: totalprice,
+  //     }
+  //   );
+  //   const res = await loadScript(
+  //     "https://checkout.razorpay.com/v1/checkout.js"
+  //   );
 
-        const res = await axios.post(
-          `https://murmuring-eyrie-62394.herokuapp.com/payment/payments/${data.razorpayPaymentId}`, {
-            product_array: pname,
-            status: "pending",
-          }
-        );
-        if(res.data.paymentSuccess === true ) {
-          deleteall();
-          window.location = "/product/thanks"
-        }else {
-          window.location = "/product/error"
-        } 
-      },
-      prefill: {
-        name: fname,
-        email: emaillog,
-        contact: "+91" + mno,
-      },
-      notes: {
-        address: details[0].addressline1 + "," + " " + details[0].addressline2 + "," + " " + details[0].city + "," + " " + details[0].pincode + "," + " " + details[0].state,
-      },
-      theme: {
-        color: "#FF0000",
-      },
-    };
+  //   if (!res) {
+  //     alert("Razorpay SDK failed to load. Are you online?");
+  //     return;
+  //   }
 
-    const paymentObject = new window.Razorpay(options);
-    paymentObject.open();
-  }
+  //   const options = {
+  //     key: "rzp_live_iQ0qtIQjfOGyaB", // Enter the Key ID generated from the Dashboard
+  //     amount: totalprice,
+  //     name: fname,
+  //     description: str,
+  //     order_id: responsed.data.id,
+  //     handler: async function (response) {
+  //       const data = {
+  //         orderCreationId: responsed.data.id,
+  //         razorpayPaymentId: response.razorpay_payment_id,
+  //         razorpayOrderId: response.razorpay_order_id,
+  //         razorpaySignature: response.razorpay_signature,
+  //       };
+
+  //       const res = await axios.post(
+  //         `https://murmuring-eyrie-62394.herokuapp.com/payment/payments/${data.razorpayPaymentId}`, {
+  //           product_array: pname,
+  //           status: "pending",
+  //         }
+  //       );
+  //       if(res.data.paymentSuccess === true ) {
+  //         deleteall();
+  //         window.location = "/product/thanks"
+  //       }else {
+  //         window.location = "/product/error"
+  //       } 
+  //     },
+  //     prefill: {
+  //       name: fname,
+  //       email: emaillog,
+  //       contact: "+91" + mno,
+  //     },
+  //     notes: {
+  //       address: details[0].addressline1 + "," + " " + details[0].addressline2 + "," + " " + details[0].city + "," + " " + details[0].pincode + "," + " " + details[0].state,
+  //     },
+  //     theme: {
+  //       color: "#FF0000",
+  //     },
+  //   };
+
+  //   const paymentObject = new window.Razorpay(options);
+  //   paymentObject.open();
+  // }
   function addresspage() {
     window.location = "/product/address"
   }
@@ -332,7 +356,7 @@ const Cart = () => {
                       </div>
                       <div className="flex justify-center">
                     <button
-                      onClick={displayRazorpay}
+                      onClick={() => onBuyNowClick()}
                       className="m-10 bg-white px-4 text-black font-medium py-2"
                     >
                       Checkout 
