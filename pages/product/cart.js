@@ -150,6 +150,7 @@ const Cart = () => {
   //   });
   // }
   const onBuyNowClick = async() => {
+    if(totalprice/100 > 9){
     var str = ""
     pname.map((data_product) => {
       str = str + "product:"+ " " + data_product.product_name + " " + "|" + " " + "qty:" + " "  + data_product.quantity + " " + "|" + " " + "Price:" + " " + "Rs." + (data_product.quantity*data_product.price)/100 + "\n"
@@ -172,6 +173,10 @@ const Cart = () => {
 				window.location.href = res.data.url;
 			} )
 			.catch( ( error ) => console.log( error.response.data ) );
+            
+    }else {
+      return alert("Order should be greater than Rs. 9")
+    }
 	};
 
   // async function displayRazorpay() {
