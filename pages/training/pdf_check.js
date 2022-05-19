@@ -184,9 +184,33 @@ const App_pdf = () => {
                   </div>
                   <span className="h-0.1 w-6 bg-black"></span>
                 </div>
-                <div className="flex justify-around h-full w-full pt-20 ">
-                  <div ca>Center Head</div>
-                  <div>Director</div>
+                <div className="flex justify-around h-full w-full pr-2">
+                  <div className="invisible">Center Head</div>
+                  <div className="flex flex-col ml-44 mt-8">
+                    <span>
+                      <Image
+                        className="mr-6"
+                        src="/director_sign.png"
+                        height={100}
+                        width={100}
+                      ></Image>
+                    </span>
+                    <span className=" -mt-10 ml-10 ">Director</span>
+                  </div>
+                </div>
+                <div className="flex justify-around h-full w-full pr-2 -mt-1">
+                  <div className="invisible">Center Head</div>
+                  <div className="flex flex-col ">
+                    <span className="text-red-400 text-sm ml-44">Udyog Aasha</span>
+                  </div>
+                </div>
+                <div className="flex justify-around h-full w-full pr-2 -mt-8">
+                  <div className="invisible">Center Head</div>
+                  <div className="flex flex-col mr-2">
+                    <span className="text-red-400 text-sm">
+                      Maharashtra Open Vocational Training Center
+                    </span>
+                  </div>
                 </div>
               </div>
               
