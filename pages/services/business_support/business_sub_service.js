@@ -179,7 +179,7 @@ export const Business_sub_services = () => {
                       // onClick={() => onBuyNowClick()}
                       className="bg-green-500 text-green-50 px-4 py-1 shadow-md hover:bg-green-50 hover:text-green-500 transform hover:scale-110 ease-in-out delay-100 duration-75  rounded-sm"
                     >
-                      {/* Pay Rs. {data.price / 100} */} We are not accepting payment of this. If you have some query related to this, you can contact us or send query through form given below.
+                      {/* Pay Rs. {data.price / 100} */} We are not accepting payment for this service. If you have some query related to this, you can contact us or send query through form given below.
                     </button>
                   </div>
                 ) : (
