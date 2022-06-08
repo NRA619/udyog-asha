@@ -349,7 +349,7 @@ export default function Admin() {
               <div className="px-4 bg-indigo-600 m-4 py-4 shadow-sm">
                 <div className="flex justify-between">
                   <span className="text-white px-2 w-3/5 truncate">
-                    {data.result[0].email}
+                    {data.result[0].buyer_email}
                   </span>
                   <button
                     onClick={() => pending_data(data.result)}
@@ -381,7 +381,7 @@ export default function Admin() {
               <div className="px-4 bg-pink-600 m-4 py-4 shadow-sm">
                 <div className="flex justify-between">
                   <span className="text-white px-2 w-3/5 truncate">
-                    {data.result[0].email}
+                    {data.result[0].buyer_email}
                   </span>
                   <button
                     onClick={() => inprogress_data(data.result)}
