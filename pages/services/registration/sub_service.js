@@ -351,6 +351,7 @@ export const Sub_services = () => {
                             onClick={() => {
                               setpro(true),
                                 setpriv(false),
+                                setoth(false)
                                 settype_of_service("Proprietorship");
                             }}
                             className="form-check-input appearance-none  rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -366,6 +367,7 @@ export const Sub_services = () => {
                             onClick={() => {
                               setpro(false),
                                 setpriv(true),
+                                setoth(false)
                                 settype_of_service("Private_Limited_Company");
                             }}
                             className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -374,10 +376,45 @@ export const Sub_services = () => {
                           />
                           Private_Limited_Company
                         </div>
+                        <div>
+                          <input
+                            type="radio"
+                            onClick={() => {
+                              setpro(false),
+                                setpriv(false),
+                                setoth(true)
+                                settype_of_service("LLP");
+                            }}
+                            className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-red-500 checked:border-red-500 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                            value="LLP"
+                            name="type_of_service"
+                          />
+                          LLP
+                        </div>
                       </div>
                       {pro == true && (
                         <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
                           {data.Proprietorship.map((idp, index) => (
+                            <div className="flex flex-col space-y-2" key={index}>
+                              <label className="text-yellow-600 font-medium flex space-x-1">
+                                <span>*{idp}</span>
+                                <div className="group text-black flex"></div>
+                              </label>
+                              <input
+                                type="file"
+                                {...register(`idp${index}`, {
+                                  // validations
+                                  required: true,
+                                })}
+                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow-600 focus:outline-none"
+                              ></input>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {oth == true && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 px-10 mt-14 gap-y-6 justify-items-stretch gap-x-10">
+                          {data.LLP.map((idp, index) => (
                             <div className="flex flex-col space-y-2" key={index}>
                               <label className="text-yellow-600 font-medium flex space-x-1">
                                 <span>*{idp}</span>
