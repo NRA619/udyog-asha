@@ -48,7 +48,7 @@ const Training = () => {
   
       setloading(false);
     
-  }, [emaillog, loading, course]);
+  }, [emaillog, loading]);
   return (
     <main className="bg-red-600 bg-opacity-5">
       {loading == true && (
