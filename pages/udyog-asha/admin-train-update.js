@@ -55,8 +55,9 @@ export default function Admin_training_update() {
             <>
               <div className="flex flex-col items-center text-white text-3xl pb-12">
                 <span>Hi Admin, want to update a course?</span>
-                <spam onClick={() => window.location = "/udyog-asha/admin-add-material"} className="px-4 hover:cursor-pointer shadow-xl  py-1 text-sm bg-gray-50 text-black mt-5">Add Materials</spam>
-                <spam onClick={() => window.location = "/udyog-asha/admin-add-chapters"} className="px-4 hover:cursor-pointer shadow-xl  py-1 text-sm bg-gray-50 text-black mt-2">Add Chapters</spam>
+                <span onClick={() => window.location = "/udyog-asha/admin-add-material"} className="w-32 flex justify-center hover:cursor-pointer shadow-xl  py-1 text-sm bg-gray-50 text-black mt-5">Add Materials</span>
+                <span onClick={() => window.location = "/udyog-asha/admin-add-chapters"} className="w-32 flex justify-center hover:cursor-pointer shadow-xl  py-1 text-sm bg-gray-50 text-black mt-2">Add Chapters</span>
+                <span onClick={() => window.location = "/udyog-asha/admin-delete-chapters"} className="w-32 flex justify-center hover:cursor-pointer shadow-xl  py-1 text-sm bg-gray-50 text-black mt-2">Delete Chapters</span>
               </div>
               <form
                 onSubmit={handleSubmit(onSubmitForm)}
