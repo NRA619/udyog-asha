@@ -179,13 +179,12 @@ const Thumbnail = () => {
   // }
   return (
     <main className="">
-      {info == undefined && loading === true && (
+      {loading === true && (
         <div className="flex flex-col justify-center items-center h-screen w-screen">
           <BarLoader
           color="#D0021B"
           height={4}
-          width={100}
-         
+          width={100}  
         />
         </div>
       )}
