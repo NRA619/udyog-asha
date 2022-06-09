@@ -31,6 +31,9 @@ export default function Admin_training_update() {
   }, [isLogged, loading]);
 
   async function onSubmitForm(values) {
+    if(values.category_of_update == "intro_link"){
+      values.update = values.update.replace(/view\?usp\=sharing/g, "preview");
+    }
     const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/update_train", {
       values,
     });
@@ -92,6 +95,7 @@ export default function Admin_training_update() {
                     <option value="discription">description</option>
                     <option value="featured">featured</option>
                     <option value="invigilator">invigilator</option>
+                    <option value="intro_link">Introduction Link</option>
                   </select>
                 </div>
                 <div className="text-white flex justify-between">

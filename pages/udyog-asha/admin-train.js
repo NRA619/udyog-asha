@@ -54,6 +54,7 @@ export default function Admin_training() {
   async function onSubmitForm(values) {
     console.log(values);
     console.log(sam4coursefield);
+    values.intro_link = values.intro_link.replace(/view\?usp\=sharing/g, "preview");
     const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/save_train", {
       course: values,
       details: sam4coursefield,
@@ -364,6 +365,18 @@ export default function Admin_training() {
                             required: true,
                           })}
                           name="img"
+                          className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-10 w-80"
+                        ></input>
+                      </div>
+                      <div className="flex flex-col space-y-1">
+                        <label className="text-yellow-400">Introduction Link*</label>
+                        <input
+                          type="text"
+                          {...register("intro_link", {
+                            // validations
+                            required: true,
+                          })}
+                          name="intro_link"
                           className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-10 w-80"
                         ></input>
                       </div>

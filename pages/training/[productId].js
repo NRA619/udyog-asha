@@ -39,11 +39,10 @@ const ProductDetail = () => {
         );
         const post = await res.json();
         setinfo(post);
-        if(post.price === 0) {
+        if (post.price === 0) {
           setpaid(true);
           checkReview();
-        }
-        else {
+        } else {
           checkPaid();
           checkReview();
         }
@@ -63,13 +62,13 @@ const ProductDetail = () => {
       );
       if (resp.data.paid === true) {
         setpaid(true);
-      }else {
+      } else {
         setpaid(false);
       }
     }
   }
 
-  async function checkReview(){
+  async function checkReview() {
     const response = await axios.post(
       "https://murmuring-eyrie-62394.herokuapp.com/tr/reviewvalidate",
       {
@@ -177,7 +176,29 @@ const ProductDetail = () => {
               </div>
             )}
           </div>
-          <div className="mt-10 w-3/4 md:flex md:flex-col md:items-end mr-10 hidden"></div>
+          <div className="w-1/2 pb-4 relative hidden  md:flex md:flex-col md:items-end mr-10">
+            <div
+              className="absolute h-16 w-16 -top-0.5 right-0"
+              onClick={() => (window.location = "/")}
+            >
+              <Image
+                src="/MOVTC13.png"
+                width={100}
+                height={100}
+                className="object-contain h-16 w-16"
+              ></Image>
+            </div>
+            <iframe
+              src={info.intro_link}
+              width="100%"
+              height="100%"
+              allow="autoplay"
+              className=""
+              frameborder="0"
+              scrolling="no"
+              seamless=""
+            />
+          </div>
         </div>
       )}
       {Object.keys(info).length !== 0 && loading == false && (
@@ -185,7 +206,30 @@ const ProductDetail = () => {
       )}
       {Object.keys(info).length !== 0 && loading == false && (
         <div className="bg-white w-full h-full block md:flex md:w-full">
-          <div className="m-10 ml-3 md:ml-10  md:w-3/4">
+          <div className="p-2 w-full  md:w-3/4">
+            <div className="w-full h-64 pb-4 relative md:hidden flex justify-center">
+              <div
+                className="absolute h-16 w-16 -top-0.5 right-0"
+                onClick={() => (window.location = "/")}
+              >
+                <Image
+                  src="/MOVTC13.png"
+                  width={100}
+                  height={100}
+                  className="object-contain h-16 w-16"
+                ></Image>
+              </div>
+              <iframe
+                src={info.intro_link}
+                width="100%"
+                height="100%"
+                allow="autoplay"
+                className=""
+                frameborder="0"
+                scrolling="no"
+                seamless=""
+              />
+            </div>
             <div className="text-2xl md:text-4xl text-yellow-500 font-bold">
               Details
             </div>
