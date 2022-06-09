@@ -218,6 +218,9 @@ const Thumbnail = () => {
               <span className="text-black flex pt-4 text-justify">
                 - For any query please fill the form on the footer.
               </span>
+              <span className="text-black flex pt-4 text-justify">
+                - Once you Click the Pay now button, you have only 10 mins to complete the payment.
+              </span>
             </div>
             <div className="bg-redback md:bg-white mt-20 bg-cover md:shadow-xl md:border md:border-red-600 w-full md:w-1/2 h-full  md:h-3/4 pb-2 md:pb-0 justify-center md:my-10 md:transform md:translate-x-36">
               <div className="bg-white m-2 md:m-0 md:border-none md:transform-none border border-red-600 transform -translate-y-10">
