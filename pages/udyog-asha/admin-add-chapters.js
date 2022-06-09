@@ -64,7 +64,7 @@ export default function Admin_add_chapters() {
     });
     if (res.data.data == "updated") {
       alert("data updated successfully");
-      return (window.location = "/udyog-asha/admin-add-chapters");
+      return (window.location = "/udyog-asha/admin-train-update");
     } else if(res.data.data == "duplicate") {
       return alert("duplicate chapter");
     }

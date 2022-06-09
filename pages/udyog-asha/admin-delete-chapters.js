@@ -7,7 +7,7 @@ import BarLoader from "react-spinners/BarLoader";
 import { useRouter } from "next/router";
 import QueueIcon from "@material-ui/icons/Queue";
 
-export default function Admin_add_material() {
+export default function Admin_add_chapters() {
   const router = useRouter();
   const [isLogged, setisLogged] = useState(false);
   const [loading, setloading] = useState(true);
@@ -20,12 +20,10 @@ export default function Admin_add_material() {
     reset,
   } = useForm();
 
-  const [materials, setmaterials] = useState([]);
-  const [sammaterials, setsammaterials] = useState({
-    Materials: [],
-  });
+ 
   const [cname, setcname] = useState("");
-
+  const [courseday, setcourseday] = useState("");
+  
   useEffect(async () => {
     setloading(true);
     const data = parseCookies();
@@ -37,24 +35,23 @@ export default function Admin_add_material() {
     setloading(false);
   }, [isLogged, loading]);
 
-  async function addmaterials() {
-    console.log(sammaterials);
-    materials.push(sammaterials.Materials);
-    console.log(materials);
-    setsammaterials({
-      Materials: [],
-    });
-  }
 
   async function submitform() {
-    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/add_materials", {
+
+    console.log(cname)
+    console.log(courseday)
+
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/delete_chapters", {
       cname: cname,
-      materials: materials,
+      name: courseday,
     });
     if (res.data.data == "updated") {
       alert("data updated successfully");
       return (window.location = "/udyog-asha/admin-train-update");
-    } else {
+    } else if(res.data.data == "duplicate") {
+      return alert("duplicate chapter");
+    }
+    else {
       return alert("Something went wrong please try again later");
     }
   }
@@ -70,7 +67,7 @@ export default function Admin_add_material() {
           )}
           {isLogged == true && loading == false && (
             <div className="space-y-10 flex flex-col">
-              <span className="text-3xl text-white flex justify-center pb-10">Add Materials</span>
+              <span className="text-3xl text-white flex justify-center pb-10">Add Chapters</span>
               <div className="flex justify-between">
               <label className="text-yellow-400 ">Course name*</label>
               <input
@@ -80,24 +77,17 @@ export default function Admin_add_material() {
                 className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-48 md:w-60"
               ></input>
               </div>
+             <div className="flex flex-col space-y-4">
              <div className="flex justify-between">
-             <label className="text-yellow-400 ">Add Study Materials*</label>
+             <label className="text-yellow-400 ">Add Course Day*</label>
               <input
                 type="text"
-                onChange={(e) =>
-                  setsammaterials((prevsammaterials) => ({
-                    ...prevsammaterials,
-                    Materials: e.target.value,
-                  }))
-                }
-                value={sammaterials.Materials}
+                onChange={(e) => setcourseday(e.target.value)}
+                value={courseday}
                 className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-48 md:w-60"
               ></input>
-              <button onClick={addmaterials} className="text-yellow-400">
-                <QueueIcon />
-              </button>
+              </div>      
              </div>
-              
              <div className="w-full flex justify-center pt-10">
              <button
                 type="submit"
