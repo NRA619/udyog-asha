@@ -71,9 +71,7 @@ const Thumbnail = () => {
       //   }
       // }
     }
-   setTimeout(() => {
-      setloading(false);
-    }, 5000);
+   
   }, [info, productId]);
 
   async function getdata() {
@@ -84,6 +82,9 @@ const Thumbnail = () => {
       const dat = await respo.json();
       setinfo(dat);
     }
+    setTimeout(() => {
+      setloading(false);
+    }, 1000);
   }
   const onBuyNowClick = async() => {
 		const data = {
