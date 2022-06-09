@@ -195,9 +195,6 @@ const ProductDetail = () => {
               height="100%"
               allow="autoplay"
               className=""
-              frameborder="0"
-              scrolling="no"
-              seamless=""
             />
           </div>
         </div>
@@ -226,9 +223,6 @@ const ProductDetail = () => {
                 height="100%"
                 allow="autoplay"
                 className=""
-                frameborder="0"
-                scrolling="no"
-                seamless=""
               />
             </div>
             <div className="text-2xl md:text-4xl text-yellow-500 font-bold">
