@@ -41,15 +41,15 @@ export default function Admin_add_chapters() {
     console.log(cname)
     console.log(courseday)
 
-    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/delete_chapters", {
+    const res = await axios.post("/admin/delete_chapters", {
       cname: cname,
       name: courseday,
     });
     if (res.data.data == "updated") {
       alert("data updated successfully");
       return (window.location = "/udyog-asha/admin-train-update");
-    } else if(res.data.data == "duplicate") {
-      return alert("duplicate chapter");
+    } else if(res.data.data == "notexists") {
+      return alert("chapter doesn't exits");
     }
     else {
       return alert("Something went wrong please try again later");
@@ -67,7 +67,7 @@ export default function Admin_add_chapters() {
           )}
           {isLogged == true && loading == false && (
             <div className="space-y-10 flex flex-col">
-              <span className="text-3xl text-white flex justify-center pb-10">Add Chapters</span>
+              <span className="text-3xl text-white flex justify-center pb-10">Delete Chapters</span>
               <div className="flex justify-between">
               <label className="text-yellow-400 ">Course name*</label>
               <input
