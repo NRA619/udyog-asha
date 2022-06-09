@@ -38,17 +38,21 @@ const App_pdf = () => {
         const post = await resp.json();
         setinfo(post);
         console.log(post);
-        const respt = await axios.post(
-          "https://murmuring-eyrie-62394.herokuapp.com/tr/get_paid_id",
-          {
-            email: email,
-            pid: productId,
+        if(post.price === 0){
+          setpaidid("free");
+        }else {
+          const respt = await axios.post(
+            "https://murmuring-eyrie-62394.herokuapp.com/tr/get_paid_id",
+            {
+              email: email,
+              pid: productId,
+            }
+          );
+          if (respt.data.data == "Not found") {
+            return window.location == "/";
+          } else {
+            setpaidid(respt.data.data);
           }
-        );
-        if (respt.data.data == "Not found") {
-          return window.location == "/";
-        } else {
-          setpaidid(respt.data.data);
         }
       }
     }

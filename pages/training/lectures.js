@@ -40,13 +40,19 @@ const Lecture = () => {
         setinfo(post.details);
         setVedio_link(post.details[0].link);
         setInvi(post.invigilator);
-
-        const resp = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/tr/reviewcheck", {
-          email: email,
-          pid: productId,
-        });
-        if (resp.data.paid === true) {
+        if (post.price === 0) {
           setpaid(true);
+        } else {
+          const resp = await axios.post(
+            "https://murmuring-eyrie-62394.herokuapp.com/tr/reviewcheck",
+            {
+              email: email,
+              pid: productId,
+            }
+          );
+          if (resp.data.paid === true) {
+            setpaid(true);
+          }
         }
       }
     }

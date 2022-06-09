@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const [info, setinfo] = useState([]);
   const [loading, setloading] = useState(true);
   const [emaillog, setemaillog] = useState(" ");
-  const [paid, setpaid] = useState(false);
+  const [paid, setpaid] = useState();
   const [review, setreview] = useState(false);
 
   useEffect(async () => {
@@ -39,8 +39,14 @@ const ProductDetail = () => {
         );
         const post = await res.json();
         setinfo(post);
-        checkPaid();
-        checkReview();
+        if(post.price === 0) {
+          setpaid(true);
+          checkReview();
+        }
+        else {
+          checkPaid();
+          checkReview();
+        }
       }
     }
 
@@ -57,6 +63,8 @@ const ProductDetail = () => {
       );
       if (resp.data.paid === true) {
         setpaid(true);
+      }else {
+        setpaid(false);
       }
     }
   }

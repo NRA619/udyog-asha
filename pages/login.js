@@ -97,7 +97,7 @@ export default function Login() {
         let stringToBase64 = buff.toString('base64');
         setCookie("user", JSON.stringify(stringToBase64), {
           path: "/",
-          maxAge: 3600 * 24, // Expires After 1hr
+          maxAge: 86400, // Expires After 1hr
           sameSite: true,
         });
         window.location = "/"

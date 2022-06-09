@@ -25,8 +25,8 @@ export const Service = () => {
                            
                     </span>
                     <span className="flex justify-center">
-                    <Link href={`registration/${data[0]._id}`} className="hover:cursor-pointer">
-                        <span className="bg-gray-800  w-full flex justify-center hover:bg-black hover:text-white font-medium rounded-b-lg text-white bg-opacity-60 shadow-xl py-4">{data[0].service_name}</span>
+                    <Link href={`registration/${data[0]._id}`} className="">
+                        <span className="bg-gray-800  w-full flex justify-center hover:cursor-pointer hover:bg-black hover:text-white font-medium rounded-b-lg text-white bg-opacity-60 shadow-xl py-4">{data[0].service_name}</span>
                     </Link>
                     </span>
                 </div>
@@ -35,8 +35,8 @@ export const Service = () => {
                         
                     </span>
                     <span className="flex justify-center">
-                    <Link href={`business_support/${data[1]._id}`} className="hover:cursor-pointer">
-                      <span className="bg-green-300 w-full flex justify-center rounded-b-lg hover:bg-black font-medium hover:text-white text-gray-800 bg-opacity-60 shadow-xl py-4">{data[1].service_name}</span>
+                    <Link href={`business_support/${data[1]._id}`} className="">
+                      <span className="bg-green-300 w-full flex justify-center rounded-b-lg hover:bg-black hover:cursor-pointer font-medium hover:text-white text-gray-800 bg-opacity-60 shadow-xl py-4">{data[1].service_name}</span>
                     </Link>
                     </span>
                 </div>

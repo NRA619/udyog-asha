@@ -215,7 +215,15 @@ const Training = () => {
                       <div className="ml-5 font-semibold text-lg">
                         {ninja.pname}
                       </div>
-                      <div className="ml-5">Rs.{ninja.price / 100}</div>
+                      <div className="ml-5">{ninja.price === 0 ? (
+                        <span>
+                          Free
+                        </span>
+                      ) : (
+                        <span>
+                          Rs.{ninja.price / 100}
+                        </span>
+                      )}</div>
                       <div className="text-blue-900 font-bold">
                         {ninja.Mode}
                       </div>
@@ -267,7 +275,15 @@ const Training = () => {
                       <div className="ml-5 font-semibold text-lg">
                         {ninja.pname}
                       </div>
-                      <div className="ml-5">Rs.{ninja.price / 100}</div>
+                      <div className="ml-5">{ninja.price === 0 ? (
+                        <span>
+                          Free
+                        </span>
+                      ) : (
+                        <span>
+                          Rs.{ninja.price / 100}
+                        </span>
+                      )}</div>
                       <div className="text-blue-900 font-bold">
                         {ninja.Mode}
                       </div>
@@ -318,7 +334,15 @@ const Training = () => {
                       <div className="ml-5 font-semibold text-lg">
                         {ninja.pname}
                       </div>
-                      <div className="ml-5">Rs.{ninja.price / 100}</div>
+                      <div className="ml-5">{ninja.price === 0 ? (
+                        <span>
+                          Free
+                        </span>
+                      ) : (
+                        <span>
+                          Rs.{ninja.price / 100}
+                        </span>
+                      )}</div>
                       <div className="text-blue-900 font-bold">
                         {ninja.Mode}
                       </div>
@@ -369,7 +393,15 @@ const Training = () => {
                       <div className="ml-5 font-semibold text-lg">
                         {ninja.pname}
                       </div>
-                      <div className="ml-5">Rs.{ninja.price / 100}</div>
+                      <div className="ml-5">{ninja.price === 0 ? (
+                        <span>
+                          Free
+                        </span>
+                      ) : (
+                        <span>
+                          Rs.{ninja.price / 100}
+                        </span>
+                      )}</div>
                       <div className="text-blue-900 font-bold">
                         {ninja.Mode}
                       </div>
@@ -420,7 +452,15 @@ const Training = () => {
                       <div className="ml-5 font-semibold text-lg">
                         {ninja.pname}
                       </div>
-                      <div className="ml-5">Rs.{ninja.price / 100}</div>
+                      <div className="ml-5">{ninja.price === 0 ? (
+                        <span>
+                          Free
+                        </span>
+                      ) : (
+                        <span>
+                          Rs.{ninja.price / 100}
+                        </span>
+                      )}</div>
                       <div className="text-blue-900 font-bold">
                         {ninja.Mode}
                       </div>
