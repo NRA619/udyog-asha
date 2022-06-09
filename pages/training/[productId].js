@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import { parseCookies } from "../../components/cookie";
+import Image from "next/image";
 
 const ProductDetail = () => {
   const router = useRouter();
