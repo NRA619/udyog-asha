@@ -20,10 +20,9 @@ export default function Admin_add_chapters() {
     reset,
   } = useForm();
 
- 
   const [cname, setcname] = useState("");
   const [courseday, setcourseday] = useState("");
-  
+
   useEffect(async () => {
     setloading(true);
     const data = parseCookies();
@@ -35,23 +34,20 @@ export default function Admin_add_chapters() {
     setloading(false);
   }, [isLogged, loading]);
 
-
   async function submitform() {
+    console.log(cname);
+    console.log(courseday);
 
-    console.log(cname)
-    console.log(courseday)
-
-    const res = await axios.post("/admin/delete_chapters", {
+    const res = await axios.post("https://murmuring-eyrie-62394.herokuapp.com/admin/delete_chapters", {
       cname: cname,
       name: courseday,
     });
     if (res.data.data == "updated") {
       alert("data updated successfully");
       return (window.location = "/udyog-asha/admin-train-update");
-    } else if(res.data.data == "notexists") {
+    } else if (res.data.data == "notexists") {
       return alert("chapter doesn't exits");
-    }
-    else {
+    } else {
       return alert("Something went wrong please try again later");
     }
   }
@@ -67,36 +63,38 @@ export default function Admin_add_chapters() {
           )}
           {isLogged == true && loading == false && (
             <div className="space-y-10 flex flex-col">
-              <span className="text-3xl text-white flex justify-center pb-10">Delete Chapters</span>
+              <span className="text-3xl text-white flex justify-center pb-10">
+                Delete Chapters
+              </span>
               <div className="flex justify-between">
-              <label className="text-yellow-400 ">Course name*</label>
-              <input
-                type="text"
-                onChange={(e) => setcname(e.target.value)}
-                value={cname}
-                className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-48 md:w-60"
-              ></input>
+                <label className="text-yellow-400 ">Course name*</label>
+                <input
+                  type="text"
+                  onChange={(e) => setcname(e.target.value)}
+                  value={cname}
+                  className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-48 md:w-60"
+                ></input>
               </div>
-             <div className="flex flex-col space-y-4">
-             <div className="flex justify-between">
-             <label className="text-yellow-400 ">Add Course Day*</label>
-              <input
-                type="text"
-                onChange={(e) => setcourseday(e.target.value)}
-                value={courseday}
-                className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-48 md:w-60"
-              ></input>
-              </div>      
-             </div>
-             <div className="w-full flex justify-center pt-10">
-             <button
-                type="submit"
-                onClick={() => submitform()}
-                className="py-1.5 px-4  bg-gray-900 text-white shadow-md rounded-md"
-              >
-                Submit
-              </button>
-             </div>
+              <div className="flex flex-col space-y-4">
+                <div className="flex justify-between">
+                  <label className="text-yellow-400 ">Add Course Day*</label>
+                  <input
+                    type="text"
+                    onChange={(e) => setcourseday(e.target.value)}
+                    value={courseday}
+                    className="shadow-md bg-gray-900 focus:ring-1 focus:ring-yellow-400 text-white border-0 focus:outline-none h-9 w-48 md:w-60"
+                  ></input>
+                </div>
+              </div>
+              <div className="w-full flex justify-center pt-10">
+                <button
+                  type="submit"
+                  onClick={() => submitform()}
+                  className="py-1.5 px-4  bg-gray-900 text-white shadow-md rounded-md"
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           )}
         </div>
