@@ -183,8 +183,6 @@ const ProductDetail = () => {
                 url={info.intro_link}
                 width="100%"
                 height="100%"
-                playing={true}
-                className=""  
               />
           </div>
         </div>
@@ -200,8 +198,6 @@ const ProductDetail = () => {
                 url={info.intro_link}
                 width="100%"
                 height="100%"
-                playing={true}
-                className=""
               />
           </div>
             <div className="text-2xl md:text-4xl text-yellow-500 font-bold">
