@@ -28,7 +28,7 @@ export default function Admin_login() {
         let stringToBase64 = buff.toString('base64');
         setCookie("user_admin", JSON.stringify(stringToBase64), {
           path: "/",
-          maxAge: 3600, // Expires After 1hr
+          maxAge: 86400, // Expires After 1hr
           sameSite: true,
         });
         window.location = "/udyog-asha/admin"
