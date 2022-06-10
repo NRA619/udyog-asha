@@ -200,18 +200,18 @@ const ProductDetail = () => {
                 height="100%"
               />
           </div>
-            <div className="text-2xl md:text-4xl text-yellow-500 font-bold">
+            <div className="text-2xl mt-10 md:ml-5 md:text-4xl text-yellow-500 font-bold">
               Details
             </div>
-            <div className="w-10 h-1 m-1 bg-yellow-400"></div>
+            <div className="w-10 md:ml-5 h-1 m-1 bg-yellow-400"></div>
             <div className="mt-5 ml-2 md:ml-10 ">
               {info.details.map((ch, index) => (
-                <div key={index}>
+                <div key={index} className="bg-yellow-50 shadow-md py-2 px-2 my-5 flex flex-col rounded-md md:mx-4">
                   {
                     <div className="mt-5 ml-2 md:ml-10">
-                      <div className="text-xl">Chapter: {ch.name}</div>
+                      <div className="text-xl font-semibold">Chapter: {ch.name}</div>
                       <div className="flex">
-                        <p className="ml-10 md:ml-20">
+                        <p className="ml-10 md:ml-20 mt-4">
                           {ch.details.map((ch, index) => (
                             <div key={index}>{ch}</div>
                           ))}
