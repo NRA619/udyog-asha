@@ -5,6 +5,7 @@ import { useState } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import { parseCookies } from "../../components/cookie";
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 const ProductDetail = () => {
   const router = useRouter();
@@ -129,9 +130,9 @@ const ProductDetail = () => {
       )}
       {Object.keys(info).length !== 0 && loading == false && (
         <div className="pt-16 md:pt-20 bg-breakbg bg-cover w-full h-1/2 flex justify-between">
-          <div className="ml-5 mr-1 lg:ml-10 mt-10">
+          <div className="ml-5 mr-1 lg:ml-10 w-full md:w-1/2 mt-10">
             <div className="text-2xl lg:text-4xl text-white">{info.pname}</div>
-            <div className="mt-5 w-full md:w-3/4  text-white">
+            <div className="mt-5 w-full md:w-full  text-white">
               {info.discription}
             </div>
             {paid === false && emaillog !== " " && (
@@ -177,25 +178,14 @@ const ProductDetail = () => {
               </div>
             )}
           </div>
-          <div className="w-1/2 pb-4 relative hidden  md:flex md:flex-col md:items-end mr-10">
-            <div
-              className="absolute h-16 w-16 -top-0.5 right-0"
-              onClick={() => (window.location = "/")}
-            >
-              <Image
-                src="/MOVTC13.png"
-                width={100}
-                height={100}
-                className="object-contain h-16 w-16"
-              ></Image>
-            </div>
-            <iframe
-              src={info.intro_link}
-              width="100%"
-              height="100%"
-              allow="autoplay"
-              className=""
-            />
+          <div className="w-1/2 pb-4 relative hidden h-80 md:flex md:flex-col md:items-end mr-1">
+          <ReactPlayer
+                url={info.intro_link}
+                width="100%"
+                height="100%"
+                playing={true}
+                className=""  
+              />
           </div>
         </div>
       )}
@@ -205,26 +195,15 @@ const ProductDetail = () => {
       {Object.keys(info).length !== 0 && loading == false && (
         <div className="bg-white w-full h-full block md:flex md:w-full">
           <div className="p-2 w-full  md:w-3/4">
-            <div className="w-full h-64 pb-4 relative md:hidden flex justify-center">
-              <div
-                className="absolute h-16 w-16 -top-0.5 right-0"
-                onClick={() => (window.location = "/")}
-              >
-                <Image
-                  src="/MOVTC13.png"
-                  width={100}
-                  height={100}
-                  className="object-contain h-16 w-16"
-                ></Image>
-              </div>
-              <iframe
-                src={info.intro_link}
+          <div className="w-full h-64 pb-4 relative md:hidden flex justify-center">
+          <ReactPlayer
+                url={info.intro_link}
                 width="100%"
                 height="100%"
-                allow="autoplay"
+                playing={true}
                 className=""
               />
-            </div>
+          </div>
             <div className="text-2xl md:text-4xl text-yellow-500 font-bold">
               Details
             </div>
